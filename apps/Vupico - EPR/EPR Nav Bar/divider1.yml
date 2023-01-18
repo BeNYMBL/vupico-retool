@@ -1,0 +1,23 @@
+id: divider1
+type: widget
+subtype: DividerWidget
+template:
+  ordered:
+    - hidden: ''
+    - maintainSpaceWhenHidden: false
+    - showInEditor: false
+    - tooltipText: ''
+    - horizontalAlign: center
+    - text: ''
+    - textSize: default
+    - style:
+        ordered:
+          - color: ''
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    height: 0.2
+    width: 12
+createdAt: 2023-01-13T16:33:47.057Z
