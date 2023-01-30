@@ -1,0 +1,10 @@
+version: 43.0.9
+pageUuid: 5a064f5a-7b3b-11ed-a5b1-073281b24b53
+appTemplate:
+  folders:
+    - plant
+    - plant_material
+  queryStatusVisibility: false
+  rootScreen: null
+  version: 2.99.3
+  markdownLinkBehavior: auto
