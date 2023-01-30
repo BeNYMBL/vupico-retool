@@ -3,5 +3,6 @@ pageUuid: fb0f87fe-a0e8-11ed-a4d4-27acd59a8df4
 appTemplate:
   queryStatusVisibility: false
   rootScreen: null
+  isFetching: true
   version: 2.99.3
   markdownLinkBehavior: auto
