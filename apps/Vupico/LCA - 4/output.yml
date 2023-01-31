@@ -1,0 +1,23 @@
+id: output
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        const wasteProductSold = {{tableWasteProductSold.data}}
+
+        const wasteAfterProduction =
+        {{formatDataAsArray(tableWasteAfterConsumption.data)}}
+
+        const wasteTransportation =
+        {{formatDataAsArray(WasteTransportationWithTotals.value)}}
+
+        return {
+          wasteTransportation: wasteTransportation.filter((val) => val.customer_name !== "Total"),
+          wasteTransportationTotal: wasteTransportation.filter((val) => val.customer_name === "Total"),
+          waste_product_sold: wasteProductSold,
+          waste_after_production: wasteAfterProduction
+        }
+    - value: ''
+createdAt: 2022-12-16T21:15:20.624Z
+folder: module_outputs

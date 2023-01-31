@@ -1,0 +1,272 @@
+id: getWasteTransportation
+type: datasource
+subtype: SqlQueryUnified
+resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
+resourceDisplayName: Vupico-Database-1
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - records: ''
+    - lastReceivedFromResourceAt: null
+    - databasePasswordOverride: ''
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: ''
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: true
+    - showFailureToaster: false
+    - query: >-
+        SELECT
+
+        sdm.id as id,
+
+        sd.id as scenario_distribution_id,
+
+        sm.id as scenario_material_id,
+
+        sd.material_code as product_code,
+
+        sd.destination_customer_code,
+
+        sm.material_code,
+
+        m.material_name,
+
+        cust.name as customer_name,
+
+        sdm.waste_from_country,
+
+        sdm.waste_to_country,
+
+        sdm.shipping_type_code,
+
+        sd.downstream_count,
+
+        cd.distance * sd.downstream_count as total_distance,
+
+        cd.unit as distance_unit,
+
+        cd.distance * sd.downstream_count * (1.0 * st.transport_cost /
+        st.distance_factor_price) as total_cost,
+
+        st.transport_cost_currency as currency,
+
+        sub_pef.PF01 * sdm.recycle_percent * cd.distance * sd.downstream_count /
+        100 as Acidification,
+
+        sub_pef.PF01_Unit as acidification_unit,
+
+        sub_pef.PF02 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as CO2,
+
+        sub_pef.PF02_Unit as co2_unit,
+
+        sub_pef.PF03 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as Ecotoxicity,
+
+        sub_pef.PF03_Unit as ecotoxicity_unit,
+
+        sub_pef.PF04 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as Fossil,
+
+        sub_pef.PF04_Unit as fossil_unit,
+
+        sub_pef.PF05 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as Freshwater_Eutrophication,
+
+        sub_pef.PF05_Unit as freshwater_eutrophication_unit,
+
+        sub_pef.PF06 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as human_toxicity_cancer,
+
+        sub_pef.PF06_Unit as human_toxicity_cancer_unit,
+
+        sub_pef.PF07 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as human_toxicity_non_cancer,
+
+        sub_pef.PF07_Unit as human_toxicity_non_cancer_unit,
+
+        sub_pef.PF08 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as ionizing_radiation,
+
+        sub_pef.PF08_Unit as ionizing_radiation_unit,
+
+        sub_pef.PF09 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as land_use,
+
+        sub_pef.PF09_Unit as land_use_unit,
+
+        sub_pef.PF10 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as marine_eutrophication,
+
+        sub_pef.PF10_Unit as marine_eutrophication_unit,
+
+        sub_pef.PF11 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as ozone_depletion,
+
+        sub_pef.PF11_Unit as ozone_depletion_unit,
+
+        sub_pef.PF12 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as particulate_matter,
+
+        sub_pef.PF12_Unit as particulate_matter_unit,
+
+        sub_pef.PF13 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as photochemical_ozone,
+
+        sub_pef.PF13_Unit as photochemical_ozone_unit,
+
+        sub_pef.PF14 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as resource_use,
+
+        sub_pef.PF14_Unit as resource_use_unit,
+
+        sub_pef.PF15 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as terrestrial_eutrophication,
+
+        sub_pef.PF15_Unit as terrestrial_eutrophication_unit,
+
+        sub_pef.PF16 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as water_use,
+
+        sub_pef.PF16_Unit as water_use_unit,
+
+        sub_pef.PF17 * sdm.recycle_percent * cd.distance * sd.downstream_count 
+        / 100 as bio_diversity,
+
+        sub_pef.PF03_Unit as bio_diversity_unit
+
+        from scenario_distribution_material sdm
+
+        inner join scenario_material sm on sdm.scenario_material_id = sm.id
+
+        inner join scenario_distribution sd on sdm.scenario_distribution_id =
+        sd.id
+
+        inner join customer cust on sd.destination_customer_code =
+        cust.customer_code
+
+        inner join material m on sm.material_id = m.id
+
+        left outer join (
+
+        select shipping_type_code,
+                 max(case when (sp.pef_category_code='PEF01') then pef_value else NULL end) as PF01,
+                 max(case when (sp.pef_category_code='PEF01') then pc.reporting_unit else NULL end) as PF01_Unit,
+                 max(case when (sp.pef_category_code='PEF02') then pef_value else NULL end) as PF02,
+                 max(case when (sp.pef_category_code='PEF02') then pc.reporting_unit else NULL end) as PF02_Unit,
+                 max(case when (sp.pef_category_code='PEF03') then pef_value else NULL end) as PF03,
+                 max(case when (sp.pef_category_code='PEF03') then pc.reporting_unit else NULL end) as PF03_Unit,
+                 max(case when (sp.pef_category_code='PEF04') then pef_value else NULL end) as PF04,
+                 max(case when (sp.pef_category_code='PEF04') then pc.reporting_unit else NULL end) as PF04_Unit,
+                 max(case when (sp.pef_category_code='PEF05') then pef_value else NULL end) as PF05,
+                 max(case when (sp.pef_category_code='PEF05') then pc.reporting_unit else NULL end) as PF05_Unit,
+                 max(case when (sp.pef_category_code='PEF06') then pef_value else NULL end) as PF06,
+                 max(case when (sp.pef_category_code='PEF06') then pc.reporting_unit else NULL end) as PF06_Unit,
+                 max(case when (sp.pef_category_code='PEF07') then pef_value else NULL end) as PF07,
+                 max(case when (sp.pef_category_code='PEF07') then pc.reporting_unit else NULL end) as PF07_Unit,
+                 max(case when (sp.pef_category_code='PEF08') then pef_value else NULL end) as PF08,
+                 max(case when (sp.pef_category_code='PEF08') then pc.reporting_unit else NULL end) as PF08_Unit,
+                 max(case when (sp.pef_category_code='PEF09') then pef_value else NULL end) as PF09,
+                 max(case when (sp.pef_category_code='PEF09') then pc.reporting_unit else NULL end) as PF09_Unit,
+                 max(case when (sp.pef_category_code='PEF10') then pef_value else NULL end) as PF10,
+                 max(case when (sp.pef_category_code='PEF10') then pc.reporting_unit else NULL end) as PF10_Unit,
+                 max(case when (sp.pef_category_code='PEF11') then pef_value else NULL end) as PF11,
+                 max(case when (sp.pef_category_code='PEF11') then pc.reporting_unit else NULL end) as PF11_Unit,
+                 max(case when (sp.pef_category_code='PEF12') then pef_value else NULL end) as PF12,
+                 max(case when (sp.pef_category_code='PEF12') then pc.reporting_unit else NULL end) as PF12_Unit,
+                 max(case when (sp.pef_category_code='PEF13') then pef_value else NULL end) as PF13,
+                 max(case when (sp.pef_category_code='PEF13') then pc.reporting_unit else NULL end) as PF13_Unit,
+                 max(case when (sp.pef_category_code='PEF14') then pef_value else NULL end) as PF14,
+                 max(case when (sp.pef_category_code='PEF14') then pc.reporting_unit else NULL end) as PF14_Unit,
+                 max(case when (sp.pef_category_code='PEF15') then pef_value else NULL end) as PF15,
+                 max(case when (sp.pef_category_code='PEF15') then pc.reporting_unit else NULL end) as PF15_Unit,
+                 max(case when (sp.pef_category_code='PEF16') then pef_value else NULL end) as PF16,
+                 max(case when (sp.pef_category_code='PEF16') then pc.reporting_unit else NULL end) as PF16_Unit,
+                 max(case when (sp.pef_category_code='PEF17') then pef_value else NULL end) as PF17,
+                 max(case when (sp.pef_category_code='PEF17') then pc.reporting_unit else NULL end) as PF17_Unit
+                 from shipping_pef sp
+                 inner join pef_category pc on sp.pef_category_code = pc.pef_category_code
+                 group by shipping_type_code
+                 order by shipping_type_code
+        ) as sub_pef
+
+        on sdm.shipping_type_code = sub_pef.shipping_type_code
+
+        left outer join shipping_type st on sdm.shipping_type_code =
+        st.shipping_type_code
+
+        left outer join country_distance cd on sdm.waste_from_country =
+        cd.from_country_id and sdm.waste_to_country = cd.to_country_id
+
+        where sdm.scenario_id = {{input_scenario_id.value}}
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - warningCodes: []
+    - data: null
+    - recordId: ''
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: true
+    - dataArray: []
+    - cacheKeyTtl: ''
+    - filterBy: ''
+    - databaseHostOverride: ''
+    - metadata: null
+    - editorMode: sql
+    - actionType: ''
+    - changesetObject: ''
+    - shouldUseLegacySql: false
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - databaseNameOverride: ''
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: ''
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - enableBulkUpdates: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - bulkUpdatePrimaryKey: ''
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events: []
+    - tableName: ''
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - databaseUsernameOverride: ''
+    - shouldEnableBatchQuerying: false
+    - doNotThrowOnNoOp: false
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2023-01-04T13:45:44.854Z
+folder: Waste_Transportation
