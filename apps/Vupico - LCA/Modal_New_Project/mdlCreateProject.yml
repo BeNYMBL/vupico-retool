@@ -1,0 +1,36 @@
+id: mdlCreateProject
+type: widget
+subtype: ModalWidget
+template:
+  ordered:
+    - opened: false
+    - modalOverflowType: scroll
+    - onModalClose: ''
+    - modalHeightType: auto
+    - tooltipText: ''
+    - modalHeight: ''
+    - onModalOpen: ''
+    - events:
+        - ordered:
+            - event: open
+            - type: datasource
+            - method: trigger
+            - pluginId: listProduct
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - modalWidth: ''
+    - closeOnOutsideClick: false
+    - loading: ''
+    - disabled: ''
+    - buttonText: + {{input_button_label.value}}
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    height: 1.2
+    width: 12
+createdAt: 2023-01-11T14:01:47.907Z

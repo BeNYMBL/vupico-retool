@@ -1,0 +1,26 @@
+id: txtModalTitle
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: center
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '#### Create New Project'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: mdlCreateProject
+    row: 5.551115123125783e-17
+    col: 2
+    height: 0.6
+    width: 8
+createdAt: 2023-01-11T14:10:01.564Z
