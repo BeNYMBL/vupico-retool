@@ -1,0 +1,14 @@
+version: 43.0.9
+pageUuid: ce523f1e-7c93-11ed-bf8a-9f499de2682f
+appTemplate:
+  folders:
+    - listQueries
+    - Plant_Production
+    - Waste
+    - module_outputs
+    - ScenarioPlant
+  queryStatusVisibility: false
+  rootScreen: null
+  isGlobalWidget: true
+  version: 2.99.3
+  markdownLinkBehavior: auto

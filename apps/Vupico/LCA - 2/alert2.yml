@@ -1,0 +1,29 @@
+id: alert2
+type: widget
+subtype: AlertWidget
+template:
+  ordered:
+    - valueToCopy: ''
+    - internalUrlHashParams: ''
+    - exportFileType: csv
+    - buttonType: action
+    - url: ''
+    - newWindow: false
+    - exportQuery: ''
+    - action: ''
+    - internalUrlQuery: ''
+    - internalUrlPath: ''
+    - title: Attention
+    - type: info
+    - exportFileName: ''
+    - description: Double click the colored badges to change your selection
+    - buttonText: ''
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 14.400000000000002
+    height: 1
+    width: 10
+createdAt: 2022-12-29T17:26:59.476Z

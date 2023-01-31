@@ -1,0 +1,14 @@
+id: input_scenario_id
+type: globalwidgetprop
+subtype: GlobalWidgetProp
+template:
+  ordered:
+    - value: ''
+    - defaultValue: 32b11968-fdce-4370-a09d-11021d7a8821
+    - description: |-
+        prasha
+        32b11968-fdce-4370-a09d-11021d7a8821
+
+        jp
+        10b0f53a-e765-4264-b0e0-3a87a44e85ab
+createdAt: 2022-12-15T16:16:21.709Z
