@@ -1,0 +1,16 @@
+id: spacer1
+type: widget
+subtype: SpacerWidget
+template:
+  ordered:
+    - hidden: false
+    - maintainSpaceWhenHidden: false
+    - showInEditor: false
+style:
+  ordered: []
+position2:
+  position2:
+    row: 2.8000000000000007
+    height: 0.4
+    width: 12
+createdAt: 2022-12-05T15:33:55.459Z

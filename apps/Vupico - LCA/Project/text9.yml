@@ -1,0 +1,27 @@
+id: text9
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: ' Started on {{moment(new Date(getProject.data.added_on)).format(''MM/DD/YYYY'')}}'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerProjectDetails
+    subcontainer: 0ac44
+    row: 5.551115123125783e-17
+    col: 8
+    height: 0.6
+    width: 2
+createdAt: 2023-01-10T15:47:48.280Z

@@ -1,0 +1,40 @@
+id: icon1
+type: widget
+subtype: IconWidget
+template:
+  ordered:
+    - horizontalAlign: center
+    - clickable: false
+    - hidden: false
+    - showInEditor: false
+    - tooltipText: ''
+    - style:
+        ordered:
+          - color: rgba(0, 0, 0, 0.6)
+    - altText: ''
+    - icon: bold/interface-delete-circle-alternate
+    - events:
+        - ordered:
+            - event: click
+            - type: script
+            - method: run
+            - pluginId: ''
+            - targetId: null
+            - params:
+                ordered:
+                  - src: >-
+                      delProjectMember.trigger({additionalScope: {id:
+                      getProjectUsers.data[i].id}})
+            - waitType: debounce
+            - waitMs: '0'
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: listMembers
+    row: 0.2
+    col: 10
+    height: 0.5999999999999999
+    width: 2
+createdAt: 2022-11-22T21:57:51.601Z

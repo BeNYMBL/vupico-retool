@@ -1,0 +1,102 @@
+id: dropdownButton1
+type: widget
+subtype: DropdownButtonWidget
+template:
+  ordered:
+    - _disabledByIndex:
+        - false
+        - ''
+    - horizontalAlign: right
+    - _values:
+        - Action 2
+        - ''
+    - iconByIndex:
+        array: []
+    - iconPosition: left
+    - clickable: false
+    - _iconByIndex:
+        - ''
+        - ''
+    - hidden: false
+    - data:
+        array: []
+    - text: ''
+    - _fallbackTextByIndex:
+        - ''
+        - ''
+    - showInEditor: false
+    - tooltipText: ''
+    - style:
+        ordered:
+          - border: rgba(10, 14, 20, 0)
+    - hiddenByIndex:
+        array: []
+    - _hiddenByIndex:
+        - false
+        - ''
+    - _captionByIndex:
+        - ''
+        - ''
+    - styleVariant: outline
+    - _hasMigratedNestedItems: true
+    - captionByIndex:
+        array: []
+    - itemMode: static
+    - _tooltipByIndex:
+        - ''
+        - ''
+    - _colorByIndex:
+        - ''
+        - ''
+    - tooltipByIndex:
+        array: []
+    - icon: bold/interface-setting-menu-vertical
+    - events:
+        - ordered:
+            - method: open
+            - enabled: '{{ editProjectModal.opened == false }}'
+            - params:
+                ordered: []
+            - targetId: a2160
+            - pluginId: editProjectModal
+            - waitType: debounce
+            - event: click
+            - type: widget
+            - waitMs: '0'
+        - ordered:
+            - event: click
+            - type: datasource
+            - method: trigger
+            - pluginId: delProject
+            - targetId: 1b156
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - _ids:
+        - a2160
+        - 1b156
+    - overlayMaxHeight: 375
+    - disabled: false
+    - _labels:
+        - Edit Project
+        - Delete Project
+    - disabledByIndex:
+        array: []
+    - maintainSpaceWhenHidden: false
+    - _imageByIndex:
+        - ''
+        - ''
+    - labels:
+        array: []
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerProjectDetails
+    subcontainer: 0ac44
+    row: -5.551115123125783e-17
+    col: 10
+    height: 0.8
+    width: 2
+createdAt: 2023-01-28T16:50:33.426Z

@@ -1,0 +1,27 @@
+id: txtProjectName
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: |
+        #### {{getProject.data.project}}
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerProjectDetails
+    subcontainer: 0ac44
+    row: 2.7755575615628914e-16
+    height: 0.6
+    width: 6
+createdAt: 2022-11-15T15:03:32.960Z
