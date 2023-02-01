@@ -1,0 +1,15 @@
+version: 43.0.9
+pageUuid: 6abe8d66-7cae-11ed-9095-37866bc96aab
+appTemplate:
+  folders:
+    - listPlants
+    - Downstream_Transportation
+    - Downstream_Waste
+    - js
+    - module_outputs
+    - Scenario_Distribution_Material
+  queryStatusVisibility: false
+  rootScreen: null
+  isGlobalWidget: true
+  version: 2.99.3
+  markdownLinkBehavior: auto
