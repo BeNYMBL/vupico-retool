@@ -1,0 +1,51 @@
+id: btnProductPackaging
+type: widget
+subtype: ButtonWidget2
+template:
+  ordered:
+    - horizontalAlign: stretch
+    - clickable: false
+    - iconAfter: ''
+    - submitTargetId: null
+    - hidden: '{{isCreateMode.value === false}}'
+    - text: Packaging
+    - showInEditor: false
+    - tooltipText: ''
+    - styleVariant: solid
+    - submit: false
+    - iconBefore: ''
+    - events:
+        - ordered:
+            - event: click
+            - type: util
+            - method: openApp
+            - pluginId: ''
+            - targetId: null
+            - params:
+                ordered:
+                  - uuid: 8cd9e480-9cc6-11ed-9d00-8bf7040b73a8
+                  - options:
+                      ordered:
+                        - queryParams:
+                            - ordered:
+                                - key: scenarioId
+                                - value: '{{getSingleScenario.data.id}}'
+                            - ordered:
+                                - key: projectId
+                                - value: '{{input_projectId.value}}'
+            - waitType: debounce
+            - waitMs: '0'
+    - loading: false
+    - loaderPosition: auto
+    - disabled: '{{currentApp.value === appRoutes.value.packaging}}'
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 4.199999999999999
+    col: 4
+    height: 0.8
+    width: 1
+createdAt: 2023-01-25T14:03:34.526Z

@@ -1,0 +1,131 @@
+id: updScenario
+type: datasource
+subtype: SqlQueryUnified
+resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
+resourceDisplayName: Vupico-Database-1
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - records: ''
+    - lastReceivedFromResourceAt: null
+    - databasePasswordOverride: ''
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: ''
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: false
+    - showFailureToaster: true
+    - query: ''
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - data: null
+    - recordId: ''
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: true
+    - dataArray: []
+    - cacheKeyTtl: ''
+    - filterBy: '[{"key":"id","value":"{{input_scenarioId.value}}","operation":"="}]'
+    - databaseHostOverride: ''
+    - metadata: null
+    - editorMode: gui
+    - actionType: UPDATE_BY
+    - changesetObject: |-
+        {{{
+          ouput_ls1: 
+        }}}
+    - shouldUseLegacySql: false
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - databaseNameOverride: ''
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: >-
+        [{"key":"output_ls1","value":"{{input_ls.value.module === 'ls1' ?
+        input_ls.value.data :
+        getSingleScenario.data.output_ls1}}"},{"key":"output_ls2","value":"{{input_ls.value.module
+        === 'ls2' ? input_ls.value.data :
+        getSingleScenario.data.output_ls2}}"},{"key":"output_ls3","value":"{{input_ls.value.module
+        === 'ls3' ? input_ls.value.data :
+        getSingleScenario.data.output_ls3}}"},{"key":"output_ls4","value":"{{input_ls.value.module
+        === 'ls4' ? input_ls.value.data : getSingleScenario.data.output_ls4}}"}]
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - enableBulkUpdates: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - bulkUpdatePrimaryKey: ''
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events:
+        - ordered:
+            - event: success
+            - type: util
+            - method: showNotification
+            - pluginId: ''
+            - targetId: null
+            - params:
+                ordered:
+                  - options:
+                      ordered:
+                        - notificationType: success
+                        - title: Success
+                        - description: Saved Succesfully!
+            - waitType: debounce
+            - waitMs: '0'
+        - ordered:
+            - event: failure
+            - type: util
+            - method: showNotification
+            - pluginId: ''
+            - targetId: null
+            - params:
+                ordered:
+                  - options:
+                      ordered:
+                        - notificationType: error
+                        - title: >-
+                            Please go to the 'Acquisition' section and hit Save
+                            to save changes
+            - waitType: debounce
+            - waitMs: '0'
+    - tableName: scenario
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: >-
+        [{"condition":"{{input_ls.value ===
+        null}}","message":"Attention!"},{"condition":"","message":""}]
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - databaseUsernameOverride: ''
+    - shouldEnableBatchQuerying: false
+    - doNotThrowOnNoOp: false
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2023-01-12T14:13:08.740Z
+folder: Scenario

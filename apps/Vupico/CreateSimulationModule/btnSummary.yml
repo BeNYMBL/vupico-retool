@@ -1,0 +1,54 @@
+id: btnSummary
+type: widget
+subtype: ButtonWidget2
+template:
+  ordered:
+    - horizontalAlign: stretch
+    - clickable: false
+    - iconAfter: ''
+    - submitTargetId: null
+    - hidden: '{{isCreateMode.value === false}}'
+    - text: Summary
+    - showInEditor: false
+    - tooltipText: ''
+    - styleVariant: solid
+    - submit: false
+    - iconBefore: ''
+    - events:
+        - ordered:
+            - event: click
+            - type: util
+            - method: openApp
+            - pluginId: ''
+            - targetId: null
+            - params:
+                ordered:
+                  - uuid: 9e61e87c-906b-11ed-98d4-2f9968c91ea1
+                  - options:
+                      ordered:
+                        - queryParams:
+                            - ordered:
+                                - key: scenarioId
+                                - value: '{{getSingleScenario.data.id}}'
+                            - ordered:
+                                - key: projectId
+                                - value: '{{input_projectId.value}}'
+                        - hashParams:
+                            - ordered:
+                                - key: ''
+                                - value: ''
+            - waitType: debounce
+            - waitMs: '0'
+    - loading: false
+    - loaderPosition: auto
+    - disabled: '{{currentApp.value === appRoutes.value.summary}}'
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 4.2
+    height: 0.8
+    width: 2
+createdAt: 2023-01-10T17:26:10.483Z

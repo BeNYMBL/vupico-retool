@@ -1,0 +1,41 @@
+id: linkProjects
+type: widget
+subtype: LinkWidget
+template:
+  ordered:
+    - horizontalAlign: left
+    - clickable: false
+    - iconAfter: ''
+    - hidden: false
+    - text: Projects ->
+    - showUnderline: always
+    - showInEditor: false
+    - tooltipText: ''
+    - allowWrap: false
+    - iconBefore: ''
+    - events:
+        - ordered:
+            - event: click
+            - type: util
+            - method: openApp
+            - pluginId: ''
+            - targetId: null
+            - params:
+                ordered:
+                  - uuid: 2eb6acda-6495-11ed-97ae-c3622b426d4b
+            - waitType: debounce
+            - waitMs: '0'
+    - loading: false
+    - loaderPosition: auto
+    - disabled: false
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: -5.551115123125783e-17
+    col: 1
+    height: 0.6
+    width: 1
+createdAt: 2023-01-19T15:19:15.762Z

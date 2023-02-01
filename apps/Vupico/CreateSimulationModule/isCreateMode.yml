@@ -1,0 +1,14 @@
+id: isCreateMode
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |
+        const a = {{urlparams.scenarioId || newScenarioId.value ? true : false}}
+         
+        // Comment me out
+        //return true 
+        return a
+    - value: ''
+createdAt: 2023-01-10T15:57:00.910Z
+folder: js

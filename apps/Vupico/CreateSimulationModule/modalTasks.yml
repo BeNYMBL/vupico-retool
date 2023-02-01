@@ -1,0 +1,28 @@
+id: modalTasks
+type: widget
+subtype: ModalWidget
+template:
+  ordered:
+    - opened: false
+    - modalOverflowType: scroll
+    - hidden: 'true'
+    - onModalClose: ''
+    - modalHeightType: fixed
+    - tooltipText: ''
+    - modalHeight: ''
+    - onModalOpen: ''
+    - modalWidth: ''
+    - closeOnOutsideClick: false
+    - loading: ''
+    - disabled: ''
+    - buttonText: Open Modal
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 1.7999999999999998
+    col: 10
+    height: 0.8
+    width: 1
+createdAt: 2023-01-19T21:48:43.103Z
