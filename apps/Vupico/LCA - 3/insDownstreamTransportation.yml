@@ -1,0 +1,118 @@
+id: insDownstreamTransportation
+type: datasource
+subtype: SqlQueryUnified
+resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
+resourceDisplayName: Vupico-Database-1
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - records: ''
+    - lastReceivedFromResourceAt: null
+    - databasePasswordOverride: ''
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: ''
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: false
+    - showFailureToaster: false
+    - query: ''
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - data: null
+    - recordId: ''
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: false
+    - dataArray: []
+    - cacheKeyTtl: ''
+    - filterBy: ''
+    - databaseHostOverride: ''
+    - metadata: null
+    - editorMode: gui
+    - actionType: INSERT
+    - changesetObject: ''
+    - shouldUseLegacySql: false
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - databaseNameOverride: ''
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: >-
+        [{"key":"plant_code","value":"{{selectDistributionFromPlant.value}}"},{"key":"destination_customer_code","value":"{{selectCustomer.value}}"},{"key":"product_id","value":"{{input_product_id.value}}"},{"key":"scenario_id","value":"{{input_scenario_id.value}}"},{"key":"shipping_type_code","value":"{{selectDistributionShippingType.value}}"},{"key":"quantity","value":"{{inputDistributionQuantity.value}}"},{"key":"material_id","value":"{{getProduct.data.material_id[0]}}"},{"key":"material_code","value":"{{getProduct.data.material_code[0]}}"},{"key":"loss_percent","value":"{{getProduct.data.loss_percent[0]}}"},{"key":"waste_percent","value":"{{getProduct.data.waste_percent[0]}}"},{"key":"downstream_count","value":"{{getDownstreamCount.data.count[0]}}"}]
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - enableBulkUpdates: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - bulkUpdatePrimaryKey: ''
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events:
+        - ordered:
+            - event: success
+            - type: datasource
+            - method: trigger
+            - pluginId: module_refresh
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+        - ordered:
+            - event: success
+            - type: widget
+            - method: close
+            - pluginId: modalAddDistribution
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+        - ordered:
+            - event: success
+            - type: datasource
+            - method: trigger
+            - pluginId: refreshScenarioDistributionMaterial
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - tableName: scenario_distribution
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - databaseUsernameOverride: ''
+    - shouldEnableBatchQuerying: false
+    - doNotThrowOnNoOp: false
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2022-12-15T20:13:14.096Z
+folder: Downstream_Transportation

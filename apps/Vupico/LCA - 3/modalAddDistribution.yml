@@ -1,0 +1,26 @@
+id: modalAddDistribution
+type: widget
+subtype: ModalWidget
+template:
+  ordered:
+    - opened: false
+    - modalOverflowType: scroll
+    - onModalClose: ''
+    - modalHeightType: fixed
+    - tooltipText: ''
+    - modalHeight: ''
+    - onModalOpen: ''
+    - modalWidth: ''
+    - closeOnOutsideClick: false
+    - loading: ''
+    - disabled: ''
+    - buttonText: Add Distribution Country
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 1.1999999999999993
+    height: 1
+    width: 3
+createdAt: 2022-12-15T19:33:20.369Z

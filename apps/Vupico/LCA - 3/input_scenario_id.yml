@@ -1,0 +1,8 @@
+id: input_scenario_id
+type: globalwidgetprop
+subtype: GlobalWidgetProp
+template:
+  ordered:
+    - value: ''
+    - defaultValue: d4024b44-c30a-4a7d-97e1-f555be01b152
+createdAt: 2022-12-15T19:37:26.969Z

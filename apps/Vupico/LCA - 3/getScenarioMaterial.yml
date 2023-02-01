@@ -1,0 +1,101 @@
+id: getScenarioMaterial
+type: datasource
+subtype: SqlQueryUnified
+resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
+resourceDisplayName: Vupico-Database-1
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - records: ''
+    - lastReceivedFromResourceAt: null
+    - databasePasswordOverride: ''
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: ''
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: true
+    - showFailureToaster: false
+    - query: |-
+        select 
+        sd.id as scenario_distribution_id,
+        sm.id as scenario_material_id,
+        sd.material_code as product_material_code,
+        sm.material_code as material_code,
+        sd.total_distance as total_distance,
+        sd.scenario_id as scenario_id
+        from scenario_material sm 
+        cross join scenario_distribution sd
+        inner join material m on sm.material_id = m.id
+        where sm.scenario_id = {{input_scenario_id.value}}
+        and sd.scenario_id = {{input_scenario_id.value}}
+        and m.material_type_code = 'PELM'
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - warningCodes: []
+    - data: null
+    - recordId: ''
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: true
+    - dataArray: []
+    - cacheKeyTtl: ''
+    - filterBy: ''
+    - databaseHostOverride: ''
+    - metadata: null
+    - editorMode: sql
+    - actionType: ''
+    - changesetObject: ''
+    - shouldUseLegacySql: false
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - databaseNameOverride: ''
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: ''
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - enableBulkUpdates: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - bulkUpdatePrimaryKey: ''
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events: []
+    - tableName: ''
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - databaseUsernameOverride: ''
+    - shouldEnableBatchQuerying: false
+    - doNotThrowOnNoOp: false
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2023-01-04T16:22:56.757Z
+folder: Scenario_Distribution_Material

@@ -1,0 +1,228 @@
+id: tableDownstreamWaste
+type: widget
+subtype: TableWidget
+template:
+  ordered:
+    - showCustomButton: false
+    - sortMappedValue:
+        ordered: []
+    - _filteredSortedRenderedDataWithTypes: null
+    - heightType: fixed
+    - normalizedData: null
+    - rowHeight: standard
+    - saveChangesDisabled: ''
+    - columnTypeProperties:
+        ordered:
+          - loss_percent:
+              ordered:
+                - showSeparators: true
+                - padDecimal: true
+          - waste_percent:
+              ordered:
+                - showSeparators: true
+                - padDecimal: true
+    - columnWidths:
+        - object:
+            id: material_name
+            value: 177.3072967529297
+    - showSummaryFooter: false
+    - disableRowSelectInteraction: false
+    - columnWidthsMobile: []
+    - hasNextAfterCursor: ''
+    - columnTypeSpecificExtras:
+        ordered: []
+    - onRowAdded: ''
+    - columnHeaderNames:
+        ordered:
+          - collection_percent: Collection Percent
+          - material_code: Product
+          - quantity: Quantity
+          - customer_name: Customer
+          - loss_product: Loss Product
+          - total_recycle: Recycle
+          - waste: Waste
+          - recyclability_percent: Recyclability Percent
+          - total_waste: Waste
+    - alwaysShowPaginator: false
+    - columnColors:
+        ordered:
+          - waste_percent: ''
+          - material_name: ''
+          - collection_percent: ''
+          - material_code: ''
+          - loss_percent: ''
+          - quantity: ''
+          - customer_name: ''
+          - loss_product: ''
+          - customer_country_name: ''
+          - country_code: ''
+          - total_recycle: ''
+          - waste: ''
+          - id: ''
+          - recyclability_percent: ''
+          - total_waste: ''
+    - columnFrozenAlignments:
+        ordered: []
+    - allowMultiRowSelect: false
+    - columnFormats:
+        ordered:
+          - loss_percent: PercentDataCell
+          - waste_percent: PercentDataCell
+    - columnRestrictedEditing:
+        ordered: []
+    - showFilterButton: true
+    - _columnVisibility:
+        ordered:
+          - id: false
+          - quantity: true
+          - customer_name: false
+          - material_code: false
+          - customer_country_name: false
+    - _columnSummaryTypes:
+        ordered:
+          - loss_percent: average
+          - waste_percent: average
+    - _columnsWithLegacyBackgroundColor:
+        set: []
+    - showAddRowButton: false
+    - _unfilteredSelectedIndex: null
+    - nextBeforeCursor: ''
+    - columnVisibility:
+        ordered: []
+    - selectedPageIndex: '0'
+    - applyDynamicSettingsToColumnOrder: true
+    - rowColor:
+        array: []
+    - actionButtonColumnName: Actions
+    - resetAfterSave: true
+    - filterStackType: and
+    - downloadRawData: false
+    - showFetchingIndicator: true
+    - serverPaginated: false
+    - data: '{{ getDownstreamWaste.data }}'
+    - displayedData: null
+    - actionButtons: []
+    - actionButtonSelectsRow: true
+    - selectRowByDefault: true
+    - defaultSortByColumn: ''
+    - paginationOffset: 0
+    - columnAlignment:
+        ordered:
+          - loss_percent: right
+          - waste_percent: right
+    - columnSummaries:
+        object: {}
+    - showBoxShadow: false
+    - sortedDesc: false
+    - customButtonName: ''
+    - columnMappersRenderAsHTML:
+        ordered: []
+    - showRefreshButton: true
+    - pageSize: '20'
+    - useDynamicColumnSettings: false
+    - actionButtonPosition: left
+    - dynamicRowHeights: false
+    - bulkUpdateAction: ''
+    - afterCursor: ''
+    - onCustomButtonPressQueryName: ''
+    - changeSet:
+        object: {}
+    - sortedColumn: ''
+    - _columnSummaryValues:
+        ordered:
+          - loss_percent: ''
+          - waste_percent: ''
+    - checkboxRowSelect: true
+    - _compatibilityMode: false
+    - showColumnBorders: false
+    - clearSelectionLabel: Clear selection
+    - _renderedDataWithTypes: null
+    - columnAllowOverflow:
+        ordered: []
+    - beforeCursor: ''
+    - serverPaginationType: limitOffsetBased
+    - onRowSelect: ''
+    - showDownloadButton: true
+    - selectedIndex: null
+    - defaultSortDescending: false
+    - _sortedDisplayedDataIndices: null
+    - dynamicColumnSettings: null
+    - events:
+        - ordered:
+            - event: saveChanges
+            - type: datasource
+            - method: trigger
+            - pluginId: updDownstreamWaste
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - totalRowCount: ''
+    - recordUpdates:
+        array: []
+    - newRow: null
+    - emptyMessage: No rows found
+    - columnEditable:
+        ordered:
+          - quantity: true
+          - loss_percent: true
+          - waste_percent: true
+    - _viewerColumnSummaryTypes:
+        object: {}
+    - filters:
+        array: []
+    - displayedDataIndices: null
+    - disableSorting:
+        ordered: []
+    - columnMappers:
+        ordered: []
+    - showClearSelection: false
+    - doubleClickToEdit: true
+    - overflowType: pagination
+    - _reverseSortedDisplayedDataIndices: null
+    - showTableBorder: true
+    - selectedCell:
+        object:
+          index: null
+          data: null
+          columnName: null
+    - columns: []
+    - defaultSelectedRow: first
+    - freezeActionButtonColumns: false
+    - sort: null
+    - _columns:
+        - id
+        - material_code
+        - material_name
+        - customer_name
+        - loss_percent
+        - waste_percent
+        - quantity
+        - loss_product
+        - waste
+        - country_code
+        - recyclability_percent
+        - collection_percent
+        - total_recycle
+        - total_waste
+    - sortByRawValue:
+        ordered: []
+    - calculatedColumns: []
+    - selectedRow:
+        object:
+          index: null
+          data: null
+    - showPaginationOnTop: false
+    - _reverseDisplayedDataIndices: null
+    - nextAfterCursor: ''
+    - useCompactMode: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 14.8
+    height: 8
+    width: 12
+createdAt: 2022-12-16T00:59:53.799Z
