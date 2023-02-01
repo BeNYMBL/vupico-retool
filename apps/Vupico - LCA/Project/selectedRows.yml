@@ -1,0 +1,11 @@
+id: selectedRows
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const a = {{tableScenarios.selectedRow.data}}
+        return a
+    - value: ''
+createdAt: 2023-01-17T23:29:54.389Z
+folder: Scenario

@@ -1,0 +1,15 @@
+version: 43.0.9
+pageUuid: 57c564a2-64f6-11ed-8e98-67c3a491194f
+appTemplate:
+  appThemeId: 1
+  folders:
+    - listQueries
+    - projectMembers
+    - projectReports
+    - Comparison
+    - Scenario
+    - Project
+  queryStatusVisibility: false
+  rootScreen: null
+  version: 2.99.3
+  markdownLinkBehavior: auto

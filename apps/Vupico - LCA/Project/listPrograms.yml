@@ -1,0 +1,27 @@
+id: listPrograms
+type: widget
+subtype: ListViewWidget
+template:
+  ordered:
+    - heightType: auto
+    - showBorder: false
+    - data: ''
+    - showDropShadow: false
+    - formDataKey: '{{ self.id }}'
+    - style:
+        ordered:
+          - accent-foreground: rgba(255, 255, 255, 0)
+    - dynamicHeightsEnabled: true
+    - itemHeight: '3'
+    - overflowType: scroll
+    - instances: '{{getObjectivePrograms.data.length}}'
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerPrograms
+    subcontainer: fe2fa
+    row: 0.6000000000000003
+    height: 5
+    width: 9
+createdAt: 2022-11-15T21:08:05.037Z

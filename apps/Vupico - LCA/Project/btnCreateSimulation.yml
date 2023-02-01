@@ -1,0 +1,49 @@
+id: btnCreateSimulation
+type: widget
+subtype: ButtonWidget2
+template:
+  ordered:
+    - horizontalAlign: stretch
+    - clickable: false
+    - iconAfter: ''
+    - submitTargetId: null
+    - hidden: false
+    - text: Create Simulation
+    - showInEditor: false
+    - tooltipText: ''
+    - styleVariant: solid
+    - submit: false
+    - iconBefore: bold/interface-add-1
+    - events:
+        - ordered:
+            - event: click
+            - type: util
+            - method: openApp
+            - pluginId: ''
+            - targetId: null
+            - params:
+                ordered:
+                  - uuid: 9e61e87c-906b-11ed-98d4-2f9968c91ea1
+                  - options:
+                      ordered:
+                        - queryParams:
+                            - ordered:
+                                - key: projectId
+                                - value: '{{ urlparams.projectId}}'
+            - waitType: debounce
+            - waitMs: '0'
+    - loading: false
+    - loaderPosition: auto
+    - disabled: false
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerSimulations
+    subcontainer: 0ac44
+    row: -6.661338147750939e-16
+    col: 6
+    height: 1
+    width: 3
+createdAt: 2022-12-12T20:54:12.427Z
