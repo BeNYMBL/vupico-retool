@@ -1,0 +1,24 @@
+id: txtUpstreamTitle
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '#### Upstream Transportation'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    row: 24.4
+    height: 0.6
+    width: 12
+createdAt: 2023-01-17T14:38:35.240Z

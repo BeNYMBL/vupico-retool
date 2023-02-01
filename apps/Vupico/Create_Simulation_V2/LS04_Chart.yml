@@ -1,0 +1,25 @@
+id: LS04_Chart
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const a = {{getSingleScenario.data.output_ls4.wasteTransportation}}
+        const myKeys = Object.keys(a[0]);
+        const PEF_KEYS = {{PEF_KEYS.value}}
+        const x = _.intersection(myKeys, PEF_KEYS);
+
+        const b = a.map((val) => {
+          const newObj = val[PEF_KEYS[0]];
+          const newObj2 = PEF_KEYS.map((key) => ({
+            key: key,
+            material: val.material_name, val: val[key]
+          }))
+          return newObj2;
+        })
+
+        const c = b.map((val) => val)
+
+        return _.flatten(c);
+    - value: ''
+createdAt: 2023-01-16T13:16:20.310Z

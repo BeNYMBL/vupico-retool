@@ -1,0 +1,63 @@
+id: crtEndOfLifeChart
+type: widget
+subtype: PlotlyChartWidget
+template:
+  ordered:
+    - dataseries:
+        ordered:
+          - '0':
+              ordered:
+                - label: val
+                - datasource: '{{formatDataAsObject( LS04_Chart.value )[''val'']}}'
+                - chartType: bar
+                - aggregationType: sum
+                - color: '#033663'
+                - colors:
+                    ordered: []
+                - visible: true
+                - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
+    - isDataTemplateDirty: true
+    - datasource: ''
+    - isJsonTemplateDirty: false
+    - groupByDropdown: material
+    - datasourceInputMode: javascript
+    - datasourceDataType: array
+    - layout: ''
+    - xAxisDropdown: key
+    - data: ''
+    - isStackSeriesEnabled: false
+    - xAxisTickFormat: ''
+    - skipDatasourceUpdate: false
+    - datasourceJS: '{{ LS04_Chart.value }}'
+    - yAxisTickFormat: ''
+    - datasourcePluginType: null
+    - xAxisType: default
+    - datasourcePluginId: null
+    - legendAlignment: bottom
+    - isLayoutJsonDirty: false
+    - chartType: bar
+    - title: Disposal Environmental Impact
+    - xAxis: >-
+        {{
+
+        formatDataAsObject(LS04_Chart.value )['key'].map((val) =>
+        _.startCase(val))
+
+        }}
+    - groupByMode: dropdown
+    - onPointSelectQuery: ''
+    - xAxisMode: javascript
+    - shouldShowLegend: true
+    - yAxisTitle: Impact
+    - selectedPoints:
+        array: []
+    - xAxisTitle: Material
+    - groupByJS: '{{formatDataAsObject( LS04_Chart.value )[''material'']}}'
+style:
+  ordered: []
+position2:
+  position2:
+    row: 107.99999999999982
+    height: 12
+    width: 12
+createdAt: 2023-01-16T13:16:10.314Z
