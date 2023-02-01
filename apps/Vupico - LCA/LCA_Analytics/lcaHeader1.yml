@@ -1,0 +1,19 @@
+id: lcaHeader1
+type: widget
+subtype: GlobalWidget
+template:
+  ordered:
+    - showFetchingIndicator: boolean
+    - heightType: auto
+    - name: LCA_Header
+    - pageUuid: 66872cea-91fc-11ed-b88b-f37325a91f1d
+    - childNamespace: lcaHeader1
+style:
+  ordered: []
+position2:
+  position2:
+    subcontainer: header
+    row: 0.20000000000000018
+    height: 0.2
+    width: 12
+createdAt: 2023-01-11T22:11:51.983Z
