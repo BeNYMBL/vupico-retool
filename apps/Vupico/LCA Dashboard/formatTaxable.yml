@@ -1,0 +1,14 @@
+id: formatTaxable
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        let output = {{ numbro(getTaxable.data).format({spaceSeparated: true,
+        average: true,  mantissa: 1}) }};
+
+
+        return output.toUpperCase();
+    - value: ''
+createdAt: 2023-01-12T08:23:11.653Z
+folder: CountersData
