@@ -1,0 +1,53 @@
+id: date1
+type: widget
+subtype: DateWidget
+template:
+  ordered:
+    - minDate: ''
+    - readOnly: 'true'
+    - iconAfter: ''
+    - datePlaceholder: '{{ self.dateFormat.toUpperCase() }}'
+    - dateFormat: MMM d, yyyy
+    - hidden: false
+    - customValidation: ''
+    - hideValidationMessage: false
+    - textBefore: ''
+    - validationMessage: ''
+    - textAfter: ''
+    - showInEditor: false
+    - showClear: false
+    - tooltipText: ''
+    - labelAlign: right
+    - formDataKey: '{{ self.id }}'
+    - value: '{{getProjects.data[i].added_on}}'
+    - style:
+        ordered:
+          - border: rgba(199, 199, 199, 0)
+    - labelCaption: ''
+    - maxDate: ''
+    - labelWidth: '33'
+    - label: ''
+    - formattedValue: ''
+    - _validate: false
+    - labelWidthUnit: '%'
+    - invalid: false
+    - iconBefore: bold/interface-calendar
+    - events:
+        ordered: []
+    - loading: false
+    - disabled: ''
+    - labelPosition: left
+    - labelWrap: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerProject
+    subcontainer: 7d056
+    row: 3.4000000000000004
+    col: 9
+    height: 1
+    width: 3
+createdAt: 2022-12-05T14:26:59.159Z

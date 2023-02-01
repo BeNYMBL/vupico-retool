@@ -1,0 +1,20 @@
+id: modalNewProject2
+type: widget
+subtype: GlobalWidget
+template:
+  ordered:
+    - showFetchingIndicator: boolean
+    - heightType: fixed
+    - name: Modal_New_Project
+    - pageUuid: 7447112c-91b8-11ed-89f4-3b1ea49174df
+    - input_button_label: ''
+    - go_to_project_page: ''
+    - childNamespace: modalNewProject2
+style:
+  ordered: []
+position2:
+  position2:
+    col: 9
+    height: 1.2
+    width: 2
+createdAt: 2023-01-31T14:20:17.699Z

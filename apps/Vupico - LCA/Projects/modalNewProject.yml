@@ -1,0 +1,31 @@
+id: modalNewProject
+type: widget
+subtype: ModalWidget
+template:
+  ordered:
+    - opened: false
+    - modalOverflowType: scroll
+    - hidden: 'true'
+    - onModalClose: ''
+    - modalHeightType: fixed
+    - tooltipText: ''
+    - style:
+        ordered:
+          - accent-foreground: rgb(255, 255, 255)
+          - border-radius: 4px
+    - modalHeight: ''
+    - onModalOpen: ''
+    - modalWidth: ''
+    - closeOnOutsideClick: false
+    - loading: ''
+    - disabled: ''
+    - buttonText: Add new project
+style:
+  ordered: []
+position2:
+  position2:
+    row: 0.2
+    col: 3
+    height: 1
+    width: 2
+createdAt: 2022-11-15T15:09:16.591Z

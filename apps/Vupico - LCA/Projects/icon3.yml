@@ -1,0 +1,25 @@
+id: icon3
+type: widget
+subtype: IconWidget
+template:
+  ordered:
+    - horizontalAlign: center
+    - clickable: false
+    - hidden: false
+    - showInEditor: false
+    - tooltipText: ''
+    - altText: ''
+    - icon: line/interface-file-multiple
+    - events:
+        ordered: []
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerProject
+    subcontainer: 7d056
+    row: 2.5999999999999996
+    height: 0.6
+    width: 1
+createdAt: 2022-12-05T14:22:09.893Z
