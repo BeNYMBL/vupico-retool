@@ -1,0 +1,55 @@
+id: btnMaterialAcquisition
+type: widget
+subtype: ButtonWidget2
+template:
+  ordered:
+    - horizontalAlign: stretch
+    - clickable: false
+    - iconAfter: ''
+    - submitTargetId: null
+    - hidden: '{{isCreateMode.value === false}}'
+    - text: Acquisition
+    - showInEditor: false
+    - tooltipText: ''
+    - styleVariant: solid
+    - submit: false
+    - iconBefore: ''
+    - events:
+        - ordered:
+            - event: click
+            - type: util
+            - method: openApp
+            - pluginId: ''
+            - targetId: null
+            - params:
+                ordered:
+                  - uuid: 8c38096a-910b-11ed-a759-9f87fc490b59
+                  - options:
+                      ordered:
+                        - queryParams:
+                            - ordered:
+                                - key: scenarioId
+                                - value: '{{getSingleScenario.data.id}}'
+                            - ordered:
+                                - key: projectId
+                                - value: '{{input_projectId.value}}'
+                        - hashParams:
+                            - ordered:
+                                - key: ''
+                                - value: ''
+            - waitType: debounce
+            - waitMs: '0'
+    - loading: false
+    - loaderPosition: auto
+    - disabled: '{{currentApp.value === appRoutes.value.acquisition}}'
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 4.2
+    col: 2
+    height: 0.8
+    width: 1
+createdAt: 2023-01-10T17:26:23.283Z

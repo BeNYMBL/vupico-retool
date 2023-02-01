@@ -1,0 +1,59 @@
+id: inputBatchSize
+type: widget
+subtype: NumberInputWidget
+template:
+  ordered:
+    - readOnly: false
+    - iconAfter: ''
+    - max: null
+    - inputValue: 0
+    - hidden: false
+    - customValidation: ''
+    - showSeparators: true
+    - hideValidationMessage: false
+    - textBefore: Batch Size
+    - validationMessage: ''
+    - textAfter: ''
+    - showInEditor: false
+    - allowNull: false
+    - showClear: false
+    - tooltipText: ''
+    - currency: USD
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: '{{getSingleScenario.data.batch_size}}'
+    - labelCaption: ''
+    - min: null
+    - hideLabel: true
+    - labelWidth: '33'
+    - placeholder: Batch Size
+    - showStepper: true
+    - label: ''
+    - _validate: false
+    - labelWidthUnit: '%'
+    - invalid: false
+    - format: decimal
+    - iconBefore: ''
+    - textAlign: left
+    - inputTooltip: ''
+    - events:
+        ordered: []
+    - loading: false
+    - disabled: false
+    - labelPosition: left
+    - decimalPlaces: null
+    - labelWrap: false
+    - padDecimal: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: container1
+    subcontainer: c0d0a
+    row: 3.5999999999999996
+    col: 3
+    height: 1
+    width: 5
+createdAt: 2023-01-11T19:08:24.213Z

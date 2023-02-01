@@ -1,0 +1,15 @@
+id: input_ls
+type: globalwidgetprop
+subtype: GlobalWidgetProp
+template:
+  ordered:
+    - value: ''
+    - defaultValue: '{}'
+    - description: |-
+        `{
+        module: 'ls1',
+        data: lca1.data_output
+        }`
+
+        `Module will either be ls1, ls2, ls3, or ls4`
+createdAt: 2023-01-12T14:07:17.464Z

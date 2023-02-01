@@ -1,0 +1,51 @@
+id: btnEndOfLife
+type: widget
+subtype: ButtonWidget2
+template:
+  ordered:
+    - horizontalAlign: stretch
+    - clickable: false
+    - iconAfter: ''
+    - submitTargetId: null
+    - hidden: '{{isCreateMode.value === false}}'
+    - text: Disposal
+    - showInEditor: false
+    - tooltipText: ''
+    - styleVariant: solid
+    - submit: false
+    - iconBefore: ''
+    - events:
+        - ordered:
+            - event: click
+            - type: util
+            - method: openApp
+            - pluginId: ''
+            - targetId: null
+            - params:
+                ordered:
+                  - uuid: 9c53b39c-910d-11ed-8b9f-a3260286ae55
+                  - options:
+                      ordered:
+                        - queryParams:
+                            - ordered:
+                                - key: scenarioId
+                                - value: '{{getSingleScenario.data.id}}'
+                            - ordered:
+                                - key: projectId
+                                - value: '{{input_projectId.value}}'
+            - waitType: debounce
+            - waitMs: '0'
+    - loading: false
+    - loaderPosition: auto
+    - disabled: '{{currentApp.value === appRoutes.value.endOfLife}}'
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 4.2
+    col: 7
+    height: 0.8
+    width: 1
+createdAt: 2023-01-10T17:28:17.285Z

@@ -1,0 +1,38 @@
+id: icon1
+type: widget
+subtype: IconWidget
+template:
+  ordered:
+    - horizontalAlign: center
+    - clickable: false
+    - hidden: '{{!isCreateMode.value === true}}'
+    - showInEditor: false
+    - tooltipText: ''
+    - style:
+        ordered:
+          - color: '{{getTasks.data.length > 0 ? ''orange'' : ''green''}} '
+    - altText: ''
+    - icon: line/interface-file-clipboard-text
+    - events:
+        - ordered:
+            - method: open
+            - enabled: '{{getTasks.data.length > 0}}'
+            - params:
+                ordered: []
+            - targetId: null
+            - pluginId: modalTasks
+            - waitType: debounce
+            - event: click
+            - type: widget
+            - waitMs: '0'
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 1.8000000000000003
+    col: 11
+    height: 1
+    width: 1
+createdAt: 2023-01-19T21:41:19.956Z

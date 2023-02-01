@@ -1,0 +1,21 @@
+id: appRoutes
+type: state
+subtype: State
+template:
+  ordered:
+    - _persistedValueGetter: null
+    - _persistedValueSetter: null
+    - persistValue: false
+    - persistedValueKey: ''
+    - value: |-
+        {
+          summary: "Vupico/Create_Simulation_V2",
+          acquisition: "Vupico/Create_Simulation_LS01",
+          formula: "Vupico/Create_Simulation_Formula",
+          packaging: "Vupico/Create_Simulation_Packaging",
+          manufacturing: "Vupico/Create_Simulation_LS02",
+          distribution: "Vupico/Create_Simulation_LS03",
+          endOfLife: "Vupico/Create_Simulation_LS04"
+        }
+createdAt: 2023-01-10T17:33:34.021Z
+folder: js
