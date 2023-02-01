@@ -1,0 +1,92 @@
+id: environmentalFootprintComparison
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        const keys = {{PEF_KEYS.value}}
+              
+              
+
+
+        // SIM 1
+
+        const sim1 = {{getSingleScenario1.data}}
+
+        const sim1_ls1_1 =
+        {{getSingleScenario1.data.output_ls1.bom_materials[0]}}
+
+        const sim1_ls1_2 =
+        {{getSingleScenario1.data.output_ls1.upstream_transportation[0]}}
+
+        const sim1_ls2 =
+        {{getSingleScenario1.data.output_ls2.plant_production[0]}}
+
+        const sim1_ls3 =
+        {{getSingleScenario1.data.output_ls3.dowmstream_transportation_total[0]}}
+
+        const sim1_ls4 =
+        {{getSingleScenario1.data.output_ls4.wasteTransportationTotal[0]}}
+
+
+        const sim1_results = keys.map((val) => {
+          console.log(val, sim1_ls1_1)
+          let total = 0;
+          total = total + parseFloat(sim1_ls1_1[val])
+          total = total + parseFloat(sim1_ls1_2[val])
+          total = total + parseFloat(sim1_ls2[val])
+          total = total + parseFloat(sim1_ls3[val])
+          total = total + parseFloat(sim1_ls4[val])
+          
+          return {
+          simulation: sim1.name,
+          impact: _.startCase(val),
+          value: total
+          }
+        }
+
+        )
+          
+        // SIM 2
+
+        const sim2 = {{getSingleScenario2.data}}
+
+
+        const sim2_ls1_1 =
+        {{getSingleScenario2.data.output_ls1.bom_materials[0]}}
+
+        const sim2_ls1_2 =
+        {{getSingleScenario2.data.output_ls1.upstream_transportation[0]}}
+
+        const sim2_ls2 =
+        {{getSingleScenario2.data.output_ls2.plant_production[0]}}
+
+        const sim2_ls3 =
+        {{getSingleScenario2.data.output_ls3.dowmstream_transportation_total[0]}}
+
+        const sim2_ls4 =
+        {{getSingleScenario2.data.output_ls4.wasteTransportationTotal[0]}}
+
+
+        const sim2_results = keys.map((val) => {
+
+          let total = 0;
+          total = total + parseFloat(sim2_ls1_1[val])
+          total = total + parseFloat(sim2_ls1_2[val])
+          total = total + parseFloat(sim2_ls2[val])
+          total = total + parseFloat(sim2_ls3[val])
+          total = total + parseFloat(sim2_ls4[val])
+          
+          return {
+          simulation: sim2.name,
+          impact: _.startCase(val),
+          value: total
+          }
+        }
+
+        )
+
+
+        return _.concat(sim1_results, sim2_results)
+    - value: ''
+createdAt: 2023-01-19T15:58:30.487Z

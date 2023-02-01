@@ -1,0 +1,68 @@
+id: impactCost
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        const impactFactor = {{selectImpact.value}}
+
+        const s1 = {{getSingleScenario1.data}}
+
+        const s2 = {{getSingleScenario2.data}}
+
+        const s1_ls1_bom =
+        {{getSingleScenario1.data.output_ls1.bom_material_breakdown}}
+
+        const s1_ls1_ups =
+        {{getSingleScenario1.data.output_ls1.upstream_breakdown}}
+
+        const s2_ls1_bom =
+        {{getSingleScenario2.data.output_ls1.bom_material_breakdown}}
+
+        const s2_ls1_ups =
+        {{getSingleScenario2.data.output_ls1.upstream_breakdown}}
+
+          
+        const s1_bomCO2 = _.sum(s1_ls1_bom.map((val) =>
+        parseFloat(val[impactFactor])))
+
+        const s1_upsCO2 = _.sum(s1_ls1_ups.map((val) =>
+        parseFloat(val[impactFactor])))
+
+        const s1_bomCost = _.sum(s1_ls1_bom.map((val) =>
+        parseFloat(val.total_cost)))
+
+        const s1_upsCost = _.sum(s1_ls1_ups.map((val) =>
+        parseFloat(val.total_cost)))
+
+        const s2_bomCO2 = _.sum(s2_ls1_bom.map((val) =>
+        parseFloat(val[impactFactor])))
+
+        const s2_upsCO2 = _.sum(s2_ls1_ups.map((val) =>
+        parseFloat(val[impactFactor])))
+
+        const s2_bomCost = _.sum(s2_ls1_bom.map((val) =>
+        parseFloat(val.total_cost)))
+
+        const s2_upsCost = _.sum(s2_ls1_ups.map((val) =>
+        parseFloat(val.total_cost)))
+
+
+        const ls1_return = [
+          { id: s1.name,
+            type: _.startCase(impactFactor),
+            value: s1_bomCO2 + s1_upsCO2,
+           cost: s1_bomCost + s1_upsCost
+          },
+          {
+            id: s2.name,
+            type: _.startCase(impactFactor),
+            value: s2_bomCO2 + s2_upsCO2,
+            cost: s2_bomCost + s2_upsCost
+          },
+        ]
+
+
+        return ls1_return
+    - value: ''
+createdAt: 2023-01-26T20:17:40.918Z

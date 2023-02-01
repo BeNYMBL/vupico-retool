@@ -1,0 +1,10 @@
+version: 43.0.9
+pageUuid: ca116910-96ac-11ed-9ff7-1b109b9efd34
+appTemplate:
+  appThemeId: 1
+  folders:
+    - Scenario
+  queryStatusVisibility: false
+  rootScreen: null
+  version: 2.99.3
+  markdownLinkBehavior: auto

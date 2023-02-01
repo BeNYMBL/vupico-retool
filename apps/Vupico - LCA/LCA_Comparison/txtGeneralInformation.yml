@@ -1,0 +1,26 @@
+id: txtGeneralInformation
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '#### General Information'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerGeneralInformation
+    subcontainer: 1e9d7
+    row: -5.551115123125783e-17
+    height: 0.6
+    width: 3
+createdAt: 2023-01-17T21:22:54.418Z
