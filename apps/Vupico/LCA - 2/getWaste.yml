@@ -1,0 +1,137 @@
+id: getWaste
+type: datasource
+subtype: SqlQueryUnified
+resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
+resourceDisplayName: Vupico-Database-1
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - records: ''
+    - lastReceivedFromResourceAt: null
+    - databasePasswordOverride: ''
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: ''
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: true
+    - showFailureToaster: false
+    - query: >-
+        select 
+
+        sm.id,
+
+        sm.material_id,
+
+        m.material_code,
+
+        m.material_name,
+
+        m.global_element_id,
+
+        (sm.quantity * s.batch_size) - (sm.quantity * s.batch_size *
+        sm.loss_percent / 100) as weight,
+
+        ((sm.quantity * s.batch_size) - (sm.quantity * s.batch_size *
+        sm.loss_percent / 100)) * (1.0 * sm.loss_percent / 100) as loss_product,
+
+        ((sm.quantity * s.batch_size) - (sm.quantity * s.batch_size *
+        sm.loss_percent / 100)) * (1.0 * sm.waste_percent / 100) as
+        waste_product,
+
+        ((sm.quantity * s.batch_size) - (sm.quantity * s.batch_size *
+        sm.loss_percent / 100)) * (1.0 * sm.waste_percent / 100) * (1.0 *
+        r.recycle_percent / 100) as total_recycle,
+
+        ((sm.quantity * s.batch_size) - (sm.quantity * s.batch_size *
+        sm.loss_percent / 100)) * (1.0 * sm.waste_percent / 100) * (1.0 *
+        r.collection_percent / 100) as total_waste,
+
+        m.uom,
+
+        m.uom as uom2
+
+        from scenario_material sm inner join material m on sm.material_id = m.id
+
+        inner join scenario s on sm.scenario_id = s.id
+
+        inner join plant plnt on sm.to_plant_code = plnt.plant_code
+
+        left outer join material_lifestage ml on m.global_element_id =
+        ml.material_code
+
+        left outer join recyclability r on plnt.country_code = r.country_code
+        and m.global_element_id = r.material_code
+
+        where ml.lifestage_code = 'LS001'
+
+        and sm.scenario_id = {{input_scenario_id.value}}
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - warningCodes: []
+    - data: null
+    - recordId: ''
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: true
+    - dataArray: []
+    - cacheKeyTtl: ''
+    - filterBy: ''
+    - databaseHostOverride: ''
+    - metadata: null
+    - editorMode: sql
+    - actionType: ''
+    - changesetObject: ''
+    - shouldUseLegacySql: false
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - databaseNameOverride: ''
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: ''
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - enableBulkUpdates: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - bulkUpdatePrimaryKey: ''
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events: []
+    - tableName: ''
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - databaseUsernameOverride: ''
+    - shouldEnableBatchQuerying: false
+    - doNotThrowOnNoOp: false
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2022-12-15T17:33:15.532Z
+folder: Waste

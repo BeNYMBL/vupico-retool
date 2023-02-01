@@ -1,0 +1,25 @@
+id: txtAddPlant
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: center
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '### Add Plant'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: modalAddPlant
+    row: 5.551115123125783e-17
+    height: 0.6
+    width: 12
+createdAt: 2023-01-30T16:55:34.051Z

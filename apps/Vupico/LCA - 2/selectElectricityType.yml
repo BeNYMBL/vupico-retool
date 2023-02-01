@@ -1,0 +1,89 @@
+id: selectElectricityType
+type: widget
+subtype: SelectWidget2
+template:
+  ordered:
+    - imageByIndex: ''
+    - _disabledByIndex: []
+    - showSelectionIndicator: true
+    - _values: []
+    - iconByIndex: ''
+    - values: '{{ item.electricity_code }}'
+    - readOnly: false
+    - iconAfter: ''
+    - _iconByIndex: []
+    - allowDeselect: false
+    - inputValue: ''
+    - hidden: false
+    - customValidation: ''
+    - data: '{{ listElectricityType.data }}'
+    - searchMode: fuzzy
+    - hideValidationMessage: false
+    - fallbackTextByIndex: ''
+    - textBefore: ''
+    - _fallbackTextByIndex: []
+    - selectedItem: null
+    - validationMessage: ''
+    - automaticItemColors: false
+    - itemAdornmentShape: circle
+    - textAfter: ''
+    - showInEditor: false
+    - showClear: false
+    - tooltipText: ''
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: null
+    - style:
+        ordered:
+          - border: rgba(209, 209, 209, 0)
+    - hiddenByIndex: ''
+    - labelCaption: ''
+    - hideLabel: true
+    - labelWidth: '33'
+    - deprecatedLabels:
+        array: []
+    - _hiddenByIndex: []
+    - placeholder: SELECT POWER
+    - _captionByIndex: []
+    - itemAdornmentSize: auto
+    - label: Label
+    - _hasMigratedNestedItems: true
+    - captionByIndex: '{{ item.electricity_code }}'
+    - _validate: false
+    - itemMode: dynamic
+    - labelWidthUnit: '%'
+    - allowCustomValue: false
+    - invalid: false
+    - selectedIndex: null
+    - _tooltipByIndex: []
+    - _colorByIndex: []
+    - tooltipByIndex: ''
+    - iconBefore: ''
+    - colorByIndex: '{{ item.electricity_code }}'
+    - selectedLabel: ''
+    - events:
+        ordered: []
+    - _ids: []
+    - emptyMessage: ''
+    - overlayMaxHeight: 375
+    - loading: false
+    - disabled: false
+    - labelPosition: left
+    - _labels: []
+    - labelWrap: false
+    - disabledValues:
+        array: []
+    - disabledByIndex: ''
+    - maintainSpaceWhenHidden: false
+    - _imageByIndex: []
+    - required: false
+    - labels: '{{ item.name }}'
+style:
+  ordered: []
+position2:
+  position2:
+    container: modalAddPlant
+    row: 1.5999999999999988
+    height: 1
+    width: 11
+createdAt: 2023-01-30T16:57:37.027Z

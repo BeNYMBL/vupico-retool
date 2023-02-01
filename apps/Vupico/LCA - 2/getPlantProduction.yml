@@ -1,0 +1,240 @@
+id: getPlantProduction
+type: datasource
+subtype: SqlQueryUnified
+resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
+resourceDisplayName: Vupico-Database-1
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - records: ''
+    - lastReceivedFromResourceAt: null
+    - databasePasswordOverride: ''
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: ''
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: true
+    - showFailureToaster: false
+    - query: >-
+        select sp.id,
+
+        p.plant_code,
+
+        --c.country,
+
+        p.name,
+
+        s.batch_size,
+
+        sp.electricity_value,
+
+        sp.electricity_unit,
+
+        sp.plant_electricity_type,
+
+        p.location_code,
+
+        sp.country_code,
+
+        sub_pef.PF01 * sp.electricity_value / sub_pef.quantity as acidification,
+
+        sub_pef.PF01_Unit as acidification_unit,
+
+        sub_pef.PF02 * sp.electricity_value / sub_pef.quantity as co2,
+
+        sub_pef.PF02_Unit as co2_unit,
+
+        sub_pef.PF03 * sp.electricity_value / sub_pef.quantity as ecotoxicity,
+
+        sub_pef.PF03_Unit as ecotoxicity_unit,
+
+        sub_pef.PF04 * sp.electricity_value / sub_pef.quantity as fossil,
+
+        sub_pef.PF04_Unit as fossil_unit,
+
+        sub_pef.PF05 * sp.electricity_value / sub_pef.quantity as
+        freshwater_eutrophication,
+
+        sub_pef.PF05_Unit as freshwater_eutrophication_unit,
+
+        sub_pef.PF06 * sp.electricity_value / sub_pef.quantity as
+        human_toxicity_cancer,
+
+        sub_pef.PF06_Unit as human_toxicity_cancer_unit,
+
+        sub_pef.PF07 * sp.electricity_value / sub_pef.quantity as
+        human_toxicity_non_cancer,
+
+        sub_pef.PF07_Unit as human_toxicity_non_cancer_unit,
+
+        sub_pef.PF08 * sp.electricity_value / sub_pef.quantity as
+        ionizing_radiation,
+
+        sub_pef.PF08_Unit as ionizing_radiation_unit,
+
+        sub_pef.PF09 * sp.electricity_value / sub_pef.quantity as land_use,
+
+        sub_pef.PF09_Unit as land_use_unit,
+
+        sub_pef.PF10 * sp.electricity_value / sub_pef.quantity as
+        marine_eutrophication,
+
+        sub_pef.PF10_Unit as marine_eutrophication_unit,
+
+        sub_pef.PF11 * sp.electricity_value / sub_pef.quantity as
+        ozone_depletion,
+
+        sub_pef.PF11_Unit as ozone_depletion_unit,
+
+        sub_pef.PF12 * sp.electricity_value / sub_pef.quantity as
+        particulate_matter,
+
+        sub_pef.PF12_Unit as particulate_matter_unit,
+
+        sub_pef.PF13 * sp.electricity_value / sub_pef.quantity as
+        photochemical_ozone,
+
+        sub_pef.PF13_Unit as photochemical_ozone_unit,
+
+        sub_pef.PF14 * sp.electricity_value / sub_pef.quantity as resource_use,
+
+        sub_pef.PF14_Unit as resource_use_unit,
+
+        sub_pef.PF15 * sp.electricity_value / sub_pef.quantity as
+        terrestrial_eutrophication,
+
+        sub_pef.PF15_Unit as terrestrial_eutrophication_unit,
+
+        sub_pef.PF16 * sp.electricity_value / sub_pef.quantity as water_use,
+
+        sub_pef.PF16_Unit as water_use_unit,
+
+        sub_pef.PF17 * sp.electricity_value / sub_pef.quantity as bio_diversity,
+
+        sub_pef.PF17_Unit as bio_diversity_unit
+
+        from scenario_plant sp
+
+        inner join plant p on sp.plant_id = p.id
+
+        --inner join country c on p.country_code = c.country_code
+
+        inner join scenario s on sp.scenario_id = s.id
+
+        left outer join (
+         select ep.country_code, ep.electricity_code, ep.quantity,
+                 max(case when (ep.pef_category_code='PEF01') then ep.pef_value else NULL end) as PF01,
+                 max(case when (ep.pef_category_code='PEF01') then pc.reporting_unit else NULL end) as PF01_Unit,
+                 max(case when (ep.pef_category_code='PEF02') then ep.pef_value else NULL end) as PF02,
+                 max(case when (ep.pef_category_code='PEF02') then pc.reporting_unit else NULL end) as PF02_Unit,
+                 max(case when (ep.pef_category_code='PEF03') then ep.pef_value else NULL end) as PF03,
+                 max(case when (ep.pef_category_code='PEF03') then pc.reporting_unit else NULL end) as PF03_Unit,
+                 max(case when (ep.pef_category_code='PEF04') then ep.pef_value else NULL end) as PF04,
+                 max(case when (ep.pef_category_code='PEF04') then pc.reporting_unit else NULL end) as PF04_Unit,
+                 max(case when (ep.pef_category_code='PEF05') then ep.pef_value else NULL end) as PF05,
+                 max(case when (ep.pef_category_code='PEF05') then pc.reporting_unit else NULL end) as PF05_Unit,
+                 max(case when (ep.pef_category_code='PEF06') then ep.pef_value else NULL end) as PF06,
+                 max(case when (ep.pef_category_code='PEF06') then pc.reporting_unit else NULL end) as PF06_Unit,
+                 max(case when (ep.pef_category_code='PEF07') then ep.pef_value else NULL end) as PF07,
+                 max(case when (ep.pef_category_code='PEF07') then pc.reporting_unit else NULL end) as PF07_Unit,
+                 max(case when (ep.pef_category_code='PEF08') then ep.pef_value else NULL end) as PF08,
+                 max(case when (ep.pef_category_code='PEF08') then pc.reporting_unit else NULL end) as PF08_Unit,
+                 max(case when (ep.pef_category_code='PEF09') then ep.pef_value else NULL end) as PF09,
+                 max(case when (ep.pef_category_code='PEF09') then pc.reporting_unit else NULL end) as PF09_Unit,
+                 max(case when (ep.pef_category_code='PEF10') then ep.pef_value else NULL end) as PF10,
+                 max(case when (ep.pef_category_code='PEF10') then pc.reporting_unit else NULL end) as PF10_Unit,
+                 max(case when (ep.pef_category_code='PEF11') then ep.pef_value else NULL end) as PF11,
+                 max(case when (ep.pef_category_code='PEF11') then pc.reporting_unit else NULL end) as PF11_Unit,
+                 max(case when (ep.pef_category_code='PEF12') then ep.pef_value else NULL end) as PF12,
+                 max(case when (ep.pef_category_code='PEF12') then pc.reporting_unit else NULL end) as PF12_Unit,
+                 max(case when (ep.pef_category_code='PEF13') then ep.pef_value else NULL end) as PF13,
+                 max(case when (ep.pef_category_code='PEF13') then pc.reporting_unit else NULL end) as PF13_Unit,
+                 max(case when (ep.pef_category_code='PEF14') then ep.pef_value else NULL end) as PF14,
+                 max(case when (ep.pef_category_code='PEF14') then pc.reporting_unit else NULL end) as PF14_Unit,
+                 max(case when (ep.pef_category_code='PEF15') then ep.pef_value else NULL end) as PF15,
+                 max(case when (ep.pef_category_code='PEF15') then pc.reporting_unit else NULL end) as PF15_Unit,
+                 max(case when (ep.pef_category_code='PEF16') then ep.pef_value else NULL end) as PF16,
+                 max(case when (ep.pef_category_code='PEF16') then pc.reporting_unit else NULL end) as PF16_Unit,
+                 max(case when (ep.pef_category_code='PEF17') then ep.pef_value else NULL end) as PF17,
+                 max(case when (ep.pef_category_code='PEF17') then pc.reporting_unit else NULL end) as PF17_Unit
+                 from electricity_pef ep
+                 inner join pef_category pc on ep.pef_category_code = pc.pef_category_code
+                 group by country_code, electricity_code, quantity
+                 order by country_code, electricity_code, quantity
+        ) as sub_pef
+
+        on sp.plant_electricity_type = sub_pef.electricity_code and
+        sp.country_code = sub_pef.country_code
+
+
+        where sp.scenario_id = {{input_scenario_id.value}}
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - warningCodes: []
+    - data: null
+    - recordId: ''
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: true
+    - dataArray: []
+    - cacheKeyTtl: ''
+    - filterBy: ''
+    - databaseHostOverride: ''
+    - metadata: null
+    - editorMode: sql
+    - actionType: ''
+    - changesetObject: ''
+    - shouldUseLegacySql: false
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - databaseNameOverride: ''
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: ''
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - enableBulkUpdates: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - bulkUpdatePrimaryKey: ''
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events: []
+    - tableName: ''
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - databaseUsernameOverride: ''
+    - shouldEnableBatchQuerying: false
+    - doNotThrowOnNoOp: false
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2022-12-15T16:24:04.027Z
+folder: Plant_Production
