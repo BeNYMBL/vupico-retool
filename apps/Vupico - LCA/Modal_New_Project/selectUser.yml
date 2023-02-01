@@ -1,0 +1,124 @@
+id: selectUser
+type: widget
+subtype: SelectWidget2
+template:
+  ordered:
+    - imageByIndex: ''
+    - _disabledByIndex:
+        - ''
+        - ''
+        - ''
+    - showSelectionIndicator: true
+    - _values:
+        - Option 1
+        - Option 2
+        - Option 3
+    - iconByIndex: ''
+    - values: '{{ item.email }}'
+    - readOnly: false
+    - iconAfter: ''
+    - _iconByIndex:
+        - ''
+        - ''
+        - ''
+    - allowDeselect: false
+    - inputValue: ''
+    - hidden: false
+    - customValidation: ''
+    - data: '{{ listRetoolUsers.data }}'
+    - searchMode: fuzzy
+    - hideValidationMessage: false
+    - fallbackTextByIndex: ''
+    - textBefore: ''
+    - _fallbackTextByIndex:
+        - ''
+        - ''
+        - ''
+    - selectedItem: null
+    - validationMessage: ''
+    - automaticItemColors: false
+    - itemAdornmentShape: circle
+    - textAfter: ''
+    - showInEditor: false
+    - showClear: false
+    - tooltipText: ''
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: '{{ current_user.email }}'
+    - style:
+        ordered:
+          - background: rgb(247, 247, 253)
+          - border: rgba(191, 191, 228, 0)
+    - hiddenByIndex: ''
+    - labelCaption: ''
+    - hideLabel: true
+    - labelWidth: '33'
+    - deprecatedLabels:
+        array: []
+    - _hiddenByIndex:
+        - ''
+        - ''
+        - ''
+    - placeholder: Select an option
+    - _captionByIndex:
+        - ''
+        - ''
+        - ''
+    - itemAdornmentSize: auto
+    - label: Label
+    - _hasMigratedNestedItems: true
+    - captionByIndex: ''
+    - _validate: false
+    - itemMode: dynamic
+    - labelWidthUnit: '%'
+    - allowCustomValue: false
+    - invalid: false
+    - selectedIndex: null
+    - _tooltipByIndex:
+        - ''
+        - ''
+        - ''
+    - _colorByIndex:
+        - ''
+        - ''
+        - ''
+    - tooltipByIndex: ''
+    - iconBefore: ''
+    - colorByIndex: ''
+    - selectedLabel: ''
+    - events:
+        ordered: []
+    - _ids:
+        - 2ad7c
+        - 6b566
+        - 2964a
+    - emptyMessage: ''
+    - overlayMaxHeight: 375
+    - loading: false
+    - disabled: 'true'
+    - labelPosition: left
+    - _labels:
+        - ''
+        - ''
+        - ''
+    - labelWrap: false
+    - disabledValues:
+        array: []
+    - disabledByIndex: ''
+    - maintainSpaceWhenHidden: false
+    - _imageByIndex:
+        - ''
+        - ''
+        - ''
+    - required: false
+    - labels: '{{ `${item.firstName} ${item.lastName}` }}'
+style:
+  ordered: []
+position2:
+  position2:
+    container: mdlCreateProject
+    row: 8.6
+    col: 1
+    height: 1
+    width: 10
+createdAt: 2023-01-31T12:48:02.226Z

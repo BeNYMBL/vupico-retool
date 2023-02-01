@@ -1,0 +1,60 @@
+id: inputProjectName
+type: widget
+subtype: TextInputWidget2
+template:
+  ordered:
+    - spellCheck: false
+    - readOnly: false
+    - iconAfter: ''
+    - showCharacterCount: false
+    - autoComplete: false
+    - maxLength: null
+    - hidden: false
+    - customValidation: ''
+    - patternType: ''
+    - hideValidationMessage: false
+    - textBefore: ''
+    - validationMessage: ''
+    - textAfter: ''
+    - showInEditor: false
+    - showClear: false
+    - pattern: ''
+    - tooltipText: ''
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: ''
+    - style:
+        ordered:
+          - background: rgb(247, 247, 253)
+          - border: rgba(186, 186, 228, 0)
+    - labelCaption: ''
+    - hideLabel: true
+    - labelWidth: '33'
+    - autoFill: ''
+    - placeholder: Project name
+    - label: ''
+    - _validate: false
+    - labelWidthUnit: '%'
+    - invalid: false
+    - iconBefore: ''
+    - minLength: null
+    - inputTooltip: ''
+    - events:
+        ordered: []
+    - autoCapitalize: none
+    - loading: false
+    - disabled: false
+    - labelPosition: left
+    - labelWrap: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: mdlCreateProject
+    row: 1.2000000000000002
+    col: 1
+    height: 1
+    width: 10
+createdAt: 2023-01-11T14:03:02.298Z
