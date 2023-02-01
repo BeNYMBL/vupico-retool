@@ -75,7 +75,7 @@ template:
           "xaxis": {
             "title": {
               "text": "Simulations",
-              "standoff": 24,
+              "standoff": 10,
               "font": {
                 "size": 12
               }
