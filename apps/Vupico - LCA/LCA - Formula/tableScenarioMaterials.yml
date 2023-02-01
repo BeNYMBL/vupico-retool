@@ -1,0 +1,367 @@
+id: tableScenarioMaterials
+type: widget
+subtype: TableWidget
+template:
+  ordered:
+    - showCustomButton: false
+    - sortMappedValue:
+        ordered: []
+    - _filteredSortedRenderedDataWithTypes: null
+    - heightType: fixed
+    - normalizedData: null
+    - rowHeight: standard
+    - saveChangesDisabled: ''
+    - columnTypeProperties:
+        ordered:
+          - element:
+              ordered:
+                - optionData: '{{ listComponent.data }}'
+                - colorMode: auto
+                - allowCustomValue: true
+                - optionLabels: '{{item.material_code}}'
+                - optionColors: []
+                - optionValues: '{{item.id}}'
+          - material_id:
+              ordered:
+                - optionData: '{{ listMaterial.data }}'
+                - colorMode: auto
+                - allowCustomValue: true
+                - optionLabels: >-
+                    {{_.startCase(item.material_name) + ' (' +
+                    item.material_code + ')'}}
+                - optionColors:
+                    array: []
+                - optionValues: '{{item.id}}'
+          - total_cost:
+              ordered:
+                - showSeparators: true
+                - currency: USD
+                - padDecimal: true
+    - columnWidths:
+        - object:
+            id: material_id
+            value: 272.21875
+        - object:
+            id: material_global_code
+            value: 240
+        - object:
+            id: uom
+            value: 152
+        - object:
+            id: water_use
+            value: 87
+    - showSummaryFooter: false
+    - disableRowSelectInteraction: false
+    - columnWidthsMobile: []
+    - hasNextAfterCursor: ''
+    - columnTypeSpecificExtras:
+        ordered: []
+    - onRowAdded: ''
+    - columnHeaderNames:
+        ordered:
+          - photochemical_ozone: >-
+              photochemical_ozone
+              ({{BomMaterialsWithTotal.value.photochemical_ozone_unit[0]}})
+          - acidification: >-
+              acidification
+              ({{BomMaterialsWithTotal.value.acidification_unit[0]}})
+          - bio_diversity: >-
+              bio_diversity
+              ({{BomMaterialsWithTotal.value.bio_diversity_unit[0]}})
+          - material_code: Material ID
+          - co2: co2 ({{BomMaterialsWithTotal.value.co2_unit[0]}})
+          - ecotoxicity: ecotoxicity ({{BomMaterialsWithTotal.value.ecotoxicity_unit[0]}})
+          - human_toxicity_non_cancer: >-
+              human_toxicity_non_cancer
+              ({{BomMaterialsWithTotal.value.human_toxicity_non_cancer_unit[0]}})
+          - total_cost: Cost ({{ BomMaterialsWithTotal.value.currency[i]}})
+          - terrestrial_eutrophication: >-
+              terrestrial_eutrophication
+              ({{BomMaterialsWithTotal.value.terrestrial_eutrophication_unit[0]}})
+          - quantity: Quantity
+          - ionizing_radiation: >-
+              ionizing_radiation
+              ({{BomMaterialsWithTotal.value.ionizing_radiation_unit[0]}})
+          - fossil: fossil ({{BomMaterialsWithTotal.value.fossil_unit[0]}})
+          - material_global_code: Global ID
+          - particulate_matter: >-
+              particulate_matter
+              ({{BomMaterialsWithTotal.value.particulate_matter_unit[0]}})
+          - uom: Unit
+          - land_use: land_use ({{BomMaterialsWithTotal.value.land_use_unit[0]}})
+          - material_id: Material
+          - resource_use: >-
+              resource_use
+              ({{BomMaterialsWithTotal.value.resource_use_unit[0]}})
+          - human_toxicity_cancer: >-
+              human_toxicity_cancer
+              ({{BomMaterialsWithTotal.value.human_toxicity_cancer_unit[0]}})
+          - freshwater_eutrophication: >-
+              freshwater_eutrophication
+              ({{BomMaterialsWithTotal.value.freshwater_eutrophication_unit[0]}})
+          - ozone_depletion: >-
+              ozone_depletion
+              ({{BomMaterialsWithTotal.value.ozone_depletion_unit[0]}})
+          - element: element
+          - water_use: water_use ({{BomMaterialsWithTotal.value.water_use_unit[0]}})
+          - marine_eutrophication: >-
+              marine_eutrophication
+              ({{BomMaterialsWithTotal.value.marine_eutrophication_unit[0]}})
+    - alwaysShowPaginator: false
+    - columnColors:
+        ordered:
+          - photochemical_ozone: ''
+          - from_country: ''
+          - bio_diversity_unit: ''
+          - acidification: ''
+          - shipping_type_code: ''
+          - acidification_unit: ''
+          - bio_diversity: ''
+          - elementGroup: ''
+          - photochemical_ozone_unit: ''
+          - material_name: ''
+          - marine_eutrophication_unit: ''
+          - water_use_unit: ''
+          - material_group_code: ''
+          - material_code: ''
+          - product_hierarchy: ''
+          - co2: ''
+          - material: ''
+          - material_group: ''
+          - ecotoxicity: ''
+          - human_toxicity_non_cancer: ''
+          - total_cost: ''
+          - human_toxicity: ''
+          - scenario_id: ''
+          - terrestrial_eutrophication: ''
+          - quantity: ''
+          - ionizing_radiation: ''
+          - product_id: ''
+          - name: ''
+          - ozone_depletion_unit: ''
+          - freshwater_eutrophication_unit: ''
+          - weight_uom: ''
+          - fossil: ''
+          - human_toxicity_cancer_unit: ''
+          - code: ''
+          - resource_use_unit: ''
+          - land_use_unit: ''
+          - currency: ''
+          - production_quantity: ''
+          - particulate_matter_unit: ''
+          - material_global_code: ''
+          - to_country: ''
+          - material_type: ''
+          - particulate_matter: ''
+          - uom: ''
+          - land_use: ''
+          - material_id: ''
+          - resource_use: ''
+          - human_toxicity_cancer: ''
+          - fossil_unit: ''
+          - freshwater_eutrophication: ''
+          - ozone_depletion: ''
+          - weight: ''
+          - ionizing_radiation_unit: ''
+          - terrestrial_eutrophication_unit: ''
+          - material_type_code: ''
+          - global_element_id: ''
+          - id: ''
+          - human_toxicity_non_cancer_unit: ''
+          - ecotoxicity_unit: ''
+          - element: ''
+          - co2_unit: ''
+          - water_use: ''
+          - marine_eutrophication: ''
+    - columnFrozenAlignments:
+        ordered: []
+    - allowMultiRowSelect: false
+    - columnFormats:
+        ordered:
+          - element: SingleTagDataCell
+          - material_id: SingleTagDataCell
+          - total_cost: CurrencyDataCell
+    - columnRestrictedEditing:
+        ordered: []
+    - showFilterButton: true
+    - _columnVisibility:
+        ordered:
+          - from_country: false
+          - bio_diversity_unit: false
+          - shipping_type_code: false
+          - acidification_unit: false
+          - photochemical_ozone_unit: false
+          - material_name: false
+          - marine_eutrophication_unit: false
+          - water_use_unit: false
+          - material_code: false
+          - scenario_id: false
+          - ozone_depletion_unit: false
+          - freshwater_eutrophication_unit: false
+          - human_toxicity_cancer_unit: false
+          - resource_use_unit: false
+          - land_use_unit: false
+          - currency: false
+          - particulate_matter_unit: false
+          - material_global_code: true
+          - to_country: false
+          - material_id: true
+          - fossil_unit: false
+          - ionizing_radiation_unit: false
+          - terrestrial_eutrophication_unit: false
+          - id: false
+          - human_toxicity_non_cancer_unit: false
+          - ecotoxicity_unit: false
+          - element: true
+          - co2_unit: false
+    - _columnSummaryTypes:
+        ordered:
+          - element: ''
+          - material_id: ''
+          - total_cost: sum
+    - _columnsWithLegacyBackgroundColor:
+        set: []
+    - showAddRowButton: false
+    - _unfilteredSelectedIndex: null
+    - nextBeforeCursor: ''
+    - columnVisibility:
+        ordered: []
+    - selectedPageIndex: '0'
+    - applyDynamicSettingsToColumnOrder: true
+    - rowColor:
+        array: []
+    - actionButtonColumnName: Actions
+    - resetAfterSave: true
+    - filterStackType: and
+    - downloadRawData: false
+    - showFetchingIndicator: true
+    - serverPaginated: false
+    - data: '{{BomMaterialsWithTotal.value}}'
+    - displayedData: null
+    - actionButtons: []
+    - actionButtonSelectsRow: true
+    - selectRowByDefault: true
+    - defaultSortByColumn: ''
+    - paginationOffset: 0
+    - columnAlignment:
+        ordered:
+          - element: left
+          - material_id: left
+          - total_cost: right
+    - columnSummaries:
+        object: {}
+    - showBoxShadow: false
+    - sortedDesc: false
+    - customButtonName: ''
+    - columnMappersRenderAsHTML:
+        ordered: []
+    - showRefreshButton: true
+    - pageSize: '20'
+    - useDynamicColumnSettings: false
+    - actionButtonPosition: left
+    - dynamicRowHeights: false
+    - bulkUpdateAction: ''
+    - afterCursor: ''
+    - onCustomButtonPressQueryName: ''
+    - changeSet:
+        object: {}
+    - sortedColumn: ''
+    - _columnSummaryValues:
+        ordered:
+          - element: ''
+          - material_id: ''
+          - total_cost: ''
+    - checkboxRowSelect: true
+    - _compatibilityMode: false
+    - showColumnBorders: false
+    - clearSelectionLabel: Clear selection
+    - _renderedDataWithTypes: null
+    - columnAllowOverflow:
+        ordered: []
+    - beforeCursor: ''
+    - serverPaginationType: limitOffsetBased
+    - onRowSelect: ''
+    - showDownloadButton: true
+    - selectedIndex: null
+    - defaultSortDescending: false
+    - _sortedDisplayedDataIndices: null
+    - dynamicColumnSettings: null
+    - events:
+        - ordered:
+            - event: saveChanges
+            - type: datasource
+            - method: trigger
+            - pluginId: updateBoMMaterial
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - totalRowCount: ''
+    - recordUpdates:
+        array: []
+    - newRow: null
+    - emptyMessage: No rows found
+    - columnEditable:
+        ordered:
+          - element: true
+          - material_id: true
+          - quantity: true
+          - uom: true
+          - acidification_unit: false
+    - _viewerColumnSummaryTypes:
+        object: {}
+    - filters:
+        array: []
+    - displayedDataIndices: null
+    - disableSorting:
+        ordered: []
+    - columnMappers:
+        ordered:
+          - element: ''
+          - material_id: ''
+    - showClearSelection: false
+    - doubleClickToEdit: true
+    - overflowType: pagination
+    - _reverseSortedDisplayedDataIndices: null
+    - showTableBorder: true
+    - selectedCell:
+        object:
+          index: null
+          data: null
+          columnName: null
+    - columns: []
+    - defaultSelectedRow: first
+    - freezeActionButtonColumns: false
+    - sort: null
+    - _columns:
+        - id
+        - material_id
+        - material_global_code
+        - from_country
+        - to_country
+        - scenario_id
+        - material_code
+        - quantity
+        - uom
+        - shipping_type_code
+    - sortByRawValue:
+        ordered: []
+    - calculatedColumns: []
+    - selectedRow:
+        object:
+          index: null
+          data: null
+    - showPaginationOnTop: false
+    - _reverseDisplayedDataIndices: null
+    - nextAfterCursor: ''
+    - useCompactMode: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 1.6000000000000028
+    height: 9.4
+    width: 12
+createdAt: 2022-12-15T14:52:46.329Z

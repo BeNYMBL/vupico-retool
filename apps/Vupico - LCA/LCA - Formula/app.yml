@@ -1,0 +1,14 @@
+version: 43.0.9
+pageUuid: f1e77016-9cb9-11ed-a8b9-7f6efaee685a
+appTemplate:
+  folders:
+    - listQuery
+    - Scenario
+    - js
+    - BoM_Materials
+    - module_outputs
+  queryStatusVisibility: false
+  rootScreen: null
+  isGlobalWidget: true
+  version: 2.99.3
+  markdownLinkBehavior: auto
