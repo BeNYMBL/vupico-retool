@@ -1,0 +1,16 @@
+id: input_scenario_id
+type: globalwidgetprop
+subtype: GlobalWidgetProp
+template:
+  ordered:
+    - value: ''
+    - defaultValue: d4024b44-c30a-4a7d-97e1-f555be01b152
+    - description: |
+        Prashansa Test 2
+
+        e8057c8a-b7d1-4849-8645-32ebf4e249d1
+
+
+        JP Simulation Bom2
+        801cf112-919d-4cad-a980-5e92060fb8e5
+createdAt: 2022-12-16T16:31:30.694Z
