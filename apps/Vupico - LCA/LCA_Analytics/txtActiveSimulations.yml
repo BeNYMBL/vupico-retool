@@ -10,7 +10,7 @@ template:
     - showInEditor: false
     - verticalAlign: center
     - tooltipText: ''
-    - value: '###### **Active Product simulations**'
+    - value: '###### **Simulations**'
     - style:
         ordered:
           - color: primary
