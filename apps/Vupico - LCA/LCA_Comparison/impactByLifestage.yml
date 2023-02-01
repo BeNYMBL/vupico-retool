@@ -155,13 +155,13 @@ template:
         const ls4_return = [
           { 
             id: s1.name,
-            type: 'End Of Life',
+            type: 'Disposal',
            impact: _.startCase(impactFactor),
             value: (s1_ls4_impact / s1total) * 100
           },
           {
             id: s2.name,
-            type: 'End Of Life',
+            type: 'Disposal',
             impact: _.startCase(impactFactor),
             value: (s2_ls4_impact / s2total) * 100
           }
