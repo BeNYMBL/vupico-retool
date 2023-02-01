@@ -1,0 +1,25 @@
+id: containerTitle2
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '#### Filter'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerFilters
+    rowGroup: header
+    height: 0.6
+    width: 10
+createdAt: 2022-11-15T14:27:55.951Z
