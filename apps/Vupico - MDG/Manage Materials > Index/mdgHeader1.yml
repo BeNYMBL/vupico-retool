@@ -1,0 +1,17 @@
+id: mdgHeader1
+type: widget
+subtype: GlobalWidget
+template:
+  ordered:
+    - showFetchingIndicator: boolean
+    - heightType: auto
+    - name: MDG_Header
+    - pageUuid: a8b922e2-9cf3-11ed-9cd5-8fe37d915a81
+    - childNamespace: mdgHeader1
+style:
+  ordered: []
+position2:
+  position2:
+    height: 0.2
+    width: 12
+createdAt: 2023-01-25T21:03:39.465Z
