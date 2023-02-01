@@ -1,0 +1,10 @@
+id: LS04
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const a = {{getSingleScenario.data.output_ls4}}
+        return a
+    - value: ''
+createdAt: 2023-01-12T15:56:28.612Z

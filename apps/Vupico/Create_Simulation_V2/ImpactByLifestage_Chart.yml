@@ -1,0 +1,111 @@
+id: ImpactByLifestage_Chart
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        const a = {{getSingleScenario.data.output_ls1.bom_material_breakdown}}
+
+        const b = {{getSingleScenario.data.output_ls1.upstream_breakdown}}
+
+        const c =
+        {{getSingleScenario.data.output_ls2.plant_production_breakdown}}
+
+        const d =
+        {{getSingleScenario.data.output_ls3.downstream_transportation}}
+
+        const e = {{getSingleScenario.data.output_ls4.wasteTransportation}}
+
+        const KEYS = {{PEF_KEYS.value}}
+          
+        const keyTotals = KEYS.map((key) => {
+          const a1 = a.map((val) => parseFloat(val[key]))
+          const b1 = b.map((val) => parseFloat(val[key]))
+          const c1 = c.map((val) => parseFloat(val[key]))
+          const d1 = d.map((val) => parseFloat(val[key]))
+          const e1 = e.map((val) => parseFloat(val[key]))
+          const total = _.sum(_.concat(a1,b1,c1,d1,e1))
+          console.log('total',b1)
+          return {
+            key: key,
+            total: total
+          }
+        })
+
+
+        console.log('keyTotals',keyTotals)
+          
+
+        // ACQUISITION
+
+        const ls1_final = KEYS.map((key) => {
+          const totalValue = keyTotals.find((val) => val.key === key).total 
+          const values_a = a.map((val) => {
+            return parseFloat(val[key])
+          })
+
+          const values_b = b.map((val) => {
+            return parseFloat(val[key])
+          })
+
+            return {
+              lifestage: 'Acquisition',
+              key: key,
+              value: _.sum(_.concat(values_a,values_b)) / totalValue * 100
+            }
+        })
+
+
+        // MANUFACTURING
+
+        const ls2_final = KEYS.map((key) => {
+          const totalValue = keyTotals.find((val) => val.key === key).total 
+          const values = c.map((val) => {
+            return parseFloat(val[key])
+        })
+            return {
+              lifestage: 'Manufacturing',
+              key: key,
+              value: _.sum(values) / totalValue * 100
+            }
+        })
+
+
+        // LOGISTICS
+
+        const ls3_final = KEYS.map((key) => {
+          // Get the Total Value from the totalKeys array of objects
+          const totalValue = keyTotals.find((val) => val.key === key).total 
+          const values = d.map((val) => {
+            return parseFloat(val[key])
+        })
+            return {
+              lifestage: 'Logistics',
+              key: key,
+              value: _.sum(values) / totalValue * 100
+            }
+        })
+
+
+
+        // Disposal
+
+        const ls4_final = KEYS.map((key) => {
+          const totalValue = keyTotals.find((val) => val.key === key).total 
+          const values = d.map((val) => {
+            return parseFloat(val[key])
+        })
+            return {
+              lifestage: 'Disposal',
+              key: key,
+              value: _.sum(values) / totalValue * 100
+            }
+        })
+
+
+
+        //return ls3_final
+
+        return _.concat(ls1_final,ls2_final,ls3_final,ls4_final)
+    - value: ''
+createdAt: 2023-01-30T18:45:53.980Z
