@@ -1,0 +1,28 @@
+id: createSimulationModule1
+type: widget
+subtype: GlobalWidget
+template:
+  ordered:
+    - input_scenarioId: '{{urlparams.scenarioId}}'
+    - heightType: auto
+    - bill_of_material_id: '{{bill_of_material_id.value}}'
+    - scenario_id: '{{scenario_id.value}}'
+    - showFetchingIndicator: boolean
+    - pageUuid: 3e8e68c6-910b-11ed-b9cc-f33a35f6d912
+    - scenarioId: '{{urlparams.scenarioId}}'
+    - product_id: '{{product_id.value}}'
+    - name: CreateSimulationModule
+    - input_ls: |-
+        {
+        module: 'ls2',
+        data: {{lca1.data_output}}
+        }
+    - childNamespace: createSimulationModule1
+    - input_projectId: '{{urlparams.projectId}}'
+style:
+  ordered: []
+position2:
+  position2:
+    height: 2.4
+    width: 12
+createdAt: 2023-01-10T17:22:14.638Z
