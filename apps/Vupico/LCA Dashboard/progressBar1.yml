@@ -1,0 +1,30 @@
+id: progressBar1
+type: widget
+subtype: ProgressBarWidget
+template:
+  ordered:
+    - hideOutput: false
+    - hidden: false
+    - showInEditor: false
+    - tooltipText: ''
+    - labelAlign: left
+    - value: '{{ getProgressData.data.mainProgress }}'
+    - labelCaption: ''
+    - labelWidth: '33'
+    - label: ''
+    - labelWidthUnit: '%'
+    - indeterminate: false
+    - labelPosition: left
+    - labelWrap: false
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: progressContainer
+    subcontainer: bcc9d
+    row: 0.6000000000000001
+    col: 4
+    height: 0.4
+    width: 8
+createdAt: 2023-01-11T15:34:26.128Z

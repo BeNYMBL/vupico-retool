@@ -1,0 +1,26 @@
+id: co2Progress
+type: widget
+subtype: ProgressCircleWidget
+template:
+  ordered:
+    - hidden: false
+    - maintainSpaceWhenHidden: false
+    - showInEditor: false
+    - tooltipText: ''
+    - hideOutput: false
+    - horizontalAlign: center
+    - value: '{{ getProgressData.data.co2Progress }}'
+    - style:
+        ordered:
+          - fill: rgb(79, 186, 240)
+          - track: rgba(37, 150, 190, 0.2)
+style:
+  ordered: []
+position2:
+  position2:
+    container: progressContainer
+    subcontainer: bcc9d
+    row: 2.5999999999999965
+    height: 2.8000000000000003
+    width: 3
+createdAt: 2023-01-11T15:38:40.220Z

@@ -1,0 +1,20 @@
+id: existingProducts
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const products = {{getExistingProducts.data}}
+
+
+        const b = {
+          existing: products.filter((val) => val.is_new === false).length,
+          new: products.filter((val) => val.is_new === true).length,
+          taxable: products.filter((val) => val.is_taxable === true).length,
+          nonTaxable: products.filter((val) => val.is_taxable === false).length,
+        }
+
+        return b
+    - value: ''
+createdAt: 2023-02-01T14:36:48.515Z
+folder: DashboardNumbers

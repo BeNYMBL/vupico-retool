@@ -1,0 +1,27 @@
+id: landProgress
+type: widget
+subtype: ProgressCircleWidget
+template:
+  ordered:
+    - hidden: false
+    - maintainSpaceWhenHidden: false
+    - showInEditor: false
+    - tooltipText: ''
+    - hideOutput: false
+    - horizontalAlign: center
+    - value: '{{ getProgressData.data.landProgress }}'
+    - style:
+        ordered:
+          - fill: rgb(79, 186, 240)
+          - track: rgba(37, 150, 190, 0.2)
+style:
+  ordered: []
+position2:
+  position2:
+    container: progressContainer
+    subcontainer: bcc9d
+    row: 2.599999999999996
+    col: 6
+    height: 2.8000000000000003
+    width: 3
+createdAt: 2023-01-11T16:03:30.036Z
