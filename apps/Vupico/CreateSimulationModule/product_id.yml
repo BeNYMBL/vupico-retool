@@ -1,7 +1,0 @@
-id: product_id
-type: globalwidgetoutput
-subtype: GlobalWidgetOutput
-template:
-  ordered:
-    - value: '{{ getSingleProject.data.product_id[0] }}'
-createdAt: 2023-01-11T19:05:07.848Z

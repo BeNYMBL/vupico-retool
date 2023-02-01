@@ -1,8 +1,0 @@
-id: input_projectId
-type: globalwidgetprop
-subtype: GlobalWidgetProp
-template:
-  ordered:
-    - value: ''
-    - defaultValue: a444cd30-aaac-46fe-b447-2b5a485105fc
-createdAt: 2023-01-10T17:53:10.589Z

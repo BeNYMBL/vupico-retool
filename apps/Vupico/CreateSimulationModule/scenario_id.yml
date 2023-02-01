@@ -1,7 +1,0 @@
-id: scenario_id
-type: globalwidgetoutput
-subtype: GlobalWidgetOutput
-template:
-  ordered:
-    - value: '{{input_scenarioId.value}}'
-createdAt: 2023-01-11T19:05:08.509Z

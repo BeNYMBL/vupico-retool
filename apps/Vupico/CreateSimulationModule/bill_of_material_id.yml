@@ -1,7 +1,0 @@
-id: bill_of_material_id
-type: globalwidgetoutput
-subtype: GlobalWidgetOutput
-template:
-  ordered:
-    - value: '{{ selectBoM.value}}'
-createdAt: 2023-01-11T19:05:08.901Z
