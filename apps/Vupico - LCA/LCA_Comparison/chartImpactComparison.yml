@@ -1,0 +1,62 @@
+id: chartImpactComparison
+type: widget
+subtype: PlotlyChartWidget
+template:
+  ordered:
+    - dataseries:
+        ordered:
+          - '0':
+              ordered:
+                - label: value
+                - datasource: >-
+                    {{formatDataAsObject(environmentalFootprintComparison.value)['value']}}
+                - chartType: bar
+                - aggregationType: sum
+                - color: null
+                - colors:
+                    ordered:
+                      - '0': '#247BC7'
+                      - '1': '#EECA86'
+                - visible: true
+                - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
+    - isDataTemplateDirty: true
+    - datasource: ''
+    - isJsonTemplateDirty: false
+    - groupByDropdown: simulation
+    - datasourceInputMode: javascript
+    - datasourceDataType: array
+    - layout: ''
+    - xAxisDropdown: impact
+    - data: ''
+    - isStackSeriesEnabled: false
+    - xAxisTickFormat: ''
+    - skipDatasourceUpdate: false
+    - datasourceJS: '{{environmentalFootprintComparison.value}}'
+    - yAxisTickFormat: ''
+    - datasourcePluginType: null
+    - xAxisType: default
+    - datasourcePluginId: null
+    - legendAlignment: right
+    - isLayoutJsonDirty: false
+    - chartType: bar
+    - title: Environmental Footprint Comparison
+    - xAxis: '{{formatDataAsObject(environmentalFootprintComparison.value).impact}}'
+    - groupByMode: dropdown
+    - onPointSelectQuery: ''
+    - xAxisMode: dropdown
+    - shouldShowLegend: true
+    - yAxisTitle: ''
+    - selectedPoints:
+        array: []
+    - xAxisTitle: ''
+    - groupByJS: >-
+        {{formatDataAsObject(environmentalFootprintComparison.value)['simulation']}}
+style:
+  ordered: []
+position2:
+  position2:
+    row: 11.4
+    col: 2
+    height: 12.8
+    width: 8
+createdAt: 2023-01-19T15:56:55.880Z

@@ -1,0 +1,60 @@
+id: chartImpactByLifestage
+type: widget
+subtype: PlotlyChartWidget
+template:
+  ordered:
+    - dataseries:
+        ordered:
+          - '0':
+              ordered:
+                - label: value
+                - datasource: '{{formatDataAsObject(impactByLifestage.value)[''value'']}}'
+                - chartType: bar
+                - aggregationType: sum
+                - color: null
+                - colors:
+                    ordered:
+                      - '0': '#247BC7'
+                      - '1': '#BCAAE7'
+                - visible: true
+                - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}%<extra></extra>'
+    - isDataTemplateDirty: true
+    - datasource: ''
+    - isJsonTemplateDirty: false
+    - groupByDropdown: type
+    - datasourceInputMode: javascript
+    - datasourceDataType: array
+    - layout: ''
+    - xAxisDropdown: id
+    - data: ''
+    - isStackSeriesEnabled: true
+    - xAxisTickFormat: ''
+    - skipDatasourceUpdate: false
+    - datasourceJS: '{{impactByLifestage.value}}'
+    - yAxisTickFormat: ''
+    - datasourcePluginType: null
+    - xAxisType: default
+    - datasourcePluginId: null
+    - legendAlignment: bottom
+    - isLayoutJsonDirty: false
+    - chartType: bar
+    - title: '{{_.startCase(selectImpact2.value)}} Impact By Lifestage'
+    - xAxis: '{{formatDataAsObject(impactByLifestage.value)[''id'']}}'
+    - groupByMode: dropdown
+    - onPointSelectQuery: ''
+    - xAxisMode: dropdown
+    - shouldShowLegend: true
+    - yAxisTitle: Percentage
+    - selectedPoints:
+        array: []
+    - xAxisTitle: Simulation
+    - groupByJS: '{{formatDataAsObject(impactByLifestage.value)[''type'']}}'
+style:
+  ordered: []
+position2:
+  position2:
+    row: 10.8
+    col: 10
+    height: 13
+    width: 2
+createdAt: 2023-01-18T18:42:25.192Z

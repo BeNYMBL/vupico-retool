@@ -1,0 +1,22 @@
+id: comparisonScenarioCard2
+type: widget
+subtype: GlobalWidget
+template:
+  ordered:
+    - showFetchingIndicator: boolean
+    - heightType: auto
+    - name: Comparison_Scenario_Card
+    - pageUuid: 590e195a-96ae-11ed-8c3f-4b46c79e4384
+    - childNamespace: comparisonScenarioCard2
+    - input_scenario_name: '{{getSingleScenario2.data.name}}'
+    - input_scenario_id: '{{getSingleScenario2.data.id}}'
+    - input_project_id: '{{urlparams.projectId}}'
+style:
+  ordered: []
+position2:
+  position2:
+    row: 5.4
+    col: 6
+    height: 0.6
+    width: 6
+createdAt: 2023-01-17T21:32:43.582Z
