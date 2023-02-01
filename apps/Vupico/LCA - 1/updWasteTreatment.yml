@@ -1,0 +1,106 @@
+id: updWasteTreatment
+type: datasource
+subtype: SqlQueryUnified
+resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
+resourceDisplayName: Vupico-Database-1
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - records: |-
+        {{tableWasteTreatment.recordUpdates.map((val) => {
+          return {
+            id: val.id,
+            loss_percent: parseInt(val.loss_percent * 100),
+            waste_percent: parseInt(val.waste_percent * 100)
+           }
+        })}}
+    - lastReceivedFromResourceAt: null
+    - databasePasswordOverride: ''
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: '{{disableQuery.value}}'
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: false
+    - showFailureToaster: false
+    - query: ''
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - data: null
+    - recordId: ''
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: false
+    - dataArray: []
+    - cacheKeyTtl: ''
+    - filterBy: ''
+    - databaseHostOverride: ''
+    - metadata: null
+    - editorMode: gui
+    - actionType: BULK_UPDATE_BY_KEY
+    - changesetObject: ''
+    - shouldUseLegacySql: false
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - databaseNameOverride: ''
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: >-
+        [{"key":"loss_percent","value":"{{
+        tableWasteTreatment.selectedRow.data.loss_percent }}"}]
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - enableBulkUpdates: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - bulkUpdatePrimaryKey: id
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events:
+        - ordered:
+            - event: success
+            - type: datasource
+            - method: trigger
+            - pluginId: getWasteTreatment
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - tableName: scenario_material
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: true
+    - enableCaching: false
+    - allowedGroups: []
+    - databaseUsernameOverride: ''
+    - shouldEnableBatchQuerying: false
+    - doNotThrowOnNoOp: false
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2022-12-19T16:16:37.028Z
+folder: Waste_Treatment

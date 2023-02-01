@@ -1,0 +1,110 @@
+id: getDistance
+type: datasource
+subtype: SqlQueryUnified
+resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
+resourceDisplayName: Vupico-Database-1
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - records: ''
+    - lastReceivedFromResourceAt: null
+    - databasePasswordOverride: ''
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: 'true'
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: true
+    - showFailureToaster: false
+    - query: |
+        select 
+        m.material_code,
+        sm.shipping_type_code,
+        sm.from_vendor_code,
+        sm.to_plant_code,
+        count(1) as count_deliveries
+        from scenario_material sm
+        inner join material m on sm.material_id = m.id
+        inner join
+        (
+         select distinct md.*, m.material_code as component_material_code from material_distribution md inner join material m on md.material_code = m.material_code
+        ) as sub1 on
+        sm.to_plant_code = sub1.plant_code and
+        sm.from_vendor_code = sub1.vendor_code and 
+        m.material_code = sub1.material_code AND
+        sm.shipping_type_code = sub1.shipping_type_code
+        where scenario_id = {{input_scenario_id.value}}
+        group by 
+        m.material_code,
+        sm.shipping_type_code,
+        sm.from_vendor_code,
+        sm.to_plant_code
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - warningCodes: []
+    - data: null
+    - recordId: ''
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: true
+    - dataArray: []
+    - cacheKeyTtl: ''
+    - filterBy: ''
+    - databaseHostOverride: ''
+    - metadata: null
+    - editorMode: sql
+    - actionType: ''
+    - changesetObject: ''
+    - shouldUseLegacySql: false
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - databaseNameOverride: ''
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: ''
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - enableBulkUpdates: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - bulkUpdatePrimaryKey: ''
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events: []
+    - tableName: ''
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - databaseUsernameOverride: ''
+    - shouldEnableBatchQuerying: false
+    - doNotThrowOnNoOp: false
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2022-12-16T14:18:54.897Z
+folder: Upstream_Transportation

@@ -1,0 +1,25 @@
+id: txtBom_Materials
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '#### Bom Materials'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 4.600000000000001
+    height: 0.8
+    width: 3
+createdAt: 2022-12-15T14:48:27.620Z

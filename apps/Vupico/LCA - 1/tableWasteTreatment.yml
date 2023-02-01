@@ -1,0 +1,282 @@
+id: tableWasteTreatment
+type: widget
+subtype: TableWidget
+template:
+  ordered:
+    - showCustomButton: false
+    - sortMappedValue:
+        ordered: []
+    - _filteredSortedRenderedDataWithTypes: null
+    - heightType: fixed
+    - normalizedData: null
+    - rowHeight: standard
+    - saveChangesDisabled: ''
+    - columnTypeProperties:
+        ordered:
+          - loss_percent:
+              ordered:
+                - showSeparators: true
+                - padDecimal: true
+          - waste_percent:
+              ordered:
+                - showSeparators: true
+                - padDecimal: true
+          - my_loss_product:
+              ordered:
+                - showSeparators: true
+                - padDecimal: true
+          - recycle_percent:
+              ordered:
+                - showSeparators: true
+                - padDecimal: true
+          - collection_percent:
+              ordered:
+                - showSeparators: true
+                - padDecimal: true
+    - columnWidths: []
+    - showSummaryFooter: false
+    - disableRowSelectInteraction: false
+    - columnWidthsMobile: []
+    - hasNextAfterCursor: ''
+    - columnTypeSpecificExtras:
+        ordered: []
+    - onRowAdded: ''
+    - columnHeaderNames:
+        ordered:
+          - waste_percent: Waste Percentage
+          - material_name: Material
+          - collection_percent: Collection Percentage
+          - loss_percent: Loss Percentage
+          - loss_product: Loss Product
+          - total_recycle: Total Recycle
+          - recycle_percent: Recycle Percentage
+          - waste: Waste
+          - global_element_id: Gloabl ID
+          - total_waste: Total Waste
+    - alwaysShowPaginator: false
+    - columnColors:
+        ordered:
+          - waste_percent: ''
+          - material_name: ''
+          - collection_percent: ''
+          - material_code: ''
+          - smbs1: ''
+          - batch_size: ''
+          - my_loss_product: ''
+          - loss_percent: ''
+          - final_recycle: ''
+          - quantity: ''
+          - final_waste: ''
+          - uom: ''
+          - material_id: ''
+          - loss_product: ''
+          - waste1: ''
+          - my_waste_product: ''
+          - total_recycle: ''
+          - weight: ''
+          - recycle_percent: ''
+          - waste: ''
+          - global_element_id: ''
+          - id: ''
+          - mllsprc: ''
+          - squnt: ''
+          - total_waste: ''
+    - columnFrozenAlignments:
+        ordered: []
+    - allowMultiRowSelect: false
+    - columnFormats:
+        ordered:
+          - loss_percent: PercentDataCell
+          - waste_percent: PercentDataCell
+          - my_loss_product: NumberDataCell
+          - recycle_percent: PercentDataCell
+          - collection_percent: PercentDataCell
+    - columnRestrictedEditing:
+        ordered: []
+    - showFilterButton: true
+    - _columnVisibility:
+        ordered:
+          - waste_percent: true
+          - material_name: true
+          - collection_percent: true
+          - material_code: false
+          - batch_size: false
+          - my_loss_product: false
+          - loss_percent: true
+          - final_recycle: false
+          - quantity: false
+          - final_waste: false
+          - uom: false
+          - material_id: false
+          - loss_product: true
+          - my_waste_product: false
+          - total_recycle: true
+          - weight: false
+          - recycle_percent: true
+          - waste: true
+          - id: false
+          - total_waste: true
+    - _columnSummaryTypes:
+        ordered:
+          - loss_percent: average
+          - waste_percent: average
+          - my_loss_product: sum
+          - recycle_percent: average
+          - collection_percent: average
+    - _columnsWithLegacyBackgroundColor:
+        set: []
+    - showAddRowButton: false
+    - _unfilteredSelectedIndex: null
+    - nextBeforeCursor: ''
+    - columnVisibility:
+        ordered: []
+    - selectedPageIndex: '0'
+    - applyDynamicSettingsToColumnOrder: true
+    - rowColor:
+        array: []
+    - actionButtonColumnName: Actions
+    - resetAfterSave: true
+    - filterStackType: and
+    - downloadRawData: false
+    - showFetchingIndicator: true
+    - serverPaginated: false
+    - data: '{{ getWasteTreatment.data }}'
+    - displayedData: null
+    - actionButtons: []
+    - actionButtonSelectsRow: true
+    - selectRowByDefault: true
+    - defaultSortByColumn: ''
+    - paginationOffset: 0
+    - columnAlignment:
+        ordered:
+          - loss_percent: right
+          - waste_percent: right
+          - my_loss_product: right
+          - recycle_percent: right
+          - collection_percent: right
+    - columnSummaries:
+        object: {}
+    - showBoxShadow: false
+    - sortedDesc: false
+    - customButtonName: ''
+    - columnMappersRenderAsHTML:
+        ordered: []
+    - showRefreshButton: true
+    - pageSize: '20'
+    - useDynamicColumnSettings: false
+    - actionButtonPosition: left
+    - dynamicRowHeights: false
+    - bulkUpdateAction: ''
+    - afterCursor: ''
+    - onCustomButtonPressQueryName: ''
+    - changeSet:
+        object: {}
+    - sortedColumn: ''
+    - _columnSummaryValues:
+        ordered:
+          - loss_percent: ''
+          - waste_percent: ''
+          - my_loss_product: ''
+          - recycle_percent: ''
+          - collection_percent: ''
+    - checkboxRowSelect: true
+    - _compatibilityMode: false
+    - showColumnBorders: false
+    - clearSelectionLabel: Clear selection
+    - _renderedDataWithTypes: null
+    - columnAllowOverflow:
+        ordered: []
+    - beforeCursor: ''
+    - serverPaginationType: limitOffsetBased
+    - onRowSelect: ''
+    - showDownloadButton: true
+    - selectedIndex: null
+    - defaultSortDescending: false
+    - _sortedDisplayedDataIndices: null
+    - dynamicColumnSettings: null
+    - events:
+        - ordered:
+            - event: saveChanges
+            - type: datasource
+            - method: trigger
+            - pluginId: updWasteTreatment
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - totalRowCount: ''
+    - recordUpdates:
+        array: []
+    - newRow: null
+    - emptyMessage: No rows found
+    - columnEditable:
+        ordered:
+          - loss_percent: true
+          - waste_percent: true
+    - _viewerColumnSummaryTypes:
+        object: {}
+    - filters:
+        array: []
+    - displayedDataIndices: null
+    - disableSorting:
+        ordered: []
+    - columnMappers:
+        ordered:
+          - material_name: '{{_.startCase(self)}}'
+    - showClearSelection: false
+    - doubleClickToEdit: true
+    - overflowType: pagination
+    - _reverseSortedDisplayedDataIndices: null
+    - showTableBorder: true
+    - selectedCell:
+        object:
+          index: null
+          data: null
+          columnName: null
+    - columns: []
+    - defaultSelectedRow: first
+    - freezeActionButtonColumns: false
+    - sort: null
+    - _columns:
+        - id
+        - material_id
+        - material_code
+        - material_name
+        - global_element_id
+        - uom
+        - batch_size
+        - quantity
+        - loss_percent
+        - waste_percent
+        - loss_product
+        - waste
+        - recycle_percent
+        - collection_percent
+        - total_recycle
+        - total_waste
+        - weight
+        - my_loss_product
+        - my_waste_product
+        - final_recycle
+        - final_waste
+    - sortByRawValue:
+        ordered: []
+    - calculatedColumns: []
+    - selectedRow:
+        object:
+          index: null
+          data: null
+    - showPaginationOnTop: false
+    - _reverseDisplayedDataIndices: null
+    - nextAfterCursor: ''
+    - useCompactMode: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 29.8
+    height: 8
+    width: 12
+createdAt: 2022-12-15T15:48:31.625Z

@@ -1,0 +1,14 @@
+id: input_scenario_id
+type: globalwidgetprop
+subtype: GlobalWidgetProp
+template:
+  ordered:
+    - value: ''
+    - defaultValue: 682f27d6-dcfd-45d8-bdfd-3eec8701036f
+    - description: |-
+        -- Good Test
+        0912c650-daa1-4edb-af41-40b37e2f28ba
+
+        -- TEST NEW STUFF
+        a065edc4-e99c-4418-b8d3-102a6900a73c
+createdAt: 2022-12-15T14:51:45.365Z

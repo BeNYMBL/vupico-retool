@@ -1,0 +1,41 @@
+id: btnLoad
+type: widget
+subtype: ButtonWidget2
+template:
+  ordered:
+    - horizontalAlign: stretch
+    - clickable: false
+    - iconAfter: ''
+    - submitTargetId: null
+    - hidden: '{{getSingleScenario.data.started_on[0]}}'
+    - text: Start Simulation
+    - showInEditor: false
+    - tooltipText: ''
+    - styleVariant: solid
+    - submit: false
+    - iconBefore: ''
+    - events:
+        - ordered:
+            - event: click
+            - type: datasource
+            - method: trigger
+            - pluginId: insScenarioMaterials
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - loading: false
+    - loaderPosition: auto
+    - disabled: false
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 0.5999999999999989
+    col: 4
+    height: 1.4
+    width: 4
+createdAt: 2022-12-15T14:48:27.521Z

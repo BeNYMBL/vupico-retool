@@ -1,0 +1,14 @@
+id: input_product_id
+type: globalwidgetprop
+subtype: GlobalWidgetProp
+template:
+  ordered:
+    - value: ''
+    - defaultValue: 32b9e566-dc43-4740-ab7d-469f46da1a99
+    - description: |-
+        -- Good Test
+        01dae9e6-7840-4e44-8871-36ff196a8715
+
+        -- New Stuff
+        ea448ec5-a692-4171-a4ae-4e299bb9e401
+createdAt: 2022-12-15T14:48:55.880Z

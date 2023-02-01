@@ -1,0 +1,524 @@
+id: getUpstreamTransportation
+type: datasource
+subtype: SqlQueryUnified
+resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
+resourceDisplayName: Vupico-Database-1
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - records: ''
+    - lastReceivedFromResourceAt: null
+    - databasePasswordOverride: ''
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: '{{disableQuery.value}}'
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: true
+    - showFailureToaster: false
+    - query: >-
+        SELECT
+
+        sm.id,
+
+        m.material_code,
+
+        m.material_name,
+
+        m.global_element_id,
+
+        sm.from_vendor_code,
+
+        v.name as vendor_name,
+
+        v.country_code as vendor_country_code,
+
+        vendor_country.country as vendor_country_name,
+
+        sm.to_plant_code,
+
+        plnt.name as plant_name,
+
+        plnt.country_code as plant_country_code,
+
+        plant_country.country as plant_country_name,
+
+        sm.shipping_type_code,
+
+        sm.distance * sm.upstream_count as distance,
+
+        (1.0 * st.transport_cost / st.distance_factor_price) * sm.distance *
+        sm.upstream_count as total_cost,
+
+        st.transport_cost_currency as currency,
+
+        sm.distance_uom as distance_unit,
+
+        sub_pef.PF01 * sm.distance * sm.upstream_count / 100 as Acidification,
+
+        sub_pef.PF01_Unit as acidification_unit,
+
+        sub_pef.PF02 * sm.distance * sm.upstream_count / 100 as CO2,
+
+        sub_pef.PF02_Unit as co2_unit,
+
+        sub_pef.PF03 * sm.distance * sm.upstream_count / 100 as Ecotoxicity,
+
+        sub_pef.PF03_Unit as ecotoxicity_unit,
+
+        sub_pef.PF04 * sm.distance * sm.upstream_count / 100 as Fossil,
+
+        sub_pef.PF04_Unit as fossil_unit,
+
+        sub_pef.PF05 * sm.distance * sm.upstream_count / 100 as
+        Freshwater_Eutrophication,
+
+        sub_pef.PF05_Unit as freshwater_eutrophication_unit,
+
+        sub_pef.PF06 * sm.distance * sm.upstream_count / 100 as
+        human_toxicity_cancer,
+
+        sub_pef.PF06_Unit as human_toxicity_cancer_unit,
+
+        sub_pef.PF07 * sm.distance * sm.upstream_count / 100 as
+        human_toxicity_non_cancer,
+
+        sub_pef.PF07_Unit as human_toxicity_non_cancer_unit,
+
+        sub_pef.PF08 * sm.distance * sm.upstream_count / 100 as
+        ionizing_radiation,
+
+        sub_pef.PF08_Unit as ionizing_radiation_unit,
+
+        sub_pef.PF09 * sm.distance * sm.upstream_count / 100 as land_use,
+
+        sub_pef.PF09_Unit as land_use_unit,
+
+        sub_pef.PF10 * sm.distance * sm.upstream_count / 100 as
+        marine_eutrophication,
+
+        sub_pef.PF10_Unit as marine_eutrophication_unit,
+
+        sub_pef.PF11 * sm.distance * sm.upstream_count / 100 as ozone_depletion,
+
+        sub_pef.PF11_Unit as ozone_depletion_unit,
+
+        sub_pef.PF12 * sm.distance * sm.upstream_count / 100 as
+        particulate_matter,
+
+        sub_pef.PF12_Unit as particulate_matter_unit,
+
+        sub_pef.PF13 * sm.distance * sm.upstream_count / 100 as
+        photochemical_ozone,
+
+        sub_pef.PF13_Unit as photochemical_ozone_unit,
+
+        sub_pef.PF14 * sm.distance * sm.upstream_count / 100 as resource_use,
+
+        sub_pef.PF14_Unit as resource_use_unit,
+
+        sub_pef.PF15 * sm.distance * sm.upstream_count / 100 as
+        terrestrial_eutrophication,
+
+        sub_pef.PF15_Unit as terrestrial_eutrophication_unit,
+
+        sub_pef.PF16 * sm.distance * sm.upstream_count / 100 as water_use,
+
+        sub_pef.PF16_Unit as water_use_unit,
+
+        sub_pef.PF17 * sm.distance * sm.upstream_count / 100 as bio_diversity,
+
+        sub_pef.PF17_Unit as bio_diversity_unit
+
+        from scenario_material sm
+
+        inner join material m on sm.material_id = m.id
+
+        left outer join vendor v on sm.from_vendor_code = v.vendor_code
+
+        left outer join country vendor_country on v.location_code =
+        vendor_country.location_code
+
+        left outer join plant plnt on sm.to_plant_code = plnt.plant_code
+
+        left outer join country plant_country on plnt.location_code =
+        plant_country.location_code
+
+        left outer join shipping_type st on sm.shipping_type_code =
+        st.shipping_type_code
+
+        left outer join (
+
+        select shipping_type_code,
+                 max(case when (sp.pef_category_code='PEF01') then pef_value else NULL end) as PF01,
+                 max(case when (sp.pef_category_code='PEF01') then pc.reporting_unit else NULL end) as PF01_Unit,
+                 max(case when (sp.pef_category_code='PEF02') then pef_value else NULL end) as PF02,
+                 max(case when (sp.pef_category_code='PEF02') then pc.reporting_unit else NULL end) as PF02_Unit,
+                 max(case when (sp.pef_category_code='PEF03') then pef_value else NULL end) as PF03,
+                 max(case when (sp.pef_category_code='PEF03') then pc.reporting_unit else NULL end) as PF03_Unit,
+                 max(case when (sp.pef_category_code='PEF04') then pef_value else NULL end) as PF04,
+                 max(case when (sp.pef_category_code='PEF04') then pc.reporting_unit else NULL end) as PF04_Unit,
+                 max(case when (sp.pef_category_code='PEF05') then pef_value else NULL end) as PF05,
+                 max(case when (sp.pef_category_code='PEF05') then pc.reporting_unit else NULL end) as PF05_Unit,
+                 max(case when (sp.pef_category_code='PEF06') then pef_value else NULL end) as PF06,
+                 max(case when (sp.pef_category_code='PEF06') then pc.reporting_unit else NULL end) as PF06_Unit,
+                 max(case when (sp.pef_category_code='PEF07') then pef_value else NULL end) as PF07,
+                 max(case when (sp.pef_category_code='PEF07') then pc.reporting_unit else NULL end) as PF07_Unit,
+                 max(case when (sp.pef_category_code='PEF08') then pef_value else NULL end) as PF08,
+                 max(case when (sp.pef_category_code='PEF08') then pc.reporting_unit else NULL end) as PF08_Unit,
+                 max(case when (sp.pef_category_code='PEF09') then pef_value else NULL end) as PF09,
+                 max(case when (sp.pef_category_code='PEF09') then pc.reporting_unit else NULL end) as PF09_Unit,
+                 max(case when (sp.pef_category_code='PEF10') then pef_value else NULL end) as PF10,
+                 max(case when (sp.pef_category_code='PEF10') then pc.reporting_unit else NULL end) as PF10_Unit,
+                 max(case when (sp.pef_category_code='PEF11') then pef_value else NULL end) as PF11,
+                 max(case when (sp.pef_category_code='PEF11') then pc.reporting_unit else NULL end) as PF11_Unit,
+                 max(case when (sp.pef_category_code='PEF12') then pef_value else NULL end) as PF12,
+                 max(case when (sp.pef_category_code='PEF12') then pc.reporting_unit else NULL end) as PF12_Unit,
+                 max(case when (sp.pef_category_code='PEF13') then pef_value else NULL end) as PF13,
+                 max(case when (sp.pef_category_code='PEF13') then pc.reporting_unit else NULL end) as PF13_Unit,
+                 max(case when (sp.pef_category_code='PEF14') then pef_value else NULL end) as PF14,
+                 max(case when (sp.pef_category_code='PEF14') then pc.reporting_unit else NULL end) as PF14_Unit,
+                 max(case when (sp.pef_category_code='PEF15') then pef_value else NULL end) as PF15,
+                 max(case when (sp.pef_category_code='PEF15') then pc.reporting_unit else NULL end) as PF15_Unit,
+                 max(case when (sp.pef_category_code='PEF16') then pef_value else NULL end) as PF16,
+                 max(case when (sp.pef_category_code='PEF16') then pc.reporting_unit else NULL end) as PF16_Unit,
+                 max(case when (sp.pef_category_code='PEF17') then pef_value else NULL end) as PF17,
+                 max(case when (sp.pef_category_code='PEF17') then pc.reporting_unit else NULL end) as PF17_Unit
+                 from shipping_pef sp
+                 inner join pef_category pc on sp.pef_category_code = pc.pef_category_code  
+                 group by shipping_type_code
+                 order by shipping_type_code
+        ) as sub_pef
+
+        on sm.shipping_type_code = sub_pef.shipping_type_code
+
+
+        where sm.scenario_id = {{input_scenario_id.value}}
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - warningCodes: []
+    - data: null
+    - recordId: ''
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: true
+    - dataArray: []
+    - cacheKeyTtl: ''
+    - filterBy: ''
+    - databaseHostOverride: ''
+    - metadata: null
+    - editorMode: sql
+    - actionType: ''
+    - changesetObject: ''
+    - shouldUseLegacySql: false
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - databaseNameOverride: ''
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: ''
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - enableBulkUpdates: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - bulkUpdatePrimaryKey: ''
+    - runWhenPageLoads: false
+    - transformer: >-
+        let data = {{ data_output.value }};
+
+
+        let acidification_sum = 0;
+
+        let co2_sum = 0;
+
+        let ecotoxicity_sum = 0;
+
+        let fossil_sum = 0;
+
+        let freshwater_eutrophication_sum = 0;
+
+        let human_toxicity_cancer_sum = 0;
+
+        let human_toxicity_non_cancer_sum = 0;
+
+        let ionizing_radiation_sum = 0;
+
+        let land_use_sum = 0;
+
+        let marine_eutrophication_sum = 0;
+
+        let ozone_depletion_sum = 0;
+
+        let particulate_matter_sum = 0;
+
+        let photochemical_ozone_sum = 0;
+
+        let resource_use_sum = 0;
+
+        let terrestrial_eutrophication_sum = 0;
+
+        let water_use_sum = 0;
+
+        let bio_diversity_sum = 0;
+
+
+        for (let i = 0; i < data.acidification.length; i++) {
+          let value = data.acidification[i];
+          acidification_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.co2.length; i++) {
+          let value = data.co2[i];
+          co2_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.ecotoxicity.length; i++) {
+          let value = data.ecotoxicity[i];
+          ecotoxicity_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.fossil.length; i++) {
+          let value = data.fossil[i];
+          fossil_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.freshwater_eutrophication.length; i++) {
+          let value = data.freshwater_eutrophication[i];
+          freshwater_eutrophication_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.human_toxicity_cancer.length; i++) {
+          let value = data.human_toxicity_cancer[i];
+          human_toxicity_cancer_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.human_toxicity_non_cancer.length; i++) {
+          let value = data.human_toxicity_non_cancer[i];
+          human_toxicity_non_cancer_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.ionizing_radiation.length; i++) {
+          let value = data.ionizing_radiation[i];
+          ionizing_radiation_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.land_use.length; i++) {
+          let value = data.land_use[i];
+          land_use_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.marine_eutrophication.length; i++) {
+          let value = data.marine_eutrophication[i];
+          marine_eutrophication_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.ozone_depletion.length; i++) {
+          let value = data.ozone_depletion[i];
+          ozone_depletion_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.particulate_matter.length; i++) {
+          let value = data.particulate_matter[i];
+          particulate_matter_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.photochemical_ozone.length; i++) {
+          let value = data.photochemical_ozone[i];
+          photochemical_ozone_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.resource_use.length; i++) {
+          let value = data.resource_use[i];
+          resource_use_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.terrestrial_eutrophication.length; i++) {
+          let value = data.terrestrial_eutrophication[i];
+          terrestrial_eutrophication_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.water_use.length; i++) {
+          let value = data.water_use[i];
+          water_use_sum += parseFloat(value);
+        }
+
+
+        for (let i = 0; i < data.bio_diversity.length; i++) {
+          let value = data.bio_diversity[i];
+          bio_diversity_sum += parseFloat(value);
+        }
+
+
+        let acid_unit = data.acidification_unit[0];
+
+        data.acidification.push(acidification_sum.toString());
+
+        data.acidification_unit.push(acid_unit);
+
+
+        let co2_unit = data.co2_unit[0];
+
+        data.co2.push(co2_sum.toString());
+
+        data.co2_unit.push(co2_unit);
+
+
+        let eco_unit = data.ecotoxicity_unit[0]
+
+        data.ecotoxicity.push(ecotoxicity_sum.toString());
+
+        data.ecotoxicity_unit.push(eco_unit);
+
+
+        let fossil_unit = data.fossil_unit[0];
+
+        data.fossil.push(fossil_sum.toString());
+
+        data.fossil_unit.push(fossil_unit);
+
+
+        let water_unit = data.freshwater_eutrophication_unit[0];
+
+        data.freshwater_eutrophication.push(freshwater_eutrophication_sum.toString());
+
+        data.freshwater_eutrophication_unit.push(water_unit);
+
+
+        let cancer_unit = data.human_toxicity_cancer_unit[0];
+
+        data.human_toxicity_cancer.push(human_toxicity_cancer_sum.toString());
+
+        data.human_toxicity_cancer_unit.push(cancer_unit);
+
+
+        let non_cancer_unit = data.human_toxicity_non_cancer_unit[0];
+
+        data.human_toxicity_non_cancer.push(human_toxicity_non_cancer_sum.toString());
+
+        data.human_toxicity_non_cancer_unit.push(non_cancer_unit);
+
+
+        let ionizing_unit = data.ionizing_radiation_unit[0];
+
+        data.ionizing_radiation.push(ionizing_radiation_sum.toString());
+
+        data.ionizing_radiation_unit.push(ionizing_unit);
+
+
+        let land_use_unit = data.land_use_unit[0];
+
+        data.land_use.push(land_use_sum.toString());
+
+        data.land_use_unit.push(land_use_unit);
+
+
+        let marine_unit = data.marine_eutrophication_unit[0];
+
+        data.marine_eutrophication.push(marine_eutrophication_sum.toString());
+
+        data.marine_eutrophication_unit.push(marine_unit);
+
+
+        let ozone_unit = data.ozone_depletion_unit[0];
+
+        data.ozone_depletion.push(ozone_depletion_sum.toString());
+
+        data.ozone_depletion_unit.push(ozone_unit);
+
+
+        let matter_unit = data.particulate_matter_unit[0];
+
+        data.particulate_matter.push(particulate_matter_sum.toString());
+
+        data.particulate_matter_unit.push(matter_unit);
+
+
+        let photo_unit = data.photochemical_ozone_unit[0];
+
+        data.photochemical_ozone.push(photochemical_ozone_sum.toString());
+
+        data.photochemical_ozone_unit.push(photo_unit);
+
+
+        let resource_use_unit = data.resource_use_unit[0];
+
+        data.resource_use.push(resource_use_sum.toString());
+
+        data.resource_use_unit.push(resource_use_unit);
+
+
+        let terrestrial_unit = data.terrestrial_eutrophication_unit[0];
+
+        data.terrestrial_eutrophication.push(terrestrial_eutrophication_sum.toString());
+
+        data.terrestrial_eutrophication_unit.push(terrestrial_unit);
+
+
+        let water_use_unit = data.water_use_unit[0];
+
+        data.water_use.push(water_use_sum.toString());
+
+        data.water_use_unit.push(water_use_unit);
+
+
+        let bio_unit = data.bio_diversity_unit[0];
+
+        data.bio_diversity.push(bio_diversity_sum.toString());
+
+        data.bio_diversity_unit.push(bio_unit);
+
+
+        data.id.push({{uuid.v4()}});
+
+        data.material_code.push('Total');
+
+
+        return data;
+    - events: []
+    - tableName: ''
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - databaseUsernameOverride: ''
+    - shouldEnableBatchQuerying: false
+    - doNotThrowOnNoOp: false
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2022-12-15T14:58:38.645Z
+folder: Upstream_Transportation

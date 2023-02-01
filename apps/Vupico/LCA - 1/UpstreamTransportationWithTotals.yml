@@ -1,0 +1,185 @@
+id: UpstreamTransportationWithTotals
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        //this variable contains data, returned by a query
+
+        let data = {{ getUpstreamTransportation.data }};
+
+
+        //calculation a sum of each attrubite and pushing it into an array of
+        values.
+
+        data.total_cost.push(_.sumBy(data.total_cost, (val) =>
+        parseFloat(val)));
+
+        data.acidification.push(_.sumBy(data.acidification, (val) =>
+        parseFloat(val)));
+
+        data.co2.push(_.sumBy(data.co2, (val) => parseFloat(val)));
+
+        data.ecotoxicity.push(_.sumBy(data.ecotoxicity, (val) =>
+        parseFloat(val)));
+
+        data.fossil.push(_.sumBy(data.fossil, (val) => parseFloat(val)));
+
+        data.freshwater_eutrophication.push(_.sumBy(data.freshwater_eutrophication,
+        (val) => parseFloat(val)));
+
+        data.human_toxicity_cancer.push(_.sumBy(data.human_toxicity_cancer,
+        (val) => parseFloat(val)));
+
+        data.human_toxicity_non_cancer.push(_.sumBy(data.human_toxicity_non_cancer,
+        (val) => parseFloat(val)));
+
+        data.ionizing_radiation.push(_.sumBy(data.ionizing_radiation, (val) =>
+        parseFloat(val)));
+
+        data.land_use.push(_.sumBy(data.land_use, (val) => parseFloat(val)));
+
+        data.marine_eutrophication.push(_.sumBy(data.marine_eutrophication,
+        (val) => parseFloat(val)));
+
+        data.ozone_depletion.push(_.sumBy(data.ozone_depletion, (val) =>
+        parseFloat(val)));
+
+        data.particulate_matter.push(_.sumBy(data.particulate_matter, (val) =>
+        parseFloat(val)));
+
+        data.photochemical_ozone.push(_.sumBy(data.photochemical_ozone, (val) =>
+        parseFloat(val)));
+
+        data.resource_use.push(_.sumBy(data.resource_use, (val) =>
+        parseFloat(val)));
+
+        data.terrestrial_eutrophication.push(_.sumBy(data.terrestrial_eutrophication,
+        (val) => parseFloat(val)));
+
+        data.water_use.push(_.sumBy(data.water_use, (val) => parseFloat(val)));
+
+        data.bio_diversity.push(_.sumBy(data.bio_diversity, (val) =>
+        parseFloat(val)));
+
+
+        //checking if unit for distance exists. if exists -> set it into a
+        variable and replace in dataset with an array that includes this value.
+
+        let distance_unit;
+
+        for (let i = 0; i < data.distance_unit.length; i++) {
+          if (data.distance_unit[i] != '' && data.distance_unit[i] != null) {
+            distance_unit = data.distance_unit[i]
+            break;
+          }
+        }
+
+        data.distance_unit = [distance_unit];
+
+
+
+        //changing an attribute's unit into an array that contains only one
+        value.
+
+        let acid_unit = data.acidification_unit[0];
+
+        data.acidification_unit = [acid_unit];
+
+
+        let co2_unit = data.co2_unit[0];
+
+        data.co2_unit = [co2_unit];
+
+
+        let eco_unit = data.ecotoxicity_unit[0]
+
+        data.ecotoxicity_unit = [eco_unit];
+
+
+        let fossil_unit = data.fossil_unit[0];
+
+        data.fossil_unit = [fossil_unit];
+
+
+        let water_unit = data.freshwater_eutrophication_unit[0];
+
+        data.freshwater_eutrophication_unit = [water_unit];
+
+
+        let cancer_unit = data.human_toxicity_cancer_unit[0];
+
+        data.human_toxicity_cancer_unit = [cancer_unit];
+
+
+        let non_cancer_unit = data.human_toxicity_non_cancer_unit[0];
+
+        data.human_toxicity_non_cancer_unit = [non_cancer_unit];
+
+
+        let ionizing_unit = data.ionizing_radiation_unit[0];
+
+        data.ionizing_radiation_unit = [ionizing_unit];
+
+
+        let land_use_unit = data.land_use_unit[0];
+
+        data.land_use_unit = [land_use_unit];
+
+
+        let marine_unit = data.marine_eutrophication_unit[0];
+
+        data.marine_eutrophication_unit = [marine_unit];
+
+
+        let ozone_unit = data.ozone_depletion_unit[0];
+
+        data.ozone_depletion_unit = [ozone_unit];
+
+
+        let matter_unit = data.particulate_matter_unit[0];
+
+        data.particulate_matter_unit = [matter_unit];
+
+
+        let photo_unit = data.photochemical_ozone_unit[0];
+
+        data.photochemical_ozone_unit = [photo_unit];
+
+
+        let resource_use_unit = data.resource_use_unit[0];
+
+        data.resource_use_unit = [resource_use_unit];
+
+
+        let terrestrial_unit = data.terrestrial_eutrophication_unit[0];
+
+        data.terrestrial_eutrophication_unit = [terrestrial_unit];
+
+
+        let water_use_unit = data.water_use_unit[0];
+
+        data.water_use_unit = [water_use_unit];
+
+
+        let bio_unit = data.bio_diversity_unit[0];
+
+        data.bio_diversity_unit = [bio_unit];
+
+
+        //creating and pushing new id and name (required by Retool table
+        component to show new row)
+
+        data.id.push({{uuid.v4()}});
+
+        data.material_code.push('Total');
+
+        data.material_name.push('Total');
+
+
+        //returning data with totals and units
+
+        return data;
+    - value: ''
+createdAt: 2022-12-23T08:57:08.799Z
+folder: Upstream_Transportation
