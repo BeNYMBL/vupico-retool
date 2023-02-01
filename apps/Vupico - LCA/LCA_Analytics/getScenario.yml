@@ -27,6 +27,7 @@ template:
         p.added_by as author
         from scenario s left outer join project p on s.project_id = p.id
         inner join product prd on s.product_id = prd.id
+        order by s.started_on desc
     - playgroundQueryUuid: ''
     - playgroundQueryId: null
     - error: null

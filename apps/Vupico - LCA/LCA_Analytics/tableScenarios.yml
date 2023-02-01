@@ -78,9 +78,9 @@ template:
             - actionButtonText: View
             - actionButtonType: openInternalUrl
             - actionButtonQuery: ''
-            - actionButtonInternalUrlPath: 57c564a2-64f6-11ed-8e98-67c3a491194f
+            - actionButtonInternalUrlPath: 9e61e87c-906b-11ed-98d4-2f9968c91ea1
             - actionButtonInternalUrlQuery: >-
-                "[{\"key\":\"projectId\",\"value\":\"{{getScenario.data[i].project_id}}\"}]"
+                "[{\"key\":\"projectId\",\"value\":\"{{getScenario.data[i].project_id}}\"},{\"key\":\"scenarioId\",\"value\":\"{{getScenario.data[i].id}}\"}]"
             - actionButtonUrl: ''
             - actionButtonNewWindow: false
             - actionButtonDisabled: ''
