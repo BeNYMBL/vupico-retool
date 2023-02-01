@@ -1,0 +1,28 @@
+id: transformerProductsTable
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const a = {{getProducts2.data}}
+
+        if({{ urlparams.is_new === true }}) {
+          return a.filter((val) => val.is_new === true)
+        }
+
+        if({{ urlparams.is_new === false }}) {
+          return a.filter((val) => val.is_new === false)
+        }
+
+        if({{ urlparams.is_taxable === true }}) {
+          return a.filter((val) => val.is_taxable === true)
+        }
+
+        if({{ urlparams.is_taxable === false }}) {
+          return a.filter((val) => val.is_taxable === false)
+        }
+
+        return a
+    - value: ''
+createdAt: 2023-02-01T17:48:19.558Z
+folder: Product
