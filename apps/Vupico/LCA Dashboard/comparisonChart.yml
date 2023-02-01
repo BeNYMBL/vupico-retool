@@ -1,0 +1,71 @@
+id: comparisonChart
+type: widget
+subtype: PlotlyChartWidget
+template:
+  ordered:
+    - dataseries:
+        ordered:
+          - '0':
+              ordered:
+                - label: Cost
+                - datasource: '{{getChartData.value.cost}}'
+                - chartType: line
+                - aggregationType: none
+                - color: '#3AACFF'
+                - colors:
+                    ordered: []
+                - visible: true
+                - hovertemplate: Simulation 2
+          - '1':
+              ordered:
+                - label: C02
+                - datasource: '{{ getChartData.value.co2 }}'
+                - chartType: line
+                - aggregationType: none
+                - color: '#ED589D'
+                - visible: true
+                - hovertemplate: Simulation 1
+                - colors:
+                    ordered: []
+    - isDataTemplateDirty: true
+    - datasource: ''
+    - isJsonTemplateDirty: false
+    - groupByDropdown: null
+    - datasourceInputMode: javascript
+    - datasourceDataType: object
+    - layout: ''
+    - xAxisDropdown: co2
+    - data: ''
+    - isStackSeriesEnabled: false
+    - xAxisTickFormat: ''
+    - skipDatasourceUpdate: false
+    - datasourceJS: '{{getChartData.value}}'
+    - yAxisTickFormat: ''
+    - datasourcePluginType: function
+    - xAxisType: default
+    - datasourcePluginId: getChartData
+    - legendAlignment: bottom
+    - isLayoutJsonDirty: false
+    - chartType: line
+    - title: ''
+    - xAxis: '{{ getXAxis.data }}'
+    - events: []
+    - groupByMode: dropdown
+    - onPointSelectQuery: ''
+    - xAxisMode: javascript
+    - shouldShowLegend: true
+    - yAxisTitle: ''
+    - selectedPoints:
+        array: []
+    - xAxisTitle: ''
+    - groupByJS: ''
+style:
+  ordered: []
+position2:
+  position2:
+    container: chartContainer
+    subcontainer: bcc9d
+    row: 0.6000000000000001
+    height: 8
+    width: 12
+createdAt: 2023-01-11T16:17:53.384Z

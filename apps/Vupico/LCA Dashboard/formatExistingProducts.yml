@@ -1,0 +1,14 @@
+id: formatExistingProducts
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        let output = {{ numbro(getExistingProducts.data).format({spaceSeparated:
+        true, average: true,  mantissa: 1}) }};
+
+
+        return output.toUpperCase();
+    - value: ''
+createdAt: 2023-01-11T17:26:41.786Z
+folder: CountersData

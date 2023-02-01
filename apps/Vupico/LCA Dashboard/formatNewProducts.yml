@@ -1,0 +1,14 @@
+id: formatNewProducts
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        let output = {{ numbro(getNewProducts.data).format({spaceSeparated:
+        true, average: true,  mantissa: 1}) }};
+
+
+        return output.toUpperCase();
+    - value: ''
+createdAt: 2023-01-12T08:16:38.514Z
+folder: CountersData
