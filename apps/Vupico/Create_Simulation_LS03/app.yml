@@ -1,8 +1,0 @@
-version: 43.0.9
-pageUuid: 924d72a2-910d-11ed-b9cc-cb21cc3b323d
-appTemplate:
-  appThemeId: 1
-  queryStatusVisibility: false
-  rootScreen: null
-  version: 2.99.3
-  markdownLinkBehavior: auto
