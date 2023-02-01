@@ -1,0 +1,269 @@
+id: getBoMMaterial
+type: datasource
+subtype: SqlQueryUnified
+resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
+resourceDisplayName: Vupico-Database-1
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - records: ''
+    - lastReceivedFromResourceAt: null
+    - databasePasswordOverride: ''
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: '{{disableQuery.value}}'
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: true
+    - showFailureToaster: false
+    - query: >-
+        select sm.id,
+
+        sm.material_id,
+
+        sm.from_country,
+
+        sm.to_country,
+
+        sm.scenario_id,
+
+        sm.quantity as quantity,
+
+        sm.uom,
+
+        sm.shipping_type_code,
+
+        m.material_code,
+
+        m.material_name,
+
+        m.material_price * sm.quantity as total_cost,
+
+        m.material_price_currency as currency,
+
+        sm.quantity * s.batch_size as production_quantity,
+
+        m.global_element_id as material_global_code,
+
+        (sub_pef.PF01 * sm.quantity * s.batch_size) / sub_pef.PF01_quantity as
+        Acidification,
+
+        sub_pef.PF01_unit as acidification_unit,
+
+        sub_pef.PF02 * sm.quantity * s.batch_size / sub_pef.PF02_quantity as
+        CO2,
+
+        sub_pef.PF02_unit as co2_unit,
+
+        sub_pef.PF03 * sm.quantity * s.batch_size / sub_pef.PF03_quantity as
+        Ecotoxicity,
+
+        sub_pef.PF03_unit as ecotoxicity_unit,
+
+        sub_pef.PF04 * sm.quantity * s.batch_size / sub_pef.PF04_quantity as
+        Fossil,
+
+        sub_pef.PF04_unit as fossil_unit,
+
+        sub_pef.PF05 * sm.quantity * s.batch_size / sub_pef.PF05_quantity as
+        Freshwater_Eutrophication,
+
+        sub_pef.PF05_unit as freshwater_eutrophication_unit,
+
+        sub_pef.PF06 * sm.quantity * s.batch_size / sub_pef.PF06_quantity as
+        human_toxicity_cancer,
+
+        sub_pef.PF06_unit as human_toxicity_cancer_unit,
+
+        sub_pef.PF07 * sm.quantity * s.batch_size / sub_pef.PF07_quantity as
+        human_toxicity_non_cancer,
+
+        sub_pef.PF07_unit as human_toxicity_non_cancer_unit,
+
+        sub_pef.PF08 * sm.quantity * s.batch_size / sub_pef.PF08_quantity as
+        ionizing_radiation,
+
+        sub_pef.PF08_unit as ionizing_radiation_unit,
+
+        sub_pef.PF09 * sm.quantity * s.batch_size / sub_pef.PF09_quantity as
+        land_use,
+
+        sub_pef.PF09_unit as land_use_unit,
+
+        sub_pef.PF10 * sm.quantity * s.batch_size / sub_pef.PF10_quantity as
+        marine_eutrophication,
+
+        sub_pef.PF10_unit as marine_eutrophication_unit,
+
+        sub_pef.PF11 * sm.quantity * s.batch_size / sub_pef.PF11_quantity as
+        ozone_depletion,
+
+        sub_pef.PF11_unit as ozone_depletion_unit,
+
+        sub_pef.PF12 * sm.quantity * s.batch_size / sub_pef.PF12_quantity as
+        particulate_matter,
+
+        sub_pef.PF12_unit as particulate_matter_unit,
+
+        sub_pef.PF13 * sm.quantity * s.batch_size / sub_pef.PF13_quantity as
+        photochemical_ozone,
+
+        sub_pef.PF13_unit as photochemical_ozone_unit,
+
+        sub_pef.PF14 * sm.quantity * s.batch_size / sub_pef.PF14_quantity as
+        resource_use,
+
+        sub_pef.PF14_unit as resource_use_unit,
+
+        sub_pef.PF15 * sm.quantity * s.batch_size / sub_pef.PF15_quantity as
+        terrestrial_eutrophication,
+
+        sub_pef.PF15_unit as terrestrial_eutrophication_unit,
+
+        sub_pef.PF16 * sm.quantity * s.batch_size / sub_pef.PF16_quantity as
+        water_use,
+
+        sub_pef.PF16_unit as water_use_unit,
+
+        sub_pef.PF17 * sm.quantity * s.batch_size / sub_pef.PF17_quantity as
+        bio_diversity,
+
+        sub_pef.PF17_unit as bio_diversity_unit
+
+        from scenario_material sm inner join material m on sm.material_id = m.id
+
+        inner join scenario s on sm.scenario_id = s.id
+
+        left outer join (
+
+        select material_code,
+                 max(case when (pef_category_id='PEF01') then pef_value else NULL end) as PF01,
+                 max(case when (pef_category_id='PEF01') then measurement_quantity else NULL end) as PF01_quantity,
+                 max(case when (pef_category_id='PEF01') then pc.reporting_unit else NULL end) as PF01_unit,
+                 max(case when (pef_category_id='PEF02') then pef_value else NULL end) as PF02,
+                 max(case when (pef_category_id='PEF02') then measurement_quantity else NULL end) as PF02_quantity,
+                 max(case when (pef_category_id='PEF02') then pc.reporting_unit else NULL end) as PF02_unit,
+                 max(case when (pef_category_id='PEF03') then pef_value else NULL end) as PF03,
+                 max(case when (pef_category_id='PEF03') then measurement_quantity else NULL end) as PF03_quantity,
+                 max(case when (pef_category_id='PEF03') then pc.reporting_unit else NULL end) as PF03_unit,
+                 max(case when (pef_category_id='PEF04') then pef_value else NULL end) as PF04,
+                 max(case when (pef_category_id='PEF04') then measurement_quantity else NULL end) as PF04_quantity,
+                 max(case when (pef_category_id='PEF04') then pc.reporting_unit else NULL end) as PF04_unit,
+                 max(case when (pef_category_id='PEF05') then pef_value else NULL end) as PF05,
+                 max(case when (pef_category_id='PEF05') then measurement_quantity else NULL end) as PF05_quantity,
+                 max(case when (pef_category_id='PEF05') then pc.reporting_unit else NULL end) as PF05_unit,
+                 max(case when (pef_category_id='PEF06') then pef_value else NULL end) as PF06,
+                 max(case when (pef_category_id='PEF06') then measurement_quantity else NULL end) as PF06_quantity,
+                 max(case when (pef_category_id='PEF06') then pc.reporting_unit else NULL end) as PF06_unit,
+                 max(case when (pef_category_id='PEF07') then pef_value else NULL end) as PF07,
+                 max(case when (pef_category_id='PEF07') then measurement_quantity else NULL end) as PF07_quantity,
+                 max(case when (pef_category_id='PEF07') then pc.reporting_unit else NULL end) as PF07_unit,
+                 max(case when (pef_category_id='PEF08') then pef_value else NULL end) as PF08,
+                 max(case when (pef_category_id='PEF08') then measurement_quantity else NULL end) as PF08_quantity,
+                 max(case when (pef_category_id='PEF08') then pc.reporting_unit else NULL end) as PF08_unit,
+                 max(case when (pef_category_id='PEF09') then pef_value else NULL end) as PF09,
+                 max(case when (pef_category_id='PEF09') then measurement_quantity else NULL end) as PF09_quantity,
+                 max(case when (pef_category_id='PEF09') then pc.reporting_unit else NULL end) as PF09_unit,
+                 max(case when (pef_category_id='PEF10') then pef_value else NULL end) as PF10,
+                 max(case when (pef_category_id='PEF10') then measurement_quantity else NULL end) as PF10_quantity,
+                 max(case when (pef_category_id='PEF10') then pc.reporting_unit else NULL end) as PF10_unit,
+                 max(case when (pef_category_id='PEF11') then pef_value else NULL end) as PF11,
+                 max(case when (pef_category_id='PEF11') then measurement_quantity else NULL end) as PF11_quantity,
+                 max(case when (pef_category_id='PEF11') then pc.reporting_unit else NULL end) as PF11_unit,
+                 max(case when (pef_category_id='PEF12') then pef_value else NULL end) as PF12,
+                 max(case when (pef_category_id='PEF12') then measurement_quantity else NULL end) as PF12_quantity,
+                 max(case when (pef_category_id='PEF12') then pc.reporting_unit else NULL end) as PF12_unit,
+                 max(case when (pef_category_id='PEF13') then pef_value else NULL end) as PF13,
+                 max(case when (pef_category_id='PEF13') then measurement_quantity else NULL end) as PF13_quantity,
+                 max(case when (pef_category_id='PEF13') then pc.reporting_unit else NULL end) as PF13_unit,
+                 max(case when (pef_category_id='PEF14') then pef_value else NULL end) as PF14,
+                 max(case when (pef_category_id='PEF14') then measurement_quantity else NULL end) as PF14_quantity,
+                 max(case when (pef_category_id='PEF14') then pc.reporting_unit else NULL end) as PF14_unit,
+                 max(case when (pef_category_id='PEF15') then pef_value else NULL end) as PF15,
+                 max(case when (pef_category_id='PEF15') then measurement_quantity else NULL end) as PF15_quantity,
+                 max(case when (pef_category_id='PEF15') then pc.reporting_unit else NULL end) as PF15_unit,
+                 max(case when (pef_category_id='PEF16') then pef_value else NULL end) as PF16,
+                 max(case when (pef_category_id='PEF16') then measurement_quantity else NULL end) as PF16_quantity,
+                 max(case when (pef_category_id='PEF16') then pc.reporting_unit else NULL end) as PF16_unit,
+                 max(case when (pef_category_id='PEF17') then pef_value else NULL end) as PF17,
+                 max(case when (pef_category_id='PEF17') then measurement_quantity else NULL end) as PF17_quantity,
+                 max(case when (pef_category_id='PEF17') then pc.reporting_unit else NULL end) as PF17_unit
+                 from material_pef 
+                 inner join pef_category pc
+                 on material_pef.pef_category_id = pc.pef_category_code
+                 group by material_code
+                 order by material_code
+        ) as sub_pef
+
+        on m.global_element_id = sub_pef.material_code
+
+        where sm.scenario_id = {{input_scenario_id.value}}
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - warningCodes: []
+    - data: null
+    - recordId: ''
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: true
+    - dataArray: []
+    - cacheKeyTtl: ''
+    - filterBy: ''
+    - databaseHostOverride: ''
+    - metadata: null
+    - editorMode: sql
+    - actionType: ''
+    - changesetObject: ''
+    - shouldUseLegacySql: false
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - databaseNameOverride: ''
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: ''
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - enableBulkUpdates: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - bulkUpdatePrimaryKey: ''
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events: []
+    - tableName: ''
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - databaseUsernameOverride: ''
+    - shouldEnableBatchQuerying: false
+    - doNotThrowOnNoOp: false
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2022-12-15T14:53:46.196Z
+folder: BoM_Materials

@@ -1,0 +1,61 @@
+id: prepUpstreamCount
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        const rawMaterials = {{getSMwithLevel.data.sort((a,b) => b.level -
+        a.level)}}
+
+        const allComponents = {{getComponentRaw.data.sort((a,b) => b.level -
+        a.level)}}
+
+
+        // Min Max Levels not currently being used
+
+        const maxLevel = _.max(rawMaterials.map((val) => val.level))
+
+        const minLevel = 0
+
+
+
+
+
+        const final = rawMaterials.map((val) => {
+
+        let a = 0
+
+        const initComp = allComponents.find((x) => (x.material_code ===
+        val.material_code && x.level === val.level))
+
+
+        deliveryCount = initComp.delivery_count ?
+        parseInt(initComp.delivery_count) : 0
+
+        a = deliveryCount;
+
+          // Gross if statement to recursively capture the parent counts. Need to replace with a loop
+        if(initComp.parent_component_id) {
+          parentComp = allComponents.find((x) => x.component_id === initComp.parent_component_id)
+          if(parentComp) {
+              let count2 = parentComp.delivery_count ? parseInt(parentComp.delivery_count) : 0
+              a = a + count2
+              parentComp2 = allComponents.find((x) => x.component_id === parentComp.parent_component_id)
+              if(parentComp2) {
+                let count3 = parentComp2.delivery_count ? parseInt(parentComp2.delivery_count) : 0
+                a = a + count3
+              }
+              }
+        }
+
+          
+          return {
+            id: val.scenario_material_id,
+            count: a
+          }
+        })
+          
+        return final
+    - value: ''
+createdAt: 2023-01-04T18:21:39.185Z
+folder: jp_Scratch

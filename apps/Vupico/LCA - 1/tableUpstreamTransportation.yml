@@ -1,0 +1,452 @@
+id: tableUpstreamTransportation
+type: widget
+subtype: TableWidget
+template:
+  ordered:
+    - showCustomButton: false
+    - sortMappedValue:
+        ordered: []
+    - _filteredSortedRenderedDataWithTypes: null
+    - heightType: fixed
+    - normalizedData: null
+    - rowHeight: standard
+    - saveChangesDisabled: ''
+    - columnTypeProperties:
+        ordered:
+          - vendor_code:
+              ordered:
+                - optionData: '{{ listVendor.data }}'
+                - colorMode: auto
+                - allowCustomValue: true
+                - optionLabels: '{{item.vendor_code}}'
+                - optionColors:
+                    array: []
+                - optionValues: '{{item.vendor_code}}'
+          - to_plant_code:
+              ordered:
+                - optionData: '{{ listPlant.data }}'
+                - colorMode: auto
+                - allowCustomValue: true
+                - optionLabels: '{{item.name + '' ('' + item.plant_code + '')''}}'
+                - optionColors:
+                    array: []
+                - optionValues: '{{item.plant_code}}'
+          - from_vendor_code:
+              ordered:
+                - optionData: '{{ listVendor.data }}'
+                - colorMode: auto
+                - allowCustomValue: true
+                - optionLabels: '{{item.name + '' ('' + item.vendor_code + '')''}}'
+                - optionColors:
+                    array: []
+                - optionValues: '{{item.vendor_code}}'
+          - shipping_type_code:
+              ordered:
+                - optionData: '{{ listShippingType.data }}'
+                - colorMode: auto
+                - allowCustomValue: true
+                - optionLabels: '{{item.label + '' ('' + item.shipping_type_code + '')''}}'
+                - optionColors:
+                    array: []
+                - optionValues: '{{item.shipping_type_code}}'
+          - distance:
+              ordered:
+                - showSeparators: false
+                - padDecimal: true
+          - total_cost:
+              ordered:
+                - showSeparators: true
+                - currency: USD
+                - padDecimal: true
+    - columnWidths:
+        - object:
+            id: from_vendor_code
+            value: 153
+        - object:
+            id: shipping_type_code
+            value: 241
+        - object:
+            id: country_code
+            value: 107
+        - object:
+            id: co2
+            value: 137
+        - object:
+            id: reporting_unit
+            value: 116
+        - object:
+            id: acidification
+            value: 164
+        - object:
+            id: distance
+            value: 107
+        - object:
+            id: water_use
+            value: 126
+        - object:
+            id: terrestrial_eutrophication
+            value: 235
+        - object:
+            id: ecotoxicity
+            value: 193
+        - object:
+            id: to_plant_code
+            value: 244
+        - object:
+            id: freshwater_eutrophication
+            value: 157
+        - object:
+            id: plant_name
+            value: 169.00000762939453
+        - object:
+            id: vendor_name
+            value: 172.00000762939453
+    - showSummaryFooter: false
+    - disableRowSelectInteraction: false
+    - columnWidthsMobile: []
+    - hasNextAfterCursor: ''
+    - columnTypeSpecificExtras:
+        ordered: []
+    - onRowAdded: ''
+    - columnHeaderNames:
+        ordered:
+          - photochemical_ozone: >-
+              Photochemical Ozone
+              ({{UpstreamTransportationWithTotals.value.photochemical_ozone_unit[0]}})
+          - acidification: >-
+              Acidification
+              ({{UpstreamTransportationWithTotals.value.acidification_unit[0]}})
+          - shipping_type_code: Shipping Type
+          - bio_diversity: >-
+              Bio Diversity
+              ({{UpstreamTransportationWithTotals.value.bio_diversity_unit[0]}})
+          - vendor_name: Vendor Name
+          - material_name: Material
+          - material_code: Material Code
+          - to_plant_code: Destination Plant
+          - co2: Co 2 ({{UpstreamTransportationWithTotals.value.co2_unit[0]}})
+          - ecotoxicity: >-
+              Ecotoxicity
+              ({{UpstreamTransportationWithTotals.value.ecotoxicity_unit[0]}})
+          - human_toxicity_non_cancer: >-
+              Human Toxicity Non Cancer
+              ({{UpstreamTransportationWithTotals.value.human_toxicity_non_cancer_unit[0]}})
+          - total_cost: Cost ({{UpstreamTransportationWithTotals.value.currency[i]}})
+          - plant_country_code: Plant Country Code
+          - terrestrial_eutrophication: >-
+              Terrestrial Eutrophication
+              ({{UpstreamTransportationWithTotals.value.terrestrial_eutrophication_unit[0]}})
+          - ionizing_radiation: >-
+              Ionizing Radiation
+              ({{UpstreamTransportationWithTotals.value.ionizing_radiation_unit[0]}})
+          - name: Vendor Name
+          - fossil: Fossil ({{UpstreamTransportationWithTotals.value.fossil_unit[0]}})
+          - vendor_country_code: Vendor Country Code
+          - from_vendor_code: Origin Vendor
+          - particulate_matter: >-
+              Particulate Matter
+              ({{UpstreamTransportationWithTotals.value.particulate_matter_unit[0]}})
+          - land_use: >-
+              Land Use
+              ({{UpstreamTransportationWithTotals.value.land_use_unit[0]}})
+          - distance: >-
+              distance
+              ({{UpstreamTransportationWithTotals.value.distance_unit[0]}})
+          - country_code: Vendor Country
+          - resource_use: >-
+              Resource Use
+              ({{UpstreamTransportationWithTotals.value.resource_use_unit[0]}})
+          - human_toxicity_cancer: >-
+              Human Toxicity Cancer
+              ({{UpstreamTransportationWithTotals.value.human_toxicity_cancer_unit[0]}})
+          - freshwater_eutrophication: >-
+              Freshwater Eutrophication
+              ({{UpstreamTransportationWithTotals.value.freshwater_eutrophication_unit[0]}})
+          - ozone_depletion: >-
+              Ozone Depletion
+              ({{UpstreamTransportationWithTotals.value.ozone_depletion_unit[0]}})
+          - water_use: >-
+              Water Use
+              ({{UpstreamTransportationWithTotals.value.water_use_unit[0]}})
+          - marine_eutrophication: >-
+              Marine Eutrophication
+              ({{UpstreamTransportationWithTotals.value.marine_eutrophication_unit[0]}})
+          - plant_name: Plant Name
+    - alwaysShowPaginator: false
+    - columnColors:
+        ordered:
+          - photochemical_ozone: ''
+          - bio_diversity_unit: ''
+          - acidification: ''
+          - shipping_type_code: ''
+          - plant_code: ''
+          - acidification_unit: ''
+          - records: ''
+          - bio_diversity: ''
+          - vendor_name: ''
+          - photochemical_ozone_unit: ''
+          - material_name: ''
+          - unit: ''
+          - marine_eutrophication_unit: ''
+          - vendor_code: ''
+          - water_use_unit: ''
+          - material_code: ''
+          - acidificationunit: ''
+          - to_plant_code: ''
+          - co2: ''
+          - ecotoxicity: ''
+          - human_toxicity_non_cancer: ''
+          - plant_country_name: ''
+          - total_cost: ''
+          - plant_country_code: ''
+          - terrestrial_eutrophication: ''
+          - co2unit: ''
+          - ionizing_radiation: ''
+          - name: ''
+          - ozone_depletion_unit: ''
+          - vendor_country_name: ''
+          - freshwater_eutrophication_unit: ''
+          - fossil: ''
+          - human_toxicity_cancer_unit: ''
+          - resource_use_unit: ''
+          - vendor_country_code: ''
+          - distance_unit: ''
+          - from_vendor_code: ''
+          - land_use_unit: ''
+          - currency: ''
+          - particulate_matter_unit: ''
+          - material_global_code: ''
+          - particulate_matter: ''
+          - land_use: ''
+          - reporting_unit: ''
+          - pf10: ''
+          - distance: ''
+          - country_code: ''
+          - resource_use: ''
+          - human_toxicity_cancer: ''
+          - pf11: ''
+          - location_code: ''
+          - fossil_unit: ''
+          - pf01: ''
+          - pf12: ''
+          - freshwater_eutrophication: ''
+          - ozone_depletion: ''
+          - pf02: ''
+          - pf13: ''
+          - ionizing_radiation_unit: ''
+          - cost_ratio: ''
+          - terrestrial_eutrophication_unit: ''
+          - pf03: ''
+          - pf14: ''
+          - pf04: ''
+          - pf15: ''
+          - global_element_id: ''
+          - id: ''
+          - human_toxicity_non_cancer_unit: ''
+          - pf05: ''
+          - pf16: ''
+          - ecotoxicity_unit: ''
+          - pf06: ''
+          - pf17: ''
+          - co2_unit: ''
+          - pf07: ''
+          - pf08: ''
+          - water_use: ''
+          - pf09: ''
+          - marine_eutrophication: ''
+          - plant_name: ''
+    - columnFrozenAlignments:
+        ordered: []
+    - allowMultiRowSelect: false
+    - columnFormats:
+        ordered:
+          - vendor_code: SingleTagDataCell
+          - to_plant_code: SingleTagDataCell
+          - from_vendor_code: SingleTagDataCell
+          - shipping_type_code: SingleTagDataCell
+          - distance: NumberDataCell
+          - total_cost: CurrencyDataCell
+    - columnRestrictedEditing:
+        ordered: []
+    - showFilterButton: true
+    - _columnVisibility:
+        ordered:
+          - photochemical_ozone: true
+          - bio_diversity_unit: false
+          - acidification_unit: false
+          - photochemical_ozone_unit: false
+          - marine_eutrophication_unit: false
+          - water_use_unit: false
+          - material_code: false
+          - plant_country_name: false
+          - ozone_depletion_unit: false
+          - vendor_country_name: false
+          - freshwater_eutrophication_unit: false
+          - human_toxicity_cancer_unit: false
+          - resource_use_unit: false
+          - distance_unit: false
+          - land_use_unit: false
+          - currency: false
+          - particulate_matter_unit: false
+          - fossil_unit: false
+          - ionizing_radiation_unit: false
+          - terrestrial_eutrophication_unit: false
+          - global_element_id: false
+          - id: false
+          - human_toxicity_non_cancer_unit: false
+          - ecotoxicity_unit: false
+          - co2_unit: false
+    - _columnSummaryTypes:
+        ordered:
+          - vendor_code: ''
+          - to_plant_code: ''
+          - from_vendor_code: ''
+          - shipping_type_code: ''
+          - distance: sum
+          - total_cost: sum
+    - _columnsWithLegacyBackgroundColor:
+        set: []
+    - showAddRowButton: false
+    - _unfilteredSelectedIndex: null
+    - nextBeforeCursor: ''
+    - columnVisibility:
+        ordered: []
+    - selectedPageIndex: '0'
+    - applyDynamicSettingsToColumnOrder: true
+    - rowColor:
+        array: []
+    - actionButtonColumnName: Actions
+    - resetAfterSave: true
+    - filterStackType: and
+    - downloadRawData: false
+    - showFetchingIndicator: true
+    - serverPaginated: false
+    - data: '{{UpstreamTransportationWithTotals.value}}'
+    - displayedData: null
+    - actionButtons: []
+    - actionButtonSelectsRow: true
+    - selectRowByDefault: true
+    - defaultSortByColumn: ''
+    - paginationOffset: 0
+    - columnAlignment:
+        ordered:
+          - vendor_code: left
+          - to_plant_code: left
+          - from_vendor_code: left
+          - shipping_type_code: left
+          - distance: right
+          - total_cost: right
+    - columnSummaries:
+        object: {}
+    - showBoxShadow: false
+    - sortedDesc: false
+    - customButtonName: ''
+    - columnMappersRenderAsHTML:
+        ordered: []
+    - showRefreshButton: true
+    - pageSize: '20'
+    - useDynamicColumnSettings: false
+    - actionButtonPosition: left
+    - dynamicRowHeights: false
+    - bulkUpdateAction: ''
+    - afterCursor: ''
+    - onCustomButtonPressQueryName: ''
+    - changeSet:
+        object: {}
+    - sortedColumn: ''
+    - _columnSummaryValues:
+        ordered:
+          - vendor_code: ''
+          - to_plant_code: ''
+          - from_vendor_code: ''
+          - shipping_type_code: ''
+          - distance: ''
+          - total_cost: ''
+    - checkboxRowSelect: true
+    - _compatibilityMode: false
+    - showColumnBorders: false
+    - clearSelectionLabel: Clear selection
+    - _renderedDataWithTypes: null
+    - columnAllowOverflow:
+        ordered: []
+    - beforeCursor: ''
+    - serverPaginationType: limitOffsetBased
+    - onRowSelect: ''
+    - showDownloadButton: true
+    - selectedIndex: null
+    - defaultSortDescending: false
+    - _sortedDisplayedDataIndices: null
+    - dynamicColumnSettings: null
+    - events:
+        - ordered:
+            - event: saveChanges
+            - type: datasource
+            - method: trigger
+            - pluginId: updUpstreamTransportation
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - totalRowCount: ''
+    - recordUpdates:
+        array: []
+    - newRow: null
+    - emptyMessage: No rows found
+    - columnEditable:
+        ordered:
+          - vendor_code: true
+          - plant_code: true
+          - to_plant_code: true
+          - from_vendor_code: true
+          - shipping_type_code: true
+          - distance_unit: false
+    - _viewerColumnSummaryTypes:
+        object: {}
+    - filters:
+        array: []
+    - displayedDataIndices: null
+    - disableSorting:
+        ordered: []
+    - columnMappers:
+        ordered:
+          - vendor_code: ''
+          - to_plant_code: ''
+          - from_vendor_code: ''
+          - shipping_type_code: ''
+          - material_name: '{{_.startCase(self)}}'
+    - showClearSelection: false
+    - doubleClickToEdit: true
+    - overflowType: pagination
+    - _reverseSortedDisplayedDataIndices: null
+    - showTableBorder: true
+    - selectedCell:
+        object:
+          index: null
+          data: null
+          columnName: null
+    - columns: []
+    - defaultSelectedRow: first
+    - freezeActionButtonColumns: false
+    - sort: null
+    - _columns: []
+    - sortByRawValue:
+        ordered: []
+    - calculatedColumns: []
+    - selectedRow:
+        object:
+          index: null
+          data: null
+    - showPaginationOnTop: false
+    - _reverseDisplayedDataIndices: null
+    - nextAfterCursor: ''
+    - useCompactMode: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 18.000000000000004
+    height: 9.2
+    width: 12
+createdAt: 2022-12-15T14:59:09.528Z

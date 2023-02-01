@@ -1,0 +1,13 @@
+id: disableQuery
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const a = {{getSingleScenario.data.started_on[0]}}
+
+        // IF it is started, this will return false
+        return a ? false : true;
+    - value: ''
+createdAt: 2023-01-19T14:26:30.405Z
+folder: js
