@@ -1,0 +1,22 @@
+id: lca1
+type: widget
+subtype: GlobalWidget
+template:
+  ordered:
+    - input_product_id: '{{createSimulationModule1.product_id}}'
+    - heightType: auto
+    - showFetchingIndicator: boolean
+    - pageUuid: 6f1b459c-7c87-11ed-b030-f78e12b7af56
+    - name: LCA - 1
+    - input_bill_of_material_id: '{{createSimulationModule1.bill_of_material_id}}'
+    - input_scenario_id: '{{createSimulationModule1.scenario_id}}'
+    - data_output: '{{data_output.value}}'
+    - childNamespace: lca1
+style:
+  ordered: []
+position2:
+  position2:
+    row: 2.3999999999999995
+    height: 7.8
+    width: 12
+createdAt: 2023-01-10T17:41:44.757Z
