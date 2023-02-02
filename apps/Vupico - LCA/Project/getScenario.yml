@@ -29,6 +29,8 @@ template:
         inner join project prj on s.project_id = prj.id
 
         where s.project_id = {{urlparams.projectId}}
+
+        order by s.name asc
     - playgroundQueryUuid: ''
     - playgroundQueryId: null
     - error: null
