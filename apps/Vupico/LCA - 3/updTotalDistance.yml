@@ -10,7 +10,7 @@ template:
         {{formatDataAsArray(getDownstreamTransportation.data).map((val) => ({
           id: val.id,
           total_distance: val.distance,
-          downstream_count: val.downstream_count
+          //downstream_count: val.downstream_count
         }))}}
     - lastReceivedFromResourceAt: null
     - databasePasswordOverride: ''

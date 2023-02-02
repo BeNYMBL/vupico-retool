@@ -4,5 +4,5 @@ subtype: GlobalWidgetProp
 template:
   ordered:
     - value: ''
-    - defaultValue: edb2a23a-a08a-4b51-9e15-48b2456325af
+    - defaultValue: 6082fdb4-d49d-49d5-85c1-65944cbc1442
 createdAt: 2022-12-15T19:37:26.969Z
