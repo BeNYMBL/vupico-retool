@@ -49,7 +49,7 @@ template:
     - isFetching: false
     - changeset: >-
         [{"key":"basic_data","value":"{{payloadBasicData.value}}"},{"key":"name","value":"Edit
-        {{tableMaterials.selectedRow.data.material_name}}"},{"key":"created_by","value":"{{current_user.email}}"},{"key":"created_on","value":"{{moment()}}"}]
+        {{tableMaterials.selectedRow.data.material_name}}"},{"key":"created_by","value":"{{current_user.email}}"},{"key":"created_on","value":"{{moment()}}"},{"key":"material_id","value":"{{tableMaterials.selectedRow.data.id}}"}]
     - rawData: null
     - queryTriggerDelay: '0'
     - resourceTypeOverride: null

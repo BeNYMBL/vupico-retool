@@ -19,6 +19,8 @@ template:
     - query: >-
         SELECT
 
+        m.id,
+
         m.material_name,
 
         m.material_code,
