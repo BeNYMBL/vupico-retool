@@ -41,7 +41,7 @@ template:
               ordered:
                 - showSeparators: true
                 - padDecimal: true
-                - decimalPlaces: '8'
+                - decimalPlaces: '2'
     - columnWidths:
         - object:
             id: material_id
@@ -187,7 +187,7 @@ template:
           - element: SingleTagDataCell
           - material_id: SingleTagDataCell
           - total_cost: CurrencyDataCell
-          - quantity: default
+          - quantity: NumberDataCell
     - columnRestrictedEditing:
         ordered: []
     - showFilterButton: true
@@ -226,7 +226,7 @@ template:
           - element: ''
           - material_id: ''
           - total_cost: sum
-          - quantity: ''
+          - quantity: sum
     - _columnsWithLegacyBackgroundColor:
         set: []
     - showAddRowButton: false
