@@ -25,7 +25,75 @@ template:
     - groupByDropdown: simulation
     - datasourceInputMode: javascript
     - datasourceDataType: array
-    - layout: ''
+    - layout: |-
+        {
+          "title": {
+            "text": "Environmental Footprint Comparison",
+            "font": {
+              "color": "#3D3D3D",
+              "size": 16
+            }
+          },
+          "font": {
+            "family": "Inter",
+            "color": "#979797"
+          },
+          "showlegend": true,
+          "legend": {
+            "xanchor": "left",
+            "orientation": "v",
+            "x": 1.05,
+            "y": 0.5
+          },
+          "margin": {
+            "l": 16,
+            "r": 24,
+            "t": 80,
+            "b": 32,
+            "pad": 2
+          },
+          "hovermode": "closest",
+          "hoverlabel": {
+            "bgcolor": "#000",
+            "bordercolor": "#000",
+            "font": {
+              "color": "#fff",
+              "family": "Inter",
+              "size": 12
+            }
+          },
+          "clickmode": "select+event",
+          "dragmode": "select",
+          "xaxis": {
+            "title": {
+              "text": "",
+              "standoff": 6,
+              "font": {
+                "size": 12
+              }
+            },
+            "type": "-",
+            "tickformat": "",
+            "automargin": true,
+            "fixedrange": true,
+            "gridcolor": "#fff",
+            "zerolinecolor": "#fff"
+          },
+          "yaxis": {
+            "title": {
+              "text": "",
+              "standoff": 6,
+              "font": {
+                "size": 12
+              }
+            },
+            "type": "linear",
+            "tickformat": "",
+            "automargin": true,
+            "fixedrange": true,
+            "zerolinecolor": "#DEDEDE"
+          }
+        }
     - xAxisDropdown: impact
     - data: ''
     - isStackSeriesEnabled: false
@@ -37,7 +105,7 @@ template:
     - xAxisType: default
     - datasourcePluginId: null
     - legendAlignment: right
-    - isLayoutJsonDirty: false
+    - isLayoutJsonDirty: true
     - chartType: bar
     - title: Environmental Footprint Comparison
     - xAxis: '{{formatDataAsObject(environmentalFootprintComparison.value).impact}}'
@@ -57,6 +125,6 @@ position2:
   position2:
     row: 11.4
     col: 2
-    height: 12.8
+    height: 14.200000000000001
     width: 8
 createdAt: 2023-01-19T15:56:55.880Z

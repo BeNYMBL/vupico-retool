@@ -50,7 +50,7 @@ template:
           "legend": {
             "xanchor": "center",
             "x": 0.45,
-            "y": -0.2,
+            "y": -0.25,
             "orientation": "h"
           },
           "margin": {
@@ -75,7 +75,7 @@ template:
           "xaxis": {
             "title": {
               "text": "Simulations",
-              "standoff": 10,
+              "standoff": 0,
               "font": {
                 "size": 12
               }
@@ -229,6 +229,6 @@ style:
 position2:
   position2:
     row: 10.800000000000004
-    height: 12.8
+    height: 14.200000000000001
     width: 2
 createdAt: 2023-01-26T20:17:24.629Z
