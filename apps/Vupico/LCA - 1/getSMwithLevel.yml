@@ -11,7 +11,7 @@ template:
     - databasePasswordOverride: ''
     - queryDisabledMessage: ''
     - successMessage: ''
-    - queryDisabled: '{{disableQuery.value}}'
+    - queryDisabled: 'true'
     - playgroundQuerySaveId: latest
     - resourceNameOverride: ''
     - runWhenModelUpdates: true

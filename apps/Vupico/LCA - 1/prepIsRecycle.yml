@@ -4,6 +4,7 @@ subtype: Function
 template:
   ordered:
     - funcBody: |-
+        return;
         const a = {{getSMwithLevel.data}}
         const b = {{getComponentRaw.data}}
         const c = a.filter((val) => val.level > 1)
