@@ -1,0 +1,145 @@
+id: parseInsertEPRReportDetail
+type: datasource
+subtype: JavascriptQuery
+resourceName: JavascriptQuery
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - lastReceivedFromResourceAt: null
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: ''
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: false
+    - showFailureToaster: true
+    - query: |-
+        let eprData = formatDataAsArray(getEPRDetailReportData.data)
+        let outputArray = []
+
+        let output = eprData.map(x => {
+          
+          //element level
+          let element = x.epr_detail_data.map(ele => {
+            
+            let component = ele.epr_detail_data.bomString.filter(row => row.level != 0).map(com => {
+                return {
+                    'report_month': x.month,
+                    'report_year': x.year,
+                    'product_id': x.product_id,
+                    'material_id': x.material_id,
+                    'material_name': x.material_name,
+                    'material_code': x.material_code,
+                    'base_uom': x.base_uom,
+                    'product_hierarchy': x.product_hierarchy,
+                    'material_type': x.material_type,
+                    'material_group1': x.material_group,
+                    'elem_material_id': ele.epr_detail_data.element,
+                    'elem_material_group1': ele.epr_detail_data.elementGroup,
+                    'elem_material_text': ele.epr_detail_data.materialName,
+                    'elem_material_code': ele.epr_detail_data.elementName,
+                    'total_product_epr_amount': x.total_epr_amount,
+                    'total_element_epr_amount': ele.epr_detail_data.epr_tax_amount_recyclability,
+                    'comp_level_material_code': com.elementName,
+                    'comp_level': com.level,
+                    'comp_level_material_text': com.materialName,
+                    'comp_level_material_group1': com.material_group,
+                    'comp_level_material_id': null,
+                    'report_id': insEPRReportSummary.rawData.result['0'].id,
+                    'epr_tax_currency': ele.epr_detail_data.currency_code
+                  }
+            })
+            return component
+            //return ele
+          
+          
+          })
+          
+          return _.flatten(element)
+
+
+        //product level
+          
+          // return {
+          //   'month': x.month,
+          //   'year': x.year,
+          //   'product_id': x.product_id,
+          //   'material_id': x.material_id,
+          //   'material_name': x.material_name,
+          //   'material_code': x.material_code,
+          //   'base_uom': x.base_uom,
+          //   'product_hierarchy': x.product_hierarchy,
+          //   'material_type': x.material_type,
+          //   'material_group1': x.material_group,
+          //   'bom': x.epr_detail_data.map(detail => detail.epr_detail_data),
+          //   'total_epr_amount': x.total_epr_amount
+          // }
+        })
+
+
+
+        return _.flatten(output)
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - data: null
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: true
+    - cacheKeyTtl: ''
+    - metadata: null
+    - changesetObject: ''
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: ''
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events:
+        - ordered:
+            - event: success
+            - type: datasource
+            - method: trigger
+            - pluginId: insEPRReportDetail
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2023-01-19T15:54:19.485Z
+folder: depreciated

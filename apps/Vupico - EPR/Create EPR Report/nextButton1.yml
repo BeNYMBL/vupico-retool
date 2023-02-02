@@ -1,0 +1,46 @@
+id: nextButton1
+type: widget
+subtype: ButtonWidget2
+template:
+  ordered:
+    - horizontalAlign: stretch
+    - clickable: false
+    - iconAfter: bold/interface-arrows-button-right
+    - submitTargetId: null
+    - hidden: '{{ steppedContainer1.currentViewIndex ==1 }}'
+    - text: Next
+    - showInEditor: false
+    - tooltipText: ''
+    - style:
+        ordered:
+          - label: rgb(40, 56, 130)
+    - styleVariant: outline
+    - submit: false
+    - iconBefore: ''
+    - events:
+        - ordered:
+            - params:
+                ordered:
+                  - wrap: false
+            - event: click
+            - method: showNextVisibleView
+            - pluginId: steppedContainer1
+            - type: widget
+            - waitMs: '0'
+            - waitType: debounce
+    - loading: false
+    - loaderPosition: auto
+    - disabled: >-
+        {{ steppedContainer1.currentViewIndex + 1 ===
+        steppedContainer1.viewKeys.length }}
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: steppedContainer1
+    rowGroup: footer
+    col: 9
+    height: 1
+    width: 3
+createdAt: 2023-01-10T22:22:56.810Z
