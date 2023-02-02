@@ -1,8 +1,0 @@
-id: input_product_id
-type: globalwidgetprop
-subtype: GlobalWidgetProp
-template:
-  ordered:
-    - value: ''
-    - defaultValue: 01dae9e6-7840-4e44-8871-36ff196a8715
-createdAt: 2022-12-15T19:36:29.492Z
