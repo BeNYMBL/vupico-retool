@@ -16,17 +16,8 @@ template:
     - resourceNameOverride: ''
     - runWhenModelUpdates: true
     - showFailureToaster: false
-    - query: >-
+    - query: |
         select * from material m
-
-        inner join (
-
-        select distinct material_id from component c where c.bill_of_material_id
-        = {{input_bill_of_material_id.value}}
-
-        ) as sub1
-
-        on m.id = sub1.material_id
     - playgroundQueryUuid: ''
     - playgroundQueryId: null
     - error: null
