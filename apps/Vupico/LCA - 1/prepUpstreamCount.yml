@@ -4,6 +4,8 @@ subtype: Function
 template:
   ordered:
     - funcBody: >-
+        return
+
         const rawMaterials = {{getSMwithLevel.data.sort((a,b) => b.level -
         a.level)}}
 
