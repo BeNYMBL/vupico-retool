@@ -27,7 +27,7 @@ template:
     - hideLabel: true
     - labelWidth: '33'
     - autoFill: ''
-    - placeholder: Search by Material Code
+    - placeholder: Search by Product Code
     - label: Search by Product Name
     - _validate: false
     - labelWidthUnit: '%'

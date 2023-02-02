@@ -17,9 +17,13 @@ template:
     - runWhenModelUpdates: true
     - showFailureToaster: true
     - query: >
-        select p.id, p.material_id, p.product, m.material_code, m.material_name,
-        m.material_type, m.material_group, p.is_taxable, p.is_new, p.is_demo
-        from product p inner join material m on p.material_id = m.id
+        select p.id, p.material_id, 
+
+        m.product_hierarchy,
+
+        p.product, m.material_code, m.material_name, m.material_type,
+        m.material_group, p.is_taxable, p.is_new, p.is_demo from product p inner
+        join material m on p.material_id = m.id
 
         where m.material_code like {{'%' + inputSearch.value + '%'}}
     - playgroundQueryUuid: ''
