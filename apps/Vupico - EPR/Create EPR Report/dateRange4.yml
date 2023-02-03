@@ -1,0 +1,54 @@
+id: dateRange4
+type: widget
+subtype: DateRangeWidget
+template:
+  ordered:
+    - minDate: ''
+    - readOnly: false
+    - iconAfter: ''
+    - dateFormat: MMM, yyyy
+    - hidden: false
+    - customValidation: ''
+    - hideValidationMessage: false
+    - textBefore: ''
+    - validationMessage: ''
+    - textAfter: ''
+    - showInEditor: false
+    - showClear: false
+    - tooltipText: ''
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value:
+        ordered:
+          - start: ''
+          - end: ''
+    - startPlaceholder: Start (month, year)
+    - labelCaption: ''
+    - maxDate: ''
+    - labelWidth: '33'
+    - label: ''
+    - formattedValue: ''
+    - _validate: false
+    - labelWidthUnit: '%'
+    - invalid: false
+    - iconBefore: bold/interface-calendar-remove
+    - endPlaceholder: End (month, year)
+    - events:
+        ordered: []
+    - textBetween: '-'
+    - loading: false
+    - disabled: false
+    - labelPosition: top
+    - labelWrap: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: container17
+    subcontainer: 19b8b
+    row: 2.2000000000000006
+    height: 1
+    width: 12
+createdAt: 2023-01-10T22:32:07.559Z

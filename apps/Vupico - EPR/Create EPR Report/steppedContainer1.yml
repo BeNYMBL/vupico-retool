@@ -1,0 +1,77 @@
+id: steppedContainer1
+type: widget
+subtype: ContainerWidget2
+template:
+  ordered:
+    - _disabledByIndex:
+        - ''
+        - ''
+    - heightType: auto
+    - currentViewKey: '{{ self.viewKeys[0] }}'
+    - iconByIndex:
+        array: []
+    - clickable: false
+    - _iconByIndex:
+        - ''
+        - ''
+    - hidden: ''
+    - showHeader: true
+    - hoistFetching: true
+    - views:
+        array: []
+    - showInEditor: false
+    - tooltipText: ''
+    - style:
+        ordered:
+          - border: rgb(255, 255, 255)
+    - hiddenByIndex:
+        array: []
+    - _hiddenByIndex:
+        - ''
+        - ''
+    - currentViewIndex: null
+    - _hasMigratedNestedItems: true
+    - transition: none
+    - itemMode: static
+    - _tooltipByIndex:
+        - ''
+        - ''
+    - tooltipByIndex:
+        array: []
+    - showFooter: true
+    - _viewKeys:
+        - General Information
+        - Report Configuration
+    - events:
+        ordered: []
+    - _ids:
+        - 95dea
+        - eaa3d
+    - viewKeys:
+        array: []
+    - iconPositionByIndex:
+        array: []
+    - _iconPositionByIndex:
+        - ''
+        - ''
+    - loading: false
+    - overflowType: scroll
+    - disabled: false
+    - _labels:
+        - ''
+        - ''
+    - disabledByIndex:
+        array: []
+    - maintainSpaceWhenHidden: false
+    - showBody: true
+    - labels:
+        array: []
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 0.6
+    height: 0.2
+    width: 12
+createdAt: 2023-01-10T22:22:55.696Z
