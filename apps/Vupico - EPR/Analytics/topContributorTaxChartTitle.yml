@@ -1,0 +1,25 @@
+id: topContributorTaxChartTitle
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '#### Top Tax Contributor By Country'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: tabbedContainer7
+    rowGroup: header
+    height: 0.8
+    width: 6
+createdAt: 2023-01-10T21:55:46.548Z

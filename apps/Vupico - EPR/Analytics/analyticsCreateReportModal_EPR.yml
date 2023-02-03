@@ -1,0 +1,31 @@
+id: analyticsCreateReportModal_EPR
+type: widget
+subtype: ModalWidget
+template:
+  ordered:
+    - opened: false
+    - modalOverflowType: scroll
+    - hidden: 'true'
+    - onModalClose: ''
+    - modalHeightType: auto
+    - tooltipText: ''
+    - style:
+        ordered:
+          - border-radius: 2px
+          - border-color: rgba(209, 209, 209, 0)
+    - modalHeight: ''
+    - onModalOpen: ''
+    - modalWidth: 50%
+    - closeOnOutsideClick: false
+    - loading: ''
+    - disabled: ''
+    - buttonText: Create New Report
+style:
+  ordered: []
+position2:
+  position2:
+    row: 1
+    col: 9
+    height: 1
+    width: 3
+createdAt: 2023-01-10T22:22:25.793Z

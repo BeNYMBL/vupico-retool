@@ -1,0 +1,26 @@
+id: estimateEPRTaxAmountTableTitle2
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: center
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '#### Estimate EPR Tax Amount'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: analyticsEstimateEPRTaxAmountTable2
+    subcontainer: 93ced
+    row: 0.2
+    height: 0.8
+    width: 12
+createdAt: 2023-01-27T22:59:20.232Z

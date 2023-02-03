@@ -1,0 +1,233 @@
+id: elementEPRTaxTable
+type: widget
+subtype: TableWidget
+template:
+  ordered:
+    - showCustomButton: false
+    - sortMappedValue:
+        ordered: []
+    - _filteredSortedRenderedDataWithTypes: null
+    - heightType: fixed
+    - normalizedData: null
+    - rowHeight: standard
+    - saveChangesDisabled: ''
+    - columnTypeProperties:
+        ordered:
+          - dueDate:
+              ordered:
+                - dateFormat: MMM d, yyyy
+          - total_epr_tax_amount:
+              ordered:
+                - showSeparators: true
+                - currency: USD
+                - padDecimal: true
+          - totalEPRTax:
+              ordered:
+                - showSeparators: true
+                - currency: USD
+                - padDecimal: true
+                - decimalPlaces: '0'
+    - columnWidths:
+        - object:
+            id: id
+            value: 102.4000015258789
+    - showSummaryFooter: false
+    - disableRowSelectInteraction: false
+    - columnWidthsMobile: []
+    - hasNextAfterCursor: ''
+    - columnTypeSpecificExtras:
+        ordered: []
+    - onRowAdded: ''
+    - columnHeaderNames:
+        ordered:
+          - dueDate: '{{''due Date''.toUpperCase()}}'
+          - projectName: '{{''Project Name''.toUpperCase()}}'
+          - c02: '{{''Co2 value in Kg''.toUpperCase()}}'
+          - totalEPRTax: TAX PAID
+          - sum: TAX PAID
+          - name: Co2 Value in Kg
+          - product: PRODUCT
+          - status: '{{''status''.toUpperCase()}}'
+          - country: COUNTRY
+          - emmisions: '{{''Highest Emission BY Life Stage''.toUpperCase()}}'
+          - id: Project Name
+          - element: ELEMENT
+          - total_epr_tax_amount: TAX AMOUNT
+    - alwaysShowPaginator: false
+    - columnColors:
+        ordered:
+          - '': ''
+          - month: ''
+          - dueDate: ''
+          - ProjectName: ''
+          - projectName: ''
+          - e: ''
+          - c02: ''
+          - proje: ''
+          - totalEPRTax: ''
+          - sum: ''
+          - name: ''
+          - Name: ''
+          - sales: ''
+          - product: ''
+          - Project Name: ''
+          - status: ''
+          - rojectName: ''
+          - country: ''
+          - project: ''
+          - emmisions: ''
+          - id: ''
+          - element: ''
+          - email: ''
+          - year: ''
+          - total_epr_tax_amount: ''
+    - columnFrozenAlignments:
+        ordered: []
+    - allowMultiRowSelect: false
+    - columnFormats:
+        ordered:
+          - dueDate: DateDataCell
+          - total_epr_tax_amount: CurrencyDataCell
+          - totalEPRTax: CurrencyDataCell
+    - columnRestrictedEditing:
+        ordered: []
+    - showFilterButton: false
+    - _columnVisibility:
+        ordered:
+          - emmisions: false
+          - status: false
+          - dueDate: false
+          - year: false
+          - month: false
+    - _columnSummaryTypes:
+        ordered:
+          - dueDate: ''
+          - total_epr_tax_amount: sum
+          - totalEPRTax: sum
+    - _columnsWithLegacyBackgroundColor:
+        set: []
+    - showAddRowButton: false
+    - _unfilteredSelectedIndex: null
+    - nextBeforeCursor: ''
+    - columnVisibility:
+        ordered: []
+    - selectedPageIndex: '0'
+    - applyDynamicSettingsToColumnOrder: true
+    - rowColor:
+        array: []
+    - actionButtonColumnName: Actions
+    - resetAfterSave: true
+    - filterStackType: and
+    - downloadRawData: false
+    - showFetchingIndicator: true
+    - serverPaginated: false
+    - data: '{{ getElementEPRTax.data }}'
+    - displayedData: null
+    - actionButtons: []
+    - actionButtonSelectsRow: true
+    - selectRowByDefault: true
+    - defaultSortByColumn: null
+    - paginationOffset: 0
+    - columnAlignment:
+        ordered:
+          - dueDate: left
+          - total_epr_tax_amount: center
+          - country: center
+          - product: center
+          - sum: center
+          - element: center
+          - totalEPRTax: center
+    - columnSummaries:
+        object: {}
+    - showBoxShadow: false
+    - sortedDesc: false
+    - customButtonName: ''
+    - columnMappersRenderAsHTML:
+        ordered: []
+    - showRefreshButton: false
+    - pageSize: '20'
+    - useDynamicColumnSettings: false
+    - style:
+        ordered:
+          - headerBackground: rgb(255, 255, 255)
+          - border: rgb(236, 236, 236)
+    - actionButtonPosition: left
+    - dynamicRowHeights: false
+    - bulkUpdateAction: ''
+    - afterCursor: ''
+    - onCustomButtonPressQueryName: ''
+    - changeSet:
+        object: {}
+    - sortedColumn: ''
+    - _columnSummaryValues:
+        ordered:
+          - dueDate: ''
+          - total_epr_tax_amount: ''
+          - totalEPRTax: ''
+    - checkboxRowSelect: true
+    - _compatibilityMode: false
+    - showColumnBorders: false
+    - clearSelectionLabel: Clear selection
+    - _renderedDataWithTypes: null
+    - columnAllowOverflow:
+        ordered: []
+    - beforeCursor: ''
+    - serverPaginationType: limitOffsetBased
+    - onRowSelect: ''
+    - showDownloadButton: false
+    - selectedIndex: null
+    - defaultSortDescending: true
+    - _sortedDisplayedDataIndices: null
+    - dynamicColumnSettings: null
+    - totalRowCount: ''
+    - recordUpdates:
+        array: []
+    - newRow: null
+    - emptyMessage: No rows found
+    - columnEditable:
+        ordered: []
+    - _viewerColumnSummaryTypes:
+        object: {}
+    - filters:
+        array: []
+    - displayedDataIndices: null
+    - disableSorting:
+        ordered: []
+    - columnMappers:
+        ordered: []
+    - showClearSelection: false
+    - doubleClickToEdit: true
+    - overflowType: scroll
+    - _reverseSortedDisplayedDataIndices: null
+    - showTableBorder: false
+    - selectedCell:
+        object:
+          index: null
+          data: null
+          columnName: null
+    - columns: []
+    - defaultSelectedRow: first
+    - freezeActionButtonColumns: false
+    - sort: null
+    - _columns: []
+    - sortByRawValue:
+        ordered: []
+    - calculatedColumns: []
+    - selectedRow:
+        object:
+          index: null
+          data: null
+    - showPaginationOnTop: false
+    - _reverseDisplayedDataIndices: null
+    - nextAfterCursor: ''
+    - useCompactMode: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: analyticsElementEPRTaxTable
+    subcontainer: 93ced
+    row: 0.8
+    height: 8
+    width: 12
+createdAt: 2023-01-27T23:21:16.417Z

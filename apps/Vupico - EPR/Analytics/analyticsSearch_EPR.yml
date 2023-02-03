@@ -1,0 +1,61 @@
+id: analyticsSearch_EPR
+type: widget
+subtype: TextInputWidget2
+template:
+  ordered:
+    - spellCheck: false
+    - readOnly: false
+    - iconAfter: ''
+    - showCharacterCount: false
+    - autoComplete: false
+    - maxLength: null
+    - hidden: 'true'
+    - customValidation: ''
+    - patternType: ''
+    - hideValidationMessage: false
+    - textBefore: ''
+    - validationMessage: ''
+    - textAfter: ''
+    - showInEditor: false
+    - showClear: false
+    - pattern: ''
+    - tooltipText: ''
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: ''
+    - style:
+        ordered:
+          - border: rgb(255, 255, 255)
+          - background: rgb(255, 255, 255)
+          - sharedLabel: rgb(0, 0, 0)
+          - text: rgb(0, 0, 0)
+          - borderRadius: 4px
+          - adornmentBackground: rgb(255, 255, 255)
+    - labelCaption: ''
+    - labelWidth: '20'
+    - autoFill: ''
+    - placeholder: Search ...
+    - label: ''
+    - _validate: false
+    - labelWidthUnit: '%'
+    - invalid: false
+    - iconBefore: bold/interface-search
+    - minLength: null
+    - inputTooltip: ''
+    - events:
+        ordered: []
+    - autoCapitalize: none
+    - loading: false
+    - disabled: false
+    - labelPosition: left
+    - labelWrap: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    col: 7
+    height: 1
+    width: 3
+createdAt: 2023-01-10T22:00:39.462Z

@@ -1,0 +1,60 @@
+id: elementEPRTaxChart
+type: widget
+subtype: PlotlyChartWidget
+template:
+  ordered:
+    - dataseries:
+        ordered:
+          - '0':
+              ordered:
+                - label: TAX PAID
+                - datasource: >-
+                    {{formatDataAsObject(getElementEPRTax.data
+                    )['totalEPRTax']}}
+                - chartType: bar
+                - aggregationType: sum
+                - color: '#033663'
+                - colors:
+                    ordered: []
+                - visible: true
+                - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
+    - isDataTemplateDirty: true
+    - datasource: ''
+    - isJsonTemplateDirty: false
+    - groupByDropdown: ''
+    - datasourceInputMode: javascript
+    - datasourceDataType: array
+    - layout: ''
+    - xAxisDropdown: element
+    - data: ''
+    - isStackSeriesEnabled: false
+    - xAxisTickFormat: ''
+    - skipDatasourceUpdate: false
+    - datasourceJS: '{{getElementEPRTax.data }}'
+    - yAxisTickFormat: ''
+    - datasourcePluginType: null
+    - xAxisType: default
+    - datasourcePluginId: null
+    - legendAlignment: bottom
+    - isLayoutJsonDirty: false
+    - chartType: bar
+    - title: ''
+    - xAxis: '{{formatDataAsObject(getElementEPRTax.data ).element}}'
+    - groupByMode: dropdown
+    - onPointSelectQuery: ''
+    - xAxisMode: dropdown
+    - shouldShowLegend: false
+    - yAxisTitle: ''
+    - selectedPoints:
+        array: []
+    - xAxisTitle: ''
+    - groupByJS: ''
+style:
+  ordered: []
+position2:
+  position2:
+    container: tabbedContainer9
+    subcontainer: 268fc
+    height: 7
+    width: 12
+createdAt: 2023-01-27T23:29:31.950Z
