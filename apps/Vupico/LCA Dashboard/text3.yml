@@ -10,7 +10,7 @@ template:
     - showInEditor: false
     - verticalAlign: center
     - tooltipText: ''
-    - value: '#### Hot Spot Analysis'
+    - value: '#### Active Projects'
     - disableMarkdown: false
     - overflowType: scroll
     - maintainSpaceWhenHidden: false
