@@ -3,14 +3,15 @@ type: widget
 subtype: GlobalWidget
 template:
   ordered:
-    - showFetchingIndicator: boolean
     - heightType: auto
-    - name: Comparison_Scenario_Card
-    - pageUuid: 590e195a-96ae-11ed-8c3f-4b46c79e4384
-    - childNamespace: comparisonScenarioCard2
     - input_scenario_name: '{{getSingleScenario2.data.name}}'
+    - hidden: 'true'
+    - showFetchingIndicator: boolean
+    - pageUuid: 590e195a-96ae-11ed-8c3f-4b46c79e4384
+    - name: Comparison_Scenario_Card
     - input_scenario_id: '{{getSingleScenario2.data.id}}'
     - input_project_id: '{{urlparams.projectId}}'
+    - childNamespace: comparisonScenarioCard2
 style:
   ordered: []
 position2:
