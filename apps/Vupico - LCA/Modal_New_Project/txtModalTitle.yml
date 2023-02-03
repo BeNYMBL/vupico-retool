@@ -10,7 +10,7 @@ template:
     - showInEditor: false
     - verticalAlign: center
     - tooltipText: ''
-    - value: '#### Create New Project'
+    - value: '#### {{input_button_label.value}}'
     - disableMarkdown: false
     - overflowType: scroll
     - maintainSpaceWhenHidden: false
