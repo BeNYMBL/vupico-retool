@@ -1,0 +1,13 @@
+id: getEPRReportSummary_ByCountry
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        // Tip: assign your external references to variables instead of chaining
+        off the curly brackets.
+
+
+        return {{ formatDataAsArray(getEPRReportSummary.data) }}
+    - value: ''
+createdAt: 2023-01-20T01:05:54.492Z

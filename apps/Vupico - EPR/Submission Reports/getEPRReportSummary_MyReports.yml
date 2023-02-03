@@ -1,0 +1,14 @@
+id: getEPRReportSummary_MyReports
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        // Tip: assign your external references to variables instead of chaining
+        off the curly brackets.
+
+
+        return {{ formatDataAsArray(getEPRReportSummary.data).filter(x =>
+        x.created_by == current_user.email )}}
+    - value: ''
+createdAt: 2023-01-20T00:59:51.608Z
