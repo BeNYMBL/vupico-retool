@@ -9,7 +9,7 @@ template:
     - isHiddenOnMobile: false
     - style:
         ordered:
-          - canvas: rgba(238, 245, 255, 0)
+          - canvas: rgb(244, 245, 246)
 style:
   ordered: []
 createdAt: 2023-01-10T21:21:48.477Z
