@@ -1,8 +1,0 @@
-id: input_button_label
-type: globalwidgetprop
-subtype: GlobalWidgetProp
-template:
-  ordered:
-    - value: ''
-    - defaultValue: Create Project
-createdAt: 2023-01-11T14:02:25.709Z

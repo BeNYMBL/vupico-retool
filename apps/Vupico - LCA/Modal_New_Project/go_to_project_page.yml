@@ -1,9 +1,0 @@
-id: go_to_project_page
-type: globalwidgetprop
-subtype: GlobalWidgetProp
-template:
-  ordered:
-    - value: ''
-    - defaultValue: 'true'
-    - description: true/fals
-createdAt: 2023-01-11T14:42:50.058Z
