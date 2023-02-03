@@ -1,0 +1,98 @@
+id: getEPRTax_byElement
+type: datasource
+subtype: JavascriptQuery
+resourceName: JavascriptQuery
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - lastReceivedFromResourceAt: null
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: ''
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: false
+    - showFailureToaster: true
+    - query: |-
+        let eprDetailData = getEPRDetail.data.epr_detail_data
+
+        let collectDetailData = []
+        eprDetailData.forEach((groupedDetail) => {
+          groupedDetail.forEach((elementDetail) =>{
+            collectDetailData.push(elementDetail.epr_detail_data)
+          })
+        })
+
+        let flatDetailData = collectDetailData.flat(Infinity)
+
+        //console.log('flatDetailData', flatDetailData)
+
+        let groupedData = _.groupBy(flatDetailData, 'materialName')
+
+        let outArr = []
+        for (const materialName in groupedData) {
+          let totalTax_byElement = groupedData[materialName].reduce((acc, obj) => {
+            return acc + obj.epr_tax_amount;
+          }, 0);
+          let outObject = {
+            element: materialName, 
+            totalEPRTax: _.round(totalTax_byElement)
+          }
+          outArr.push(outObject)
+        }
+
+        return outArr.sort((a,b) => a.totalEPRTax - b.totalEPRTax).slice(0,5)
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - data: null
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: false
+    - cacheKeyTtl: ''
+    - metadata: null
+    - changesetObject: ''
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: ''
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events: []
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2023-01-19T16:09:25.192Z
+folder: charts

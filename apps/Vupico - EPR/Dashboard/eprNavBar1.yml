@@ -1,0 +1,20 @@
+id: eprNavBar1
+type: widget
+subtype: GlobalWidget
+template:
+  ordered:
+    - showFetchingIndicator: boolean
+    - heightType: auto
+    - name: EPR Nav Bar
+    - pageUuid: c678687e-912c-11ed-83dc-8f3c2d7d7b07
+    - childNamespace: eprNavBar1
+    - hidden: '{{ navbar1.pageUuid != ''33579386-5c74-11ed-8186-1fa1b9abbbb4'' }}'
+style:
+  ordered: []
+position2:
+  position2:
+    subcontainer: header
+    row: 0.19999999999999996
+    height: 2.4
+    width: 12
+createdAt: 2023-01-10T21:24:54.223Z

@@ -1,0 +1,75 @@
+id: EPRTax_thisYearChart
+type: widget
+subtype: PlotlyChartWidget
+template:
+  ordered:
+    - dataseries:
+        ordered:
+          - '0':
+              ordered:
+                - label: Estimate EPR Tax Amount
+                - datasource: >-
+                    {{ getEPRTax_byCountry_thisYear.data
+                    ['total_epr_tax_amount']}}
+                - chartType: bar
+                - aggregationType: sum
+                - color: null
+                - colors:
+                    ordered:
+                      - '0': '#3791d3'
+                      - '1': '#3791d3'
+                - visible: true
+                - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
+          - '1':
+              ordered:
+                - label: Sale Amount
+                - datasource: '{{ getEPRTax_byCountry_thisYear.data [''total_sales'']}}'
+                - chartType: bar
+                - aggregationType: sum
+                - color: null
+                - colors:
+                    ordered:
+                      - '0': '#E30'
+                      - '1': '#E30'
+                - visible: true
+                - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
+    - isDataTemplateDirty: true
+    - datasource: ''
+    - isJsonTemplateDirty: false
+    - groupByDropdown: country
+    - datasourceInputMode: javascript
+    - datasourceDataType: object
+    - layout: ''
+    - xAxisDropdown: country
+    - data: ''
+    - isStackSeriesEnabled: false
+    - xAxisTickFormat: ''
+    - skipDatasourceUpdate: false
+    - datasourceJS: '{{ getEPRTax_byCountry_thisYear.data }}'
+    - yAxisTickFormat: ''
+    - datasourcePluginType: null
+    - xAxisType: default
+    - datasourcePluginId: null
+    - legendAlignment: bottom
+    - isLayoutJsonDirty: false
+    - chartType: bar
+    - title: ''
+    - xAxis: '{{ getEPRTax_byCountry_thisYear.data .country}}'
+    - groupByMode: dropdown
+    - onPointSelectQuery: ''
+    - xAxisMode: dropdown
+    - shouldShowLegend: false
+    - yAxisTitle: ''
+    - selectedPoints:
+        array: []
+    - xAxisTitle: ''
+    - groupByJS: '{{ getEPRTax_byCountry_thisYear.data [''country'']}}'
+style:
+  ordered: []
+position2:
+  position2:
+    container: EPRTax_thisYear
+    subcontainer: ec62c
+    height: 4.8
+    width: 12
+createdAt: 2023-01-17T15:22:23.992Z

@@ -1,0 +1,25 @@
+id: text13
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: Due Date **{{ getReportTimelines.data.next_due_date[i] }}**
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: listView1
+    row: 1.2
+    height: 0.6
+    width: 11
+createdAt: 2023-01-18T12:50:21.793Z
