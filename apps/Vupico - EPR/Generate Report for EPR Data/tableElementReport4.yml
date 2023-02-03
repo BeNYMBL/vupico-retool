@@ -1,0 +1,260 @@
+id: tableElementReport4
+type: widget
+subtype: TableWidget
+template:
+  ordered:
+    - showCustomButton: false
+    - sortMappedValue:
+        ordered: []
+    - _filteredSortedRenderedDataWithTypes: null
+    - heightType: fixed
+    - normalizedData: null
+    - rowHeight: standard
+    - saveChangesDisabled: ''
+    - columnTypeProperties:
+        ordered:
+          - element:
+              ordered:
+                - optionData: '{{ listComponentMaterial.data }}'
+                - colorMode: auto
+                - allowCustomValue: true
+                - optionLabels: '{{item.material_code}}'
+                - optionColors: []
+                - optionValues: '{{item.id}}'
+          - Custom Column 4:
+              ordered:
+                - optionData: '{{ currentColumn }}'
+                - colorMode: auto
+                - allowCustomValue: true
+                - optionLabels: []
+                - optionColors: []
+                - optionValues: []
+          - productid:
+              ordered:
+                - optionData: '{{ listBillOfMaterial.data }}'
+                - colorMode: auto
+                - allowCustomValue: true
+                - optionLabels: ''
+                - optionColors:
+                    array: []
+                - optionValues: ''
+          - amount:
+              ordered:
+                - showSeparators: true
+                - currency: USD
+                - padDecimal: true
+          - year:
+              ordered:
+                - showSeparators: false
+                - padDecimal: true
+    - columnWidths: []
+    - showSummaryFooter: false
+    - disableRowSelectInteraction: false
+    - columnWidthsMobile: []
+    - hasNextAfterCursor: ''
+    - columnTypeSpecificExtras:
+        ordered: []
+    - onRowAdded: ''
+    - columnHeaderNames:
+        ordered:
+          - Custom Column 4: uom
+    - alwaysShowPaginator: false
+    - columnColors:
+        ordered:
+          - month: ''
+          - tax_currency: ''
+          - local_currency: ''
+          - productid: ''
+          - quantity: ''
+          - name: ''
+          - sales: ''
+          - stateid: ''
+          - valid_from: ''
+          - state: ''
+          - countryid: ''
+          - uom: ''
+          - tax_rate: ''
+          - Custom Column 1: ''
+          - country: ''
+          - Custom Column 2: ''
+          - amount: ''
+          - Custom Column 3: ''
+          - global_element_id: ''
+          - id: ''
+          - element: ''
+          - email: ''
+          - year: ''
+          - valid_to: ''
+    - columnFrozenAlignments:
+        ordered: []
+    - allowMultiRowSelect: false
+    - columnFormats:
+        ordered:
+          - element: SingleTagDataCell
+          - Custom Column 4: SingleTagDataCell
+          - productid: SingleTagDataCell
+          - amount: CurrencyDataCell
+          - year: NumberDataCell
+    - columnRestrictedEditing:
+        ordered: []
+    - showFilterButton: true
+    - _columnVisibility:
+        ordered:
+          - Custom Column 3: false
+          - id: false
+          - productid: false
+          - countryid: false
+          - stateid: false
+          - local_currency: false
+          - uom: true
+    - _columnSummaryTypes:
+        ordered:
+          - element: ''
+          - Custom Column 4: ''
+          - productid: ''
+          - amount: sum
+          - year: sum
+    - _columnsWithLegacyBackgroundColor:
+        set: []
+    - showAddRowButton: false
+    - _unfilteredSelectedIndex: null
+    - nextBeforeCursor: ''
+    - columnVisibility:
+        ordered: []
+    - selectedPageIndex: '0'
+    - applyDynamicSettingsToColumnOrder: true
+    - rowColor:
+        array: []
+    - actionButtonColumnName: Actions
+    - resetAfterSave: true
+    - filterStackType: and
+    - downloadRawData: false
+    - showFetchingIndicator: true
+    - serverPaginated: false
+    - data: '{{ getEPRTaxing.data }}'
+    - displayedData: null
+    - actionButtons: []
+    - actionButtonSelectsRow: true
+    - selectRowByDefault: true
+    - defaultSortByColumn: ''
+    - paginationOffset: 0
+    - columnAlignment:
+        ordered:
+          - element: left
+          - Custom Column 4: left
+          - productid: left
+          - amount: right
+          - year: right
+    - columnSummaries:
+        object: {}
+    - showBoxShadow: false
+    - sortedDesc: false
+    - customButtonName: ''
+    - columnMappersRenderAsHTML:
+        ordered: []
+    - showRefreshButton: true
+    - pageSize: '20'
+    - useDynamicColumnSettings: false
+    - actionButtonPosition: left
+    - dynamicRowHeights: false
+    - bulkUpdateAction: ''
+    - afterCursor: ''
+    - onCustomButtonPressQueryName: ''
+    - changeSet:
+        object: {}
+    - sortedColumn: ''
+    - _columnSummaryValues:
+        ordered:
+          - element: ''
+          - Custom Column 4: ''
+          - productid: ''
+          - amount: ''
+          - year: ''
+    - checkboxRowSelect: true
+    - _compatibilityMode: false
+    - showColumnBorders: false
+    - clearSelectionLabel: Clear selection
+    - _renderedDataWithTypes: null
+    - columnAllowOverflow:
+        ordered: []
+    - beforeCursor: ''
+    - serverPaginationType: limitOffsetBased
+    - onRowSelect: ''
+    - showDownloadButton: true
+    - selectedIndex: null
+    - defaultSortDescending: false
+    - _sortedDisplayedDataIndices: null
+    - dynamicColumnSettings: null
+    - totalRowCount: ''
+    - recordUpdates:
+        array: []
+    - newRow: null
+    - emptyMessage: No rows found
+    - columnEditable:
+        ordered:
+          - Custom Column 1: true
+          - Custom Column 2: false
+          - Custom Column 3: false
+          - element: true
+          - productid: true
+    - _viewerColumnSummaryTypes:
+        object: {}
+    - filters:
+        array: []
+    - displayedDataIndices: null
+    - disableSorting:
+        ordered: []
+    - columnMappers:
+        ordered:
+          - element: ''
+          - Custom Column 4: ''
+          - productid: ''
+    - showClearSelection: false
+    - doubleClickToEdit: true
+    - overflowType: scroll
+    - _reverseSortedDisplayedDataIndices: null
+    - showTableBorder: true
+    - selectedCell:
+        object:
+          index: null
+          data: null
+          columnName: null
+    - columns: []
+    - defaultSelectedRow: first
+    - freezeActionButtonColumns: false
+    - sort: null
+    - _columns:
+        - Custom Column 3
+        - country
+        - state
+        - quantity
+        - id
+        - global_element_id
+        - valid_from
+        - valid_to
+        - tax_currency
+        - tax_rate
+        - uom
+    - sortByRawValue:
+        ordered: []
+    - calculatedColumns:
+        - Custom Column 1
+        - Custom Column 2
+        - Custom Column 3
+    - selectedRow:
+        object:
+          index: null
+          data: null
+    - showPaginationOnTop: false
+    - _reverseDisplayedDataIndices: null
+    - nextAfterCursor: ''
+    - useCompactMode: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerElementReport4
+    subcontainer: 2dcb4
+    height: 8
+    width: 12
+createdAt: 2022-11-15T23:43:11.207Z

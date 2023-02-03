@@ -1,0 +1,239 @@
+id: tableElementReport5
+type: widget
+subtype: TableWidget
+template:
+  ordered:
+    - showCustomButton: false
+    - sortMappedValue:
+        ordered: []
+    - _filteredSortedRenderedDataWithTypes: null
+    - heightType: fixed
+    - normalizedData: null
+    - rowHeight: standard
+    - saveChangesDisabled: ''
+    - columnTypeProperties:
+        ordered:
+          - element:
+              ordered:
+                - optionData: '{{ listComponentMaterial.data }}'
+                - colorMode: auto
+                - allowCustomValue: true
+                - optionLabels: '{{item.material_code}}'
+                - optionColors: []
+                - optionValues: '{{item.id}}'
+          - Custom Column 4:
+              ordered:
+                - optionData: '{{ currentColumn }}'
+                - colorMode: auto
+                - allowCustomValue: true
+                - optionLabels: []
+                - optionColors: []
+                - optionValues: []
+          - epr_tax_amount:
+              ordered:
+                - showSeparators: true
+                - currency: '{{ currentRow.currency_code }}'
+                - padDecimal: true
+    - columnWidths:
+        - object:
+            id: element
+            value: 140.78131103515625
+        - object:
+            id: materialName
+            value: 105
+    - showSummaryFooter: false
+    - disableRowSelectInteraction: false
+    - columnWidthsMobile: []
+    - hasNextAfterCursor: ''
+    - columnTypeSpecificExtras:
+        ordered: []
+    - onRowAdded: ''
+    - columnHeaderNames:
+        ordered:
+          - Custom Column 4: uom
+          - elementGroup: Element Group
+          - materialName: Element Name
+          - element: Element
+          - epr_tax_amount: EPR Tax Amount
+    - alwaysShowPaginator: false
+    - columnColors:
+        ordered:
+          - elementGroup: ''
+          - epr_tax_amount: ''
+          - level: ''
+          - elementName: ''
+          - quantity: ''
+          - name: ''
+          - sales: ''
+          - unit_of_measure: ''
+          - bomString: ''
+          - materialName: ''
+          - uom: ''
+          - Custom Column 1: ''
+          - elementIndex: ''
+          - Custom Column 2: ''
+          - Custom Column 3: ''
+          - id: ''
+          - currency_code: ''
+          - element: ''
+          - email: ''
+    - columnFrozenAlignments:
+        ordered: []
+    - allowMultiRowSelect: false
+    - columnFormats:
+        ordered:
+          - element: SingleTagDataCell
+          - Custom Column 4: SingleTagDataCell
+          - epr_tax_amount: CurrencyDataCell
+    - columnRestrictedEditing:
+        ordered: []
+    - showFilterButton: true
+    - _columnVisibility:
+        ordered:
+          - Custom Column 3: false
+          - quantity: false
+          - unit_of_measure: false
+          - currency_code: false
+          - bomString: false
+          - elementIndex: false
+          - level: false
+    - _columnSummaryTypes:
+        ordered:
+          - element: ''
+          - Custom Column 4: ''
+          - epr_tax_amount: sum
+    - _columnsWithLegacyBackgroundColor:
+        set: []
+    - showAddRowButton: false
+    - _unfilteredSelectedIndex: null
+    - nextBeforeCursor: ''
+    - columnVisibility:
+        ordered: []
+    - selectedPageIndex: '0'
+    - applyDynamicSettingsToColumnOrder: true
+    - rowColor:
+        array: []
+    - actionButtonColumnName: Actions
+    - resetAfterSave: true
+    - filterStackType: and
+    - downloadRawData: false
+    - showFetchingIndicator: true
+    - serverPaginated: false
+    - data: '{{getElementSalesEPRTax.data}}'
+    - displayedData: null
+    - actionButtons: []
+    - actionButtonSelectsRow: true
+    - selectRowByDefault: true
+    - defaultSortByColumn: ''
+    - paginationOffset: 0
+    - columnAlignment:
+        ordered:
+          - element: left
+          - Custom Column 4: left
+          - epr_tax_amount: right
+    - columnSummaries:
+        object: {}
+    - showBoxShadow: false
+    - sortedDesc: false
+    - customButtonName: ''
+    - columnMappersRenderAsHTML:
+        ordered: []
+    - showRefreshButton: true
+    - pageSize: '20'
+    - useDynamicColumnSettings: false
+    - actionButtonPosition: left
+    - dynamicRowHeights: false
+    - bulkUpdateAction: ''
+    - afterCursor: ''
+    - onCustomButtonPressQueryName: ''
+    - changeSet:
+        object: {}
+    - sortedColumn: ''
+    - _columnSummaryValues:
+        ordered:
+          - element: ''
+          - Custom Column 4: ''
+          - epr_tax_amount: ''
+    - checkboxRowSelect: true
+    - _compatibilityMode: false
+    - showColumnBorders: false
+    - clearSelectionLabel: Clear selection
+    - _renderedDataWithTypes: null
+    - columnAllowOverflow:
+        ordered: []
+    - beforeCursor: ''
+    - serverPaginationType: limitOffsetBased
+    - onRowSelect: ''
+    - showDownloadButton: false
+    - selectedIndex: null
+    - defaultSortDescending: false
+    - _sortedDisplayedDataIndices: null
+    - dynamicColumnSettings: null
+    - totalRowCount: ''
+    - recordUpdates:
+        array: []
+    - newRow: null
+    - emptyMessage: No rows found
+    - columnEditable:
+        ordered:
+          - Custom Column 1: true
+          - Custom Column 2: false
+          - Custom Column 3: false
+          - element: true
+    - _viewerColumnSummaryTypes:
+        object: {}
+    - filters:
+        array: []
+    - displayedDataIndices: null
+    - disableSorting:
+        ordered: []
+    - columnMappers:
+        ordered:
+          - element: ''
+          - Custom Column 4: ''
+    - showClearSelection: false
+    - doubleClickToEdit: true
+    - overflowType: scroll
+    - _reverseSortedDisplayedDataIndices: null
+    - showTableBorder: true
+    - selectedCell:
+        object:
+          index: null
+          data: null
+          columnName: null
+    - columns: []
+    - defaultSelectedRow: first
+    - freezeActionButtonColumns: false
+    - sort: null
+    - _columns:
+        - Custom Column 3
+        - materialName
+        - element
+        - quantity
+        - unit_of_measure
+        - elementGroup
+        - epr_tax_amount
+        - currency_code
+    - sortByRawValue:
+        ordered: []
+    - calculatedColumns:
+        - Custom Column 1
+        - Custom Column 2
+        - Custom Column 3
+    - selectedRow:
+        object:
+          index: null
+          data: null
+    - showPaginationOnTop: false
+    - _reverseDisplayedDataIndices: null
+    - nextAfterCursor: ''
+    - useCompactMode: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerElementReport5
+    subcontainer: 2dcb4
+    height: 8
+    width: 12
+createdAt: 2022-11-15T23:43:47.874Z

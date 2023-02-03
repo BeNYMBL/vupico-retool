@@ -1,0 +1,30 @@
+id: transformer5
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >+
+        let output = {{ reportDataForBulkInsert.value.filter(x => x.month ==
+        selectFilterMonth.value && x.year == selectFilterYear.value && x.state
+        == selectFilterState.value && x.country == selectFilterCountry.value) }}
+            
+        let arr = []
+
+
+        output = JSON.parse(output[0].epr_detail_data)
+
+
+        _.map(output,function(row) {
+          row.sort = row.elementIndex + '_' + row.epr_detail_data.level
+          arr.push(_.flatten(row.epr_detail_data.bomString))
+          delete row.epr_detail_data.bomString
+          arr.push(row.epr_detail_data)
+          
+        })
+
+
+        return _.flatten(arr)
+
+    - value: ''
+createdAt: 2022-12-23T00:21:24.331Z
+folder: calculateElements

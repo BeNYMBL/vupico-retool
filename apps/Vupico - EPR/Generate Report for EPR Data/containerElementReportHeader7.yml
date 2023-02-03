@@ -1,0 +1,25 @@
+id: containerElementReportHeader7
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '##### Sales - EPR Tax Amount'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerElementReport7
+    rowGroup: header
+    height: 0.8
+    width: 12
+createdAt: 2022-11-15T23:44:29.575Z
