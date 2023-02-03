@@ -1,0 +1,19 @@
+id: listEPRReport_TopCountry
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        let groupedData = {{ parseEPRCurrency.value }}
+
+        return _(groupedData)
+          .groupBy('country_id')
+          .map((report, id) => ({
+            country_id: id,
+            country: report[0].country,
+            sum_epr_tax_amount: _.sumBy(report, 'total_epr_tax_amount'),
+          }))
+          .value().sort((a,b) => b.sum_epr_tax_amount - a.sum_epr_tax_amount)
+    - value: ''
+createdAt: 2022-12-12T18:34:46.490Z
+folder: epr_reports

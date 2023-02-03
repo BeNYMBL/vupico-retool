@@ -1,0 +1,24 @@
+id: listView1
+type: widget
+subtype: ListViewWidget
+template:
+  ordered:
+    - heightType: fixed
+    - showBorder: false
+    - data: ''
+    - showDropShadow: false
+    - formDataKey: '{{ self.id }}'
+    - dynamicHeightsEnabled: true
+    - itemHeight: '3'
+    - overflowType: visible
+    - instances: '{{ getReportTimelines.data.report_id.length }}'
+style:
+  ordered: []
+position2:
+  position2:
+    container: upcomingEPRSubmissionContainer
+    subcontainer: 93ced
+    row: 0.7999999999999999
+    height: 8.8
+    width: 12
+createdAt: 2023-01-18T12:49:12.735Z

@@ -1,0 +1,72 @@
+id: customComponent1
+type: widget
+subtype: CustomComponentWidget
+template:
+  ordered:
+    - allowTopNavigation: false
+    - allowDownloads: false
+    - allowFullscreen: false
+    - allowForms: false
+    - model: |-
+        {
+        "country": {{ getEPRTax_byCountry_thisYear.data.iso_code}},
+        "values": {{ getEPRTax_byCountry_thisYear.data.total_epr_tax_amount}}
+        }
+    - allowCamera: false
+    - allowModals: false
+    - allowPopups: false
+    - iframeCode: >-
+        <head>
+          <!-- Load plotly.js into the DOM -->
+          <script src='https://cdn.plot.ly/plotly-2.18.0.min.js'></script>
+        </head>
+
+
+        <body>
+          <script>
+        let countries, values;
+
+        //subscribe component to model and assign model values 
+
+        window.Retool.subscribe(function(model) {
+           if(!model){ return }
+            country = model.country;
+            values = model.values;
+            } 
+          );
+        var data = [{
+          type: "choroplethmapbox", locations: country, 
+        z: values,
+         coloraxis: 'coloraxis',
+          geojson: "https://raw.githubusercontent.com/python-visualization/folium/main/examples/data/world-countries.json",
+          marker: {line: {width:0}}
+        }];
+         var layout = {mapbox: {style:"light", center: {lon: -74, lat: 43}, zoom: 2},
+                    responsive: true,autoscale: true, margin: {t: 0, b: 0,l: 0, r:0}, coloraxis: {showscale: false, colorscale: [
+                      [0, 'rgba(55, 145, 211, .2)'], [0.2, 'rgba(55, 145, 211, .4)'],
+                      [0.4, 'rgba(55, 145, 211, .6)'], [0.6, 'rgba(55, 145, 211, .8)'],
+                      [0.8, 'rgba(55, 145, 211, .9)'], [1, 'rgba(55, 145, 211, 1)']
+                  ]} };
+
+        var config = {mapboxAccessToken:
+        "pk.eyJ1IjoibnltYmwiLCJhIjoiY2xkbG9qNGVyMDFlYjNvb3MwdHljOHp0ZSJ9.tP4CXhQeZo7eVjQLjFQVsw"};
+
+
+        Plotly.newPlot('myDiv', data, layout, config);</script>
+          <div id='myDiv' style="min-width: 100%; min-height: 100%"><!-- Plotly chart will be drawn inside this DIV --></div>
+        </body>
+    - allowMicrophone: false
+    - allowSameOrigin: false
+    - allowPopupsToEscapeSandbox: false
+    - allowPayment: false
+    - allowGeolocation: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: EPRSubmissionCountriesContainer
+    subcontainer: 93ced
+    row: 0.7999999999999998
+    height: 9.8
+    width: 12
+createdAt: 2023-02-01T17:52:01.824Z

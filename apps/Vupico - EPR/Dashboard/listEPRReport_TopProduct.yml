@@ -1,0 +1,19 @@
+id: listEPRReport_TopProduct
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const groupedData = {{ formatDataAsArray(getProjectReport_EPR.data) }}
+        const productData = {{ formatDataAsArray(getProduct.data) }}
+
+        return _(groupedData)
+          .groupBy('product_id')
+          .map((report, id) => ({
+            product: _.find(productData, function(p) { if(p.id === id) { return true } })?.product,
+            sum_epr_tax_amount: _.sumBy(report, 'total_epr_tax_amount'),
+          }))
+          .value().sort((a,b) => b.sum_epr_tax_amount - a.sum_epr_tax_amount)
+    - value: ''
+createdAt: 2022-12-12T18:38:25.728Z
+folder: epr_reports

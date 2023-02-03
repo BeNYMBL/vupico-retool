@@ -1,0 +1,42 @@
+id: listEPRReport_TopElements
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        const groupedData = {{ formatDataAsArray(getProjectReport_EPR.data) }}
+
+        const materialData = {{ formatDataAsArray(getMaterials.data) }}
+
+        let currencyConversion = {{
+        formatDataAsArray(getCurrencyConversion.data) }}
+
+        let selectedCurrency = {{ selectCurrency_dashboardEPR.value }} 
+
+
+
+        flatElementSalesData = _.flatMap(_.flatMap(groupedData,
+        'project_report_data'),'elementSalesEPRRecycability')
+
+
+        flatElementSalesData = flatElementSalesData.map(row => { 
+          if(selectedCurrency != (row?.currency_code || 'USD') ) {
+           let factor = currencyConversion.find(x => x.from_currency_code === (row?.currency_code || 'USD') &&  x.to_currency_code === selectedCurrency)
+           
+           row.epr_tax_amount_recyclability = (factor?.conversion_factor || 1) * (row?.epr_tax_amount_recyclability || 0)
+          }
+          return row
+        })
+
+
+        return _(flatElementSalesData)
+          .groupBy('element')
+          .map((element, id) => ({
+            element: id,
+            element_code: _.find(materialData, function(m) { if(m.id === id) { return true } })?.material_code,
+            sum_epr_tax_amount: _.sumBy(element, 'epr_tax_amount_recyclability'),
+          }))
+          .value().sort((a,b) => b.sum_epr_tax_amount - a.sum_epr_tax_amount)
+    - value: ''
+createdAt: 2022-12-12T18:35:14.527Z
+folder: epr_reports
