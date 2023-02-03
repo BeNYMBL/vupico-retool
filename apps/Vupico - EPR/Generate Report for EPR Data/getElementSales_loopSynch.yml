@@ -1,0 +1,117 @@
+id: getElementSales_loopSynch
+type: datasource
+subtype: JavascriptQuery
+resourceName: JavascriptQuery
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - lastReceivedFromResourceAt: null
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: ''
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: false
+    - showFailureToaster: true
+    - query: >-
+        const projectReportData = getProjectReport.data &&
+        formatDataAsArray(getProjectReport.data)
+
+
+
+        if(projectReportData) {
+          return projectReportData[0].project_report_data.elementSales
+        }
+
+
+        const elementQuantity = getElements_duplicateForLoop.data
+
+        console.log('elementQuantity BEFORE');
+
+
+        let elementQuantityArray = []
+
+        const salesCollection = formatDataAsArray(getProductSales_noFilter.data)
+
+
+        salesCollection.forEach((sale) => {
+          let elementQuantityCopy = elementQuantity.map(a => {return {...a}})
+          //console.log('sale', sale)
+          let saleQuantity = parseInt(sale.quantity)
+          elementQuantityCopy.forEach((element) => {
+            //console.log('element', element)
+            element.quantity = element.quantity * saleQuantity
+            elementQuantityArray.push({element: element, year: sale.year, month: sale.month, country: sale.country, state: sale.state})
+          })
+        })
+
+
+        console.log('elementQuantityArray')
+
+
+        return elementQuantityArray
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - data: null
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: true
+    - cacheKeyTtl: ''
+    - metadata: null
+    - changesetObject: ''
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: ''
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events:
+        - ordered:
+            - method: trigger
+            - enabled: ''
+            - params:
+                ordered: []
+            - targetId: null
+            - pluginId: getElementSalesEPRTax_loopSynch
+            - waitType: debounce
+            - event: success
+            - type: datasource
+            - waitMs: '0'
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2023-01-18T17:32:33.447Z
+folder: generateReport

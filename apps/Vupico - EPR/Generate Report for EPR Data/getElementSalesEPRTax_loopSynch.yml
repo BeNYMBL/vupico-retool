@@ -1,0 +1,123 @@
+id: getElementSalesEPRTax_loopSynch
+type: datasource
+subtype: JavascriptQuery
+resourceName: JavascriptQuery
+template:
+  ordered:
+    - queryRefreshTime: ''
+    - lastReceivedFromResourceAt: null
+    - queryDisabledMessage: ''
+    - successMessage: ''
+    - queryDisabled: ''
+    - playgroundQuerySaveId: latest
+    - resourceNameOverride: ''
+    - runWhenModelUpdates: false
+    - showFailureToaster: true
+    - query: >-
+        const projectReportData = getProjectReport.data &&
+        formatDataAsArray(getProjectReport.data)
+
+
+
+        if(projectReportData) {
+          return projectReportData[0].project_report_data.elementSalesEPRTax
+        }
+
+
+        const elementData = getElementSales_loopSynch.data
+
+        console.log('elementData BEFORE')
+
+        const eprTaxData = formatDataAsArray(getEPRTaxing_all.data)
+
+        // console.log('eprTaxData',eprTaxData)
+
+        const conversionData = formatDataAsArray(getMeasurementConversion.data)
+
+
+        elementData.map(x => {
+          let epr_tax_data = eprTaxData.find(epr => epr.global_element_id == x.element.elementGroup);
+          // console.log('epr_tax_data', epr_tax_data)  
+          let from_uom_code = x.element.unit_of_measure;
+          let to_uom_code = epr_tax_data?.uom;
+          let uom_conversion_factor = conversionData.find(uom => uom.from_measure_code === from_uom_code && uom.to_measure_code === to_uom_code)?.conversion_metric || 1;
+          
+          // console.log('from_uom_code', from_uom_code)
+          // console.log('to_uom_code', to_uom_code)
+          // console.log('uom_conversion_factor', uom_conversion_factor)
+          
+          x.element.epr_tax_amount = x.element.quantity * ((eprTaxData.find(epr => epr.global_element_id == x.element.elementGroup)?.tax_rate || 0) / (epr_tax_data?.quantity / uom_conversion_factor)); 
+          x.element.currency_code = eprTaxData.find(epr => epr.global_element_id == x.element.elementGroup)?.tax_currency || 'XXX';
+          return x
+        });
+
+
+        console.log('elementData AFTER')
+
+
+        return elementData
+    - playgroundQueryUuid: ''
+    - playgroundQueryId: null
+    - error: null
+    - privateParams: []
+    - runWhenPageLoadsDelay: ''
+    - data: null
+    - importedQueryInputs:
+        ordered: []
+    - isImported: false
+    - showSuccessToaster: true
+    - cacheKeyTtl: ''
+    - metadata: null
+    - changesetObject: ''
+    - errorTransformer: >-
+        // The variable 'data' allows you to reference the request's data in the
+        transformer. 
+
+        // example: return data.find(element => element.isError)
+
+        return data.error
+    - confirmationMessage: null
+    - isFetching: false
+    - changeset: ''
+    - rawData: null
+    - queryTriggerDelay: '0'
+    - resourceTypeOverride: null
+    - watchedParams: []
+    - enableErrorTransformer: false
+    - showLatestVersionUpdatedWarning: false
+    - timestamp: 0
+    - importedQueryDefaults:
+        ordered: []
+    - enableTransformer: false
+    - showUpdateSetValueDynamicallyToggle: true
+    - runWhenPageLoads: false
+    - transformer: >-
+        // type your code here
+
+        // example: return formatDataAsArray(data).filter(row => row.quantity >
+        20)
+
+        return data
+    - events:
+        - ordered:
+            - method: trigger
+            - enabled: ''
+            - params:
+                ordered: []
+            - targetId: null
+            - pluginId: getElementSalesEPRRecyclability_loopSynch
+            - waitType: debounce
+            - event: success
+            - type: datasource
+            - waitMs: '0'
+    - queryTimeout: '10000'
+    - requireConfirmation: false
+    - queryFailureConditions: ''
+    - changesetIsObject: false
+    - enableCaching: false
+    - allowedGroups: []
+    - queryThrottleTime: '750'
+    - updateSetValueDynamically: false
+    - notificationDuration: ''
+createdAt: 2023-01-18T19:27:04.291Z
+folder: generateReport

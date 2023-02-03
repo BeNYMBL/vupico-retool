@@ -1,0 +1,13 @@
+id: parseUniqueCurrency
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        // Tip: assign your external references to variables instead of chaining
+        off the curly brackets.
+
+
+        return {{ _.uniq(getEPRTaxing.data.tax_currency) }}
+    - value: ''
+createdAt: 2022-12-15T19:36:57.730Z

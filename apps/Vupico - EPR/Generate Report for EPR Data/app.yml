@@ -1,0 +1,11 @@
+version: 43.0.9
+pageUuid: 8c88e4e4-9754-11ed-ab6f-336af6429695
+appTemplate:
+  folders:
+    - generateReport
+    - listQueries
+    - calculateElements
+  queryStatusVisibility: false
+  rootScreen: null
+  version: 2.99.3
+  markdownLinkBehavior: auto

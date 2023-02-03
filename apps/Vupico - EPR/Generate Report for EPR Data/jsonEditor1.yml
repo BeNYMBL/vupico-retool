@@ -1,0 +1,15 @@
+id: jsonEditor1
+type: widget
+subtype: JSONEditorWidget
+template:
+  ordered:
+    - value: '{{ reportDataForBulkInsert.value }}'
+    - valid: true
+style:
+  ordered: []
+position2:
+  position2:
+    row: 5
+    height: 8
+    width: 12
+createdAt: 2023-01-18T20:11:22.671Z

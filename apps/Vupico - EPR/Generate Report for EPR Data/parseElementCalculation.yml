@@ -1,0 +1,25 @@
+id: parseElementCalculation
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        // Tip: assign your external references to variables instead of chaining
+        off the curly brackets.
+
+
+        return {
+          'element': {{ getElements.data }},
+          'elementSales': {{ getElementSales.data }},
+          'elementSalesEPRTax': {{ getElementSalesEPRTax.data }},
+          'elementSalesEPRRecycability': {{ getElementSalesEPRRecyclability.data }},
+          'totalEPRTaxAmount': {{ _.sumBy(getElementSalesEPRRecyclability.data,'epr_tax_amount_recyclability') }},
+          'currencyCode': {{ _.uniq(formatDataAsObject(getElementSalesEPRRecyclability.data.filter(row => row.currency_code != 'XXX')).currency_code)[0] }},
+          'product_id': {{ selectProduct.value }},
+          'bom_id' : {{ selectBoM.value }},
+          'country_code': {{ selectFilterCountry.value }},
+          'state_code': {{ selectFilterState.value }}
+        }
+    - value: ''
+createdAt: 2022-12-08T15:20:03.229Z
+folder: calculateElements
