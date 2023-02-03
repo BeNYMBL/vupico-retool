@@ -1,0 +1,35 @@
+id: button2
+type: widget
+subtype: ButtonWidget2
+template:
+  ordered:
+    - horizontalAlign: stretch
+    - clickable: false
+    - iconAfter: line/interface-edit-pencil
+    - submitTargetId: null
+    - hidden: 'true'
+    - text: Edit
+    - showInEditor: false
+    - tooltipText: ''
+    - style:
+        ordered:
+          - label: rgb(40, 56, 130)
+          - border: rgb(40, 56, 130)
+          - borderRadius: 5px
+    - styleVariant: outline
+    - submit: false
+    - iconBefore: ''
+    - events:
+        ordered: []
+    - loading: false
+    - loaderPosition: auto
+    - disabled: false
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    col: 5
+    height: 1.2
+    width: 1
+createdAt: 2023-01-18T14:05:48.290Z

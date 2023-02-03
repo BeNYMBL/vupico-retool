@@ -1,0 +1,47 @@
+id: button8
+type: widget
+subtype: ButtonWidget2
+template:
+  ordered:
+    - horizontalAlign: stretch
+    - clickable: false
+    - iconAfter: line/interface-download-button-2
+    - submitTargetId: null
+    - hidden: >-
+        {{ getEPRReportSummary.data.status_id['0'] ==
+        '56620064-8f44-4f3d-98ad-41c0bf5c4674' }}
+    - text: Download
+    - showInEditor: false
+    - tooltipText: ''
+    - style:
+        ordered:
+          - label: rgb(40, 56, 130)
+          - border: rgb(40, 56, 130)
+          - borderRadius: 5px
+    - styleVariant: outline
+    - submit: false
+    - iconBefore: ''
+    - events:
+        - ordered:
+            - event: click
+            - type: widget
+            - method: open
+            - pluginId: modalDownload
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - loading: false
+    - loaderPosition: auto
+    - disabled: false
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    row: 1.2
+    col: 7
+    height: 1.2
+    width: 2
+createdAt: 2023-01-19T17:50:33.618Z
