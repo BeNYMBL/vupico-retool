@@ -83,7 +83,7 @@ template:
               ionizing_radiation
               ({{BomMaterialsWithTotal.value.ionizing_radiation_unit[0]}})
           - fossil: fossil ({{BomMaterialsWithTotal.value.fossil_unit[0]}})
-          - material_global_code: Global ID
+          - material_global_code: Material Code
           - particulate_matter: >-
               particulate_matter
               ({{BomMaterialsWithTotal.value.particulate_matter_unit[0]}})
