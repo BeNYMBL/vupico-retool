@@ -1,0 +1,65 @@
+id: estimateEPRTaxAmountChart2
+type: widget
+subtype: PlotlyChartWidget
+template:
+  ordered:
+    - dataseries:
+        ordered:
+          - '0':
+              ordered:
+                - label: Estimated EPR Tax Amount
+                - datasource: >-
+                    {{formatDataAsObject(
+                    formatDataAsArray(estimateEPRTaxAmount.data)
+                    )['total_epr_tax_amount']}}
+                - chartType: bar
+                - aggregationType: sum
+                - color: '#55A1E3'
+                - colors:
+                    ordered: []
+                - visible: true
+                - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
+    - isDataTemplateDirty: true
+    - datasource: ''
+    - isJsonTemplateDirty: false
+    - groupByDropdown: country
+    - datasourceInputMode: javascript
+    - datasourceDataType: array
+    - layout: ''
+    - xAxisDropdown: country
+    - data: ''
+    - isStackSeriesEnabled: false
+    - xAxisTickFormat: ''
+    - skipDatasourceUpdate: false
+    - datasourceJS: '{{ formatDataAsArray(estimateEPRTaxAmount.data) }}'
+    - yAxisTickFormat: ''
+    - datasourcePluginType: null
+    - xAxisType: default
+    - datasourcePluginId: null
+    - legendAlignment: bottom
+    - isLayoutJsonDirty: false
+    - chartType: bar
+    - title: ''
+    - xAxis: >-
+        {{formatDataAsObject( formatDataAsArray(estimateEPRTaxAmount.data)
+        )['country']}}
+    - groupByMode: dropdown
+    - onPointSelectQuery: ''
+    - xAxisMode: dropdown
+    - shouldShowLegend: true
+    - yAxisTitle: ''
+    - selectedPoints:
+        array: []
+    - xAxisTitle: ''
+    - groupByJS: >-
+        {{formatDataAsObject( formatDataAsArray(estimateEPRTaxAmount.data)
+        )['country']}}
+style:
+  ordered: []
+position2:
+  position2:
+    container: tabbedContainer8
+    subcontainer: 268fc
+    height: 7
+    width: 12
+createdAt: 2023-01-27T22:59:16.389Z
