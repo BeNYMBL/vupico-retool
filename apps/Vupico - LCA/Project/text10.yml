@@ -1,4 +1,4 @@
-id: text9
+id: text10
 type: widget
 subtype: TextWidget2
 template:
@@ -10,7 +10,7 @@ template:
     - showInEditor: false
     - verticalAlign: center
     - tooltipText: ''
-    - value: ' Started on {{moment(new Date(getProject.data.added_on)).format(''MM/DD/YYYY'')}}'
+    - value: '**Project**'
     - disableMarkdown: false
     - overflowType: scroll
     - maintainSpaceWhenHidden: false
@@ -20,8 +20,6 @@ position2:
   position2:
     container: containerProjectDetails
     subcontainer: 0ac44
-    row: 0.6000000000000001
-    col: 8
     height: 0.6
-    width: 2
-createdAt: 2023-01-10T15:47:48.280Z
+    width: 12
+createdAt: 2023-02-03T14:27:09.918Z

@@ -8,12 +8,12 @@ template:
     - iconAfter: ''
     - submitTargetId: null
     - hidden: false
-    - text: Create Simulation
+    - text: View Simulation
     - showInEditor: false
     - tooltipText: ''
     - styleVariant: solid
     - submit: false
-    - iconBefore: bold/interface-add-1
+    - iconBefore: ''
     - events:
         - ordered:
             - event: click
