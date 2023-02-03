@@ -28,7 +28,7 @@ template:
           - product: PRODUCT
           - brand: BRAND
           - author: AUTHOR
-          - material_code: CODE
+          - material_code: MATERIAL CODE
           - bom: BOM
     - alwaysShowPaginator: false
     - columnColors:
