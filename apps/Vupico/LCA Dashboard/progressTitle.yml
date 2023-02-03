@@ -10,7 +10,7 @@ template:
     - showInEditor: false
     - verticalAlign: center
     - tooltipText: ''
-    - value: '#### Environmental &nbsp; Impacts and Targets'
+    - value: '#### Environmental Targets'
     - disableMarkdown: false
     - overflowType: scroll
     - maintainSpaceWhenHidden: false
