@@ -113,7 +113,7 @@ template:
             - actionButtonDisabled: ''
     - actionButtonSelectsRow: true
     - selectRowByDefault: true
-    - defaultSortByColumn: ''
+    - defaultSortByColumn: submitted_on
     - paginationOffset: 0
     - columnAlignment:
         ordered:
@@ -163,7 +163,7 @@ template:
     - onRowSelect: ''
     - showDownloadButton: true
     - selectedIndex: null
-    - defaultSortDescending: false
+    - defaultSortDescending: true
     - _sortedDisplayedDataIndices: null
     - dynamicColumnSettings: null
     - totalRowCount: ''
