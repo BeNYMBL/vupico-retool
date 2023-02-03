@@ -41,14 +41,14 @@ template:
           "legend": {
             "xanchor": "center",
             "x": 0.45,
-            "y": -0.25,
+            "y": -0.30,
             "orientation": "h"
           },
           "margin": {
             "l": 72,
             "r": 24,
             "t": 80,
-            "b": 72,
+            "b": 82,
             "pad": 2
           },
           "hovermode": "closest",
