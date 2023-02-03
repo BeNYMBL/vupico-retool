@@ -1,0 +1,24 @@
+id: impactCost
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const final = [
+          {
+            id: 'Air Transportation',
+            type: 'COST',
+            value: 156.80,
+            cost: 70000.80
+          },
+            {
+            id: 'Air Transportation',
+            type: 'CO2',
+            value: 388.81,
+            cost: 66492.80
+          }
+        ]
+        return final
+    - value: ''
+createdAt: 2023-02-03T19:51:06.835Z
+folder: ChartData
