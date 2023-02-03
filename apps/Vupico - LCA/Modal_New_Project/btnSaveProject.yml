@@ -8,12 +8,12 @@ template:
     - iconAfter: ''
     - submitTargetId: null
     - hidden: false
-    - text: Save Project
+    - text: '{{input_button_label.value}}'
     - showInEditor: false
     - tooltipText: ''
     - styleVariant: solid
     - submit: false
-    - iconBefore: ''
+    - iconBefore: bold/interface-add-1
     - events:
         - ordered:
             - event: click
