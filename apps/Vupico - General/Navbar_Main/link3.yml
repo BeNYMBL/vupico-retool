@@ -1,0 +1,44 @@
+id: link3
+type: widget
+subtype: LinkWidget
+template:
+  ordered:
+    - horizontalAlign: left
+    - clickable: false
+    - iconAfter: ''
+    - hidden: false
+    - text: MDG
+    - showUnderline: always
+    - showInEditor: false
+    - tooltipText: ''
+    - style:
+        ordered:
+          - text: '{{isMDG.value ? ''primary'' : ''#000000''}}'
+    - allowWrap: false
+    - iconBefore: edit
+    - events:
+        - ordered:
+            - event: click
+            - type: util
+            - method: openApp
+            - pluginId: ''
+            - targetId: null
+            - params:
+                ordered:
+                  - uuid: 09dee174-9cf4-11ed-ab83-6b170ed4bf76
+            - waitType: debounce
+            - waitMs: '0'
+    - loading: false
+    - loaderPosition: auto
+    - disabled: false
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: moduleContainer
+    row: 0.20000000000000007
+    col: 6
+    height: 0.6
+    width: 1
+createdAt: 2023-01-11T19:25:18.279Z

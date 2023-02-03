@@ -1,0 +1,25 @@
+id: moduleContainer
+type: widget
+subtype: ModuleContainerWidget
+template:
+  ordered:
+    - heightType: fixed
+    - spinWhenChildrenAreFetching: true
+    - showBorder: true
+    - showDropShadow: true
+    - isGlobalWidgetContainer: true
+    - backgroundColor: white
+    - title: ''
+    - productName: Product Name
+    - overflowType: hidden
+    - disabled: ''
+    - organizationName: Org Name
+position2:
+  position2:
+    height: 1.3999999999999992
+    width: 12
+mobilePosition2:
+  position2:
+    height: 12
+    width: 12
+createdAt: 2022-11-04T19:09:26.564Z

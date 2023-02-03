@@ -1,0 +1,8 @@
+id: productName
+type: globalwidgetprop
+subtype: GlobalWidgetProp
+template:
+  ordered:
+    - value: Product Name
+    - defaultValue: ''
+createdAt: 2022-11-04T19:16:34.057Z
