@@ -1,0 +1,51 @@
+id: button10
+type: widget
+subtype: ButtonWidget2
+template:
+  ordered:
+    - horizontalAlign: stretch
+    - clickable: false
+    - iconAfter: ''
+    - submitTargetId: null
+    - hidden: false
+    - text: Confirm
+    - showInEditor: false
+    - tooltipText: ''
+    - style:
+        ordered:
+          - borderRadius: |
+              4px
+    - styleVariant: solid
+    - submit: false
+    - iconBefore: ''
+    - events:
+        - ordered:
+            - event: click
+            - type: util
+            - method: exportData
+            - pluginId: ''
+            - targetId: null
+            - params:
+                ordered:
+                  - fileType: xlsx
+                  - data: '{{ reportsByCountryTable.data }}'
+                  - fileName: '{{ getEPRReportSummary.data.report_name[''0'']}}'
+                  - options:
+                      ordered:
+                        - sheetName: EPR Report
+            - waitType: debounce
+            - waitMs: '0'
+    - loading: false
+    - loaderPosition: auto
+    - disabled: false
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: modalDownload
+    row: 7
+    col: 1
+    height: 1.2
+    width: 10
+createdAt: 2023-01-19T17:52:57.324Z
