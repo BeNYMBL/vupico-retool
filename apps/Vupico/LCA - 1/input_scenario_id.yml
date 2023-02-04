@@ -4,7 +4,7 @@ subtype: GlobalWidgetProp
 template:
   ordered:
     - value: ''
-    - defaultValue: 02152d4e-febd-42ff-bc61-efbf4a1c54df
+    - defaultValue: 2e49d215-796e-426e-b64e-7c87d20c77d2
     - description: |-
         -- Good Test
         0912c650-daa1-4edb-af41-40b37e2f28ba
