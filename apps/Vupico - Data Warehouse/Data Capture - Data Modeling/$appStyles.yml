@@ -1,0 +1,12 @@
+id: $appStyles
+type: setting
+subtype: AppStyles
+template:
+  ordered:
+    - value: |-
+        /* TABLE */
+        .ReactTable .rt-thead.-header {
+         border-bottom: none; 
+        }
+        /* * * * */
+createdAt: 2023-01-13T20:37:56.247Z

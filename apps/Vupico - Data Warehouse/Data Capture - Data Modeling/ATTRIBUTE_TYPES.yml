@@ -1,0 +1,11 @@
+id: ATTRIBUTE_TYPES
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const ATTRIBUTE_TYPES = ['text','number','date','time','boolean']
+        return ATTRIBUTE_TYPES
+    - value: ''
+createdAt: 2023-01-13T20:15:30.366Z
+folder: CONSTS

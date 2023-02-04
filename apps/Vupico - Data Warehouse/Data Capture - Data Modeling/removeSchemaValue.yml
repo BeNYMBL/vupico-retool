@@ -1,0 +1,24 @@
+id: removeSchemaValue
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        const currentRecord = {{getSingleCustomAttributes.data}}
+
+        const allAttributes = {{getSingleCustomAttributes.data.json_schema}}
+
+        const selectedAttribute = {{tableCustomAttributes.selectedRow.data}}
+          
+        const remainingAttributes = allAttributes.filter((val) => val.name !==
+        selectedAttribute.name)
+
+        console.log('Remaining',remainingAttributes)
+
+        const final = {...currentRecord, json_schema:
+        JSON.stringify(remainingAttributes)}
+
+        return final
+    - value: ''
+createdAt: 2023-01-13T20:22:26.552Z
+folder: app_js

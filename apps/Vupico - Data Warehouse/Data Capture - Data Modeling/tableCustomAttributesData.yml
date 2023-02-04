@@ -1,0 +1,52 @@
+id: tableCustomAttributesData
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: >-
+        const customColumns = {{getSingleCustomAttributes.data.json_schema}}
+
+        const systemColumns = {{listTableColumns.data}}
+           const isSap = {{switchStandard.value}}
+        const isEnhanced = {{switchEnhanced.value}}
+          
+        const customColumnsTransf = customColumns === null ? [] :
+        customColumns.map((val) => ({...val, is_custom: true, length: val.type
+        === 'text' ? 50 : undefined}))
+
+        const systemColumnsTransf = systemColumns.map((val) => ({...val,
+        is_custom: false, length: 50, length: val.type === 'character varying' ?
+        50 : undefined}))
+
+
+
+        const concatColumns = _.concat(customColumnsTransf, systemColumnsTransf)
+
+        const sortedColumns = _.sortBy(concatColumns, 'is_custom')
+
+
+        if (isSap && isEnhanced) {
+          return sortedColumns
+        }
+
+
+        if (isSap && !isEnhanced) {
+          return systemColumnsTransf
+        }
+
+
+        if (!isSap && isEnhanced) {
+          return customColumnsTransf
+        }
+
+
+        if (!isSap && !isEnhanced) {
+          return []
+        }
+
+
+
+        return sortedColumns
+    - value: ''
+createdAt: 2023-01-16T13:55:04.786Z
+folder: Custom_Attribute
