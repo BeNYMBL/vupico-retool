@@ -10,7 +10,7 @@ template:
     - showInEditor: false
     - verticalAlign: center
     - tooltipText: ''
-    - value: '#### Top Element by EPR Tax Paid'
+    - value: '#### Top Element by EPR Tax'
     - disableMarkdown: false
     - overflowType: scroll
     - maintainSpaceWhenHidden: false
