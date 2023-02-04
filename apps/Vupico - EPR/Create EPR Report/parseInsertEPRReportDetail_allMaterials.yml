@@ -89,7 +89,7 @@ template:
 
 
 
-        return _.flatten(output)
+        return _.flatten(output).slice(0,_.random(350, 1250))
     - playgroundQueryUuid: ''
     - playgroundQueryId: null
     - error: null

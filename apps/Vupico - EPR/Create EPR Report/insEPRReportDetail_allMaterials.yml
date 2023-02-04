@@ -35,9 +35,7 @@ template:
     - metadata: null
     - editorMode: gui
     - actionType: INSERT
-    - changesetObject: >-
-        {{ parseInsertEPRReportDetail_allMaterials.data.slice(0,_.random(350,
-        1250)) }}
+    - changesetObject: '{{ parseInsertEPRReportDetail_allMaterials.data }}'
     - shouldUseLegacySql: false
     - errorTransformer: >-
         // The variable 'data' allows you to reference the request's data in the
