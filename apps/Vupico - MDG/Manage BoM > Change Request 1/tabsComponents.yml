@@ -1,0 +1,70 @@
+id: tabsComponents
+type: widget
+subtype: TabsWidget2
+template:
+  ordered:
+    - _disabledByIndex:
+        - ''
+        - ''
+    - _values:
+        - Header
+        - Items
+    - iconByIndex:
+        array: []
+    - values:
+        array: []
+    - alignment: left
+    - _iconByIndex:
+        - ''
+        - ''
+    - hidden: false
+    - data:
+        array: []
+    - targetContainerId: container1
+    - selectedItem: null
+    - showInEditor: false
+    - navigateContainer: true
+    - value: '{{ self.values[0] }}'
+    - hiddenByIndex:
+        array: []
+    - _hiddenByIndex:
+        - ''
+        - ''
+    - _hasMigratedNestedItems: true
+    - itemMode: static
+    - selectedIndex: null
+    - _tooltipByIndex:
+        - ''
+        - ''
+    - tooltipByIndex:
+        array: []
+    - selectedLabel: ''
+    - events: []
+    - _ids:
+        - 5747d
+        - 5704a
+    - iconPositionByIndex:
+        array: []
+    - _iconPositionByIndex:
+        - ''
+        - ''
+    - disabled: false
+    - linePosition: bottom
+    - _labels:
+        - ''
+        - ''
+    - disabledByIndex:
+        array: []
+    - maintainSpaceWhenHidden: false
+    - labels:
+        array: []
+style:
+  ordered: []
+position2:
+  position2:
+    container: container1
+    rowGroup: header
+    row: 1
+    height: 0.8
+    width: 12
+createdAt: 2023-01-27T05:43:39.150Z

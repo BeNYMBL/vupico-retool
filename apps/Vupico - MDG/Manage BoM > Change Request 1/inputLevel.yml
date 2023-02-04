@@ -1,0 +1,69 @@
+id: inputLevel
+type: widget
+subtype: NumberInputWidget
+template:
+  ordered:
+    - readOnly: ''
+    - iconAfter: ''
+    - max: null
+    - inputValue: 0
+    - hidden: '{{ isHeaderComponent.value }}'
+    - customValidation: ''
+    - showSeparators: true
+    - hideValidationMessage: false
+    - textBefore: ''
+    - validationMessage: ''
+    - textAfter: ''
+    - showInEditor: false
+    - allowNull: false
+    - showClear: false
+    - tooltipText: ''
+    - currency: USD
+    - labelAlign: left
+    - formDataKey: level
+    - value: >-
+        {{ isComponentCopy.value ? ( isHeaderComponent.value ?
+        headerComponentsTable.selectedRow.data.level :
+        itemComponentsTable.selectedRow.data.level ) : isHeaderComponent.value ?
+        0 : 1 }}
+    - labelCaption: ''
+    - min: null
+    - labelWidth: '33'
+    - placeholder: Enter value
+    - showStepper: true
+    - label: Level
+    - _validate: false
+    - labelWidthUnit: '%'
+    - invalid: false
+    - format: decimal
+    - iconBefore: ''
+    - textAlign: left
+    - inputTooltip: ''
+    - events:
+        - ordered:
+            - event: submit
+            - type: datasource
+            - method: trigger
+            - pluginId: insComponent
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - loading: false
+    - disabled: false
+    - labelPosition: left
+    - decimalPlaces: null
+    - labelWrap: false
+    - padDecimal: false
+    - maintainSpaceWhenHidden: false
+    - required: true
+style:
+  ordered: []
+position2:
+  position2:
+    container: form
+    row: 1
+    height: 1
+    width: 12
+createdAt: 2023-01-30T20:16:01.809Z

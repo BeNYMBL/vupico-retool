@@ -1,0 +1,41 @@
+id: prevButton
+type: widget
+subtype: ButtonWidget2
+template:
+  ordered:
+    - horizontalAlign: stretch
+    - clickable: false
+    - iconAfter: ''
+    - submitTargetId: null
+    - hidden: '{{ steppedContainerBoM.currentViewIndex === 0 }}'
+    - text: ''
+    - showInEditor: false
+    - tooltipText: ''
+    - style:
+        ordered: []
+    - styleVariant: outline
+    - submit: false
+    - iconBefore: bold/interface-arrows-button-left
+    - events:
+        - ordered:
+            - params:
+                ordered:
+                  - wrap: false
+            - event: click
+            - method: showPreviousVisibleView
+            - pluginId: steppedContainerBoM
+            - type: widget
+            - waitMs: '0'
+            - waitType: debounce
+    - loading: false
+    - loaderPosition: auto
+    - disabled: '{{ steppedContainerBoM.currentViewIndex === 0 }}'
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: steppedContainerBoM
+    rowGroup: footer
+    width: 1
+createdAt: 2023-01-27T05:43:32.962Z

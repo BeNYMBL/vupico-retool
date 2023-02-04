@@ -1,0 +1,24 @@
+id: text1
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: '{{!getSingleChangeRequest.data.material_name}}'
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '##### **PRODUCT:** '
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    row: 1.4000000000000008
+    height: 0.6
+    width: 1
+createdAt: 2023-02-02T14:19:47.938Z
