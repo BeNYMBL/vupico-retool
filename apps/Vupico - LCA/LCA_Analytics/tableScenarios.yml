@@ -23,20 +23,30 @@ template:
     - onRowAdded: ''
     - columnHeaderNames:
         ordered:
-          - name: NAME
-          - project: PROJECT
-          - product: PRODUCT
+          - material_name: MATERIAL NAME
+          - material_code: MATERIAL CODE
+          - material_group: MATERIAL GROUP
           - brand: BRAND
           - author: AUTHOR
+          - name: NAME
+          - weight_uom: UOM
+          - product: PRODUCT
+          - weight: WEIGHT
+          - project: PROJECT
     - alwaysShowPaginator: false
     - columnColors:
         ordered:
           - project_id: ''
+          - material_name: ''
+          - material_code: ''
+          - material_group: ''
           - brand: ''
           - author: ''
           - name: ''
           - sales: ''
+          - weight_uom: ''
           - product: ''
+          - weight: ''
           - project: ''
           - id: ''
           - email: ''
@@ -71,7 +81,7 @@ template:
     - downloadRawData: false
     - showFetchingIndicator: true
     - serverPaginated: false
-    - data: '{{getScenario.data}}'
+    - data: '{{getProducts.data}}'
     - displayedData: null
     - actionButtons:
         - ordered:
