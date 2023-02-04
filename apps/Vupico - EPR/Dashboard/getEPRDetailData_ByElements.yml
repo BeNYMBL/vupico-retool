@@ -1,69 +1,54 @@
-id: getEPRTax_byElement
+id: getEPRDetailData_ByElements
 type: datasource
-subtype: JavascriptQuery
-resourceName: JavascriptQuery
+subtype: SqlQueryUnified
+resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
+resourceDisplayName: Vupico-Database-1
 template:
   ordered:
     - queryRefreshTime: ''
+    - records: ''
     - lastReceivedFromResourceAt: null
+    - databasePasswordOverride: ''
     - queryDisabledMessage: ''
     - successMessage: ''
     - queryDisabled: ''
     - playgroundQuerySaveId: latest
     - resourceNameOverride: ''
-    - runWhenModelUpdates: false
+    - runWhenModelUpdates: true
     - showFailureToaster: true
     - query: >-
-        let eprDetailData = getEPRDetailData_ByElements.data.epr_detail_data
+        select epr_detail_data
 
+        from epr_detail
 
-        let collectDetailData = []
+        WHERE 
 
-        eprDetailData.forEach((groupedDetail) => {
-          groupedDetail.forEach((elementDetail) =>{
-            collectDetailData.push(elementDetail.epr_detail_data)
-          })
-        })
+        (to_date(CONCAT(epr_detail.year, '/', epr_detail.month,'/','01') ,
+        'YYYY/MM/DD') >= '2022/01/01')
 
-
-        let flatDetailData = collectDetailData.flat(Infinity)
-
-
-        //console.log('flatDetailData', flatDetailData)
-
-
-        let groupedData = _.groupBy(flatDetailData, 'materialName')
-
-
-        let outArr = []
-
-        for (const materialName in groupedData) {
-          let totalTax_byElement = groupedData[materialName].reduce((acc, obj) => {
-            return acc + obj.epr_tax_amount;
-          }, 0);
-          let outObject = {
-            element: materialName, 
-            totalEPRTax: _.round(totalTax_byElement)
-          }
-          outArr.push(outObject)
-        }
-
-
-        return outArr.sort((a,b) => b.totalEPRTax -
-        a.totalEPRTax).slice(0,5).sort((a,b) => a.totalEPRTax - b.totalEPRTax)
+        AND (to_date(CONCAT(epr_detail.year, '/', epr_detail.month, '/','01') ,
+        'YYYY/MM/DD') <= '2022/12/01')
     - playgroundQueryUuid: ''
     - playgroundQueryId: null
     - error: null
     - privateParams: []
     - runWhenPageLoadsDelay: ''
+    - warningCodes: []
     - data: null
+    - recordId: ''
     - importedQueryInputs:
         ordered: []
     - isImported: false
-    - showSuccessToaster: false
-    - cacheKeyTtl: ''
+    - showSuccessToaster: true
+    - dataArray: []
+    - cacheKeyTtl: 300
+    - filterBy: ''
+    - databaseHostOverride: ''
     - metadata: null
+    - editorMode: sql
+    - actionType: ''
     - changesetObject: ''
+    - shouldUseLegacySql: false
     - errorTransformer: >-
         // The variable 'data' allows you to reference the request's data in the
         transformer. 
@@ -71,20 +56,23 @@ template:
         // example: return data.find(element => element.isError)
 
         return data.error
+    - databaseNameOverride: ''
     - confirmationMessage: null
     - isFetching: false
     - changeset: ''
     - rawData: null
     - queryTriggerDelay: '0'
-    - resourceTypeOverride: null
+    - resourceTypeOverride: ''
     - watchedParams: []
     - enableErrorTransformer: false
+    - enableBulkUpdates: false
     - showLatestVersionUpdatedWarning: false
     - timestamp: 0
     - importedQueryDefaults:
         ordered: []
     - enableTransformer: false
     - showUpdateSetValueDynamicallyToggle: true
+    - bulkUpdatePrimaryKey: ''
     - runWhenPageLoads: false
     - transformer: >-
         // type your code here
@@ -93,15 +81,29 @@ template:
         20)
 
         return data
-    - events: []
+    - events:
+        - ordered:
+            - event: success
+            - type: datasource
+            - method: trigger
+            - pluginId: getEPRTax_byElement
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - tableName: ''
     - queryTimeout: '10000'
     - requireConfirmation: false
     - queryFailureConditions: ''
     - changesetIsObject: false
-    - enableCaching: false
+    - enableCaching: true
     - allowedGroups: []
+    - databaseUsernameOverride: ''
+    - shouldEnableBatchQuerying: false
+    - doNotThrowOnNoOp: false
     - queryThrottleTime: '750'
     - updateSetValueDynamically: false
     - notificationDuration: ''
-createdAt: 2023-01-19T16:09:25.192Z
-folder: charts
+createdAt: 2023-02-04T13:10:54.535Z
+folder: epr_detail_data

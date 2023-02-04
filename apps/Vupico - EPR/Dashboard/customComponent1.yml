@@ -43,9 +43,9 @@ template:
         }];
          var layout = {mapbox: {style:"light", center: {lon: -74, lat: 43}, zoom: 2},
                     responsive: true,autoscale: true, margin: {t: 0, b: 0,l: 0, r:0}, coloraxis: {showscale: false, colorscale: [
-                      [0, 'rgba(55, 145, 211, .2)'], [0.2, 'rgba(55, 145, 211, .4)'],
-                      [0.4, 'rgba(55, 145, 211, .6)'], [0.6, 'rgba(55, 145, 211, .8)'],
-                      [0.8, 'rgba(55, 145, 211, .9)'], [1, 'rgba(55, 145, 211, 1)']
+                      [0, 'rgba(238,51,0, .2)'], [0.2, 'rgba(238,51,0, .4)'],
+                      [0.4, 'rgba(5238,51,0, .6)'], [0.6, 'rgba(238,51,0, .8)'],
+                      [0.8, 'rgba(238,51,0, .9)'], [1, 'rgba(238,51,0, 1)']
                   ]} };
 
         var config = {mapboxAccessToken:
