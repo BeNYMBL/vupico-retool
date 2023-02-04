@@ -43,7 +43,7 @@ template:
           - country: COUNTRY
           - emmisions: '{{''Highest Emission BY Life Stage''.toUpperCase()}}'
           - id: Project Name
-          - total_epr_tax_amount: TAX AMOUNT
+          - total_epr_tax_amount: TAX
     - alwaysShowPaginator: false
     - columnColors:
         ordered:
