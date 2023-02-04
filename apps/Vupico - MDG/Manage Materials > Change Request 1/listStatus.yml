@@ -1,0 +1,12 @@
+id: listStatus
+type: state
+subtype: State
+template:
+  ordered:
+    - _persistedValueGetter: null
+    - _persistedValueSetter: null
+    - persistValue: false
+    - persistedValueKey: ''
+    - value: '[''Pending'', ''Submitted'', ''Approved'',''Declined'']'
+createdAt: 2023-01-25T21:31:03.903Z
+folder: JS_List_Values

@@ -1,0 +1,94 @@
+id: tabs
+type: widget
+subtype: TabsWidget2
+template:
+  ordered:
+    - _disabledByIndex:
+        - ''
+        - ''
+        - ''
+        - false
+    - _values:
+        - Change Request
+        - Basic Data
+        - Sustainability Data
+        - Material Plant
+    - iconByIndex:
+        array: []
+    - values:
+        array: []
+    - alignment: left
+    - _iconByIndex:
+        - ''
+        - ''
+        - ''
+        - ''
+    - hidden: false
+    - data:
+        array: []
+    - targetContainerId: null
+    - selectedItem: null
+    - showInEditor: false
+    - navigateContainer: false
+    - value: '{{ self.values[0] }}'
+    - hiddenByIndex:
+        array: []
+    - _hiddenByIndex:
+        - ''
+        - ''
+        - ''
+        - false
+    - _hasMigratedNestedItems: true
+    - itemMode: static
+    - selectedIndex: null
+    - _tooltipByIndex:
+        - ''
+        - ''
+        - ''
+        - ''
+    - tooltipByIndex:
+        array: []
+    - selectedLabel: ''
+    - events:
+        - ordered:
+            - event: change
+            - type: datasource
+            - method: trigger
+            - pluginId: updateChangeRequest
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - _ids:
+        - 5747d
+        - 5704a
+        - b375c
+        - '38517'
+    - iconPositionByIndex:
+        array: []
+    - _iconPositionByIndex:
+        - ''
+        - ''
+        - ''
+        - left
+    - disabled: false
+    - linePosition: bottom
+    - _labels:
+        - ''
+        - ''
+        - ''
+        - ''
+    - disabledByIndex:
+        array: []
+    - maintainSpaceWhenHidden: false
+    - labels:
+        array: []
+style:
+  ordered: []
+position2:
+  position2:
+    row: 3.4000000000000004
+    height: 0.8
+    width: 12
+createdAt: 2023-01-25T21:17:38.395Z

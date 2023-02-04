@@ -1,0 +1,17 @@
+id: payloadBasicData
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const final = {
+          material: {{inputMaterialName.value}},
+          uom: {{selectUom.value}},
+          material_type: {{selectMaterialType.value}},
+          material_group: {{selectMaterialGroup.value}},
+          product_hierarchy: {{selectProductHierarchy.value}}
+        }
+        return JSON.stringify(final)
+    - value: ''
+createdAt: 2023-01-25T22:05:31.786Z
+folder: JS_Payloads

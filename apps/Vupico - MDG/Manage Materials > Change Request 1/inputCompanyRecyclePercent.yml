@@ -1,0 +1,62 @@
+id: inputCompanyRecyclePercent
+type: widget
+subtype: NumberInputWidget
+template:
+  ordered:
+    - readOnly: '{{ getSingleChangeRequest.data.status === "Submitted" }}'
+    - iconAfter: ''
+    - max: null
+    - inputValue: 0
+    - hidden: false
+    - customValidation: ''
+    - showSeparators: true
+    - hideValidationMessage: false
+    - textBefore: ''
+    - validationMessage: ''
+    - textAfter: ''
+    - showInEditor: false
+    - allowNull: true
+    - showClear: false
+    - tooltipText: ''
+    - currency: USD
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: >-
+        {{parseInt(getSingleChangeRequest.data.sustainability_data.company_recycle_percent)}}
+    - style:
+        ordered:
+          - border: rgba(186, 186, 228, 0)
+    - labelCaption: ''
+    - min: null
+    - hideLabel: true
+    - labelWidth: '33'
+    - placeholder: Company Recycle Percent
+    - showStepper: true
+    - label: Number Input
+    - _validate: false
+    - labelWidthUnit: '%'
+    - invalid: false
+    - format: decimal
+    - iconBefore: ''
+    - textAlign: left
+    - inputTooltip: ''
+    - events:
+        ordered: []
+    - loading: false
+    - disabled: false
+    - labelPosition: left
+    - decimalPlaces: null
+    - labelWrap: false
+    - padDecimal: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: collapseSustainabilityPackaging
+    subcontainer: '13714'
+    row: 9.000000000000034
+    height: 1
+    width: 6
+createdAt: 2023-01-31T19:09:01.302Z

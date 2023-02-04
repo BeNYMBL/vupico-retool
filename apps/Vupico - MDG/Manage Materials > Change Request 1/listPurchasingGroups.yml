@@ -1,0 +1,16 @@
+id: listPurchasingGroups
+type: state
+subtype: State
+template:
+  ordered:
+    - _persistedValueGetter: null
+    - _persistedValueSetter: null
+    - persistValue: false
+    - persistedValueKey: ''
+    - value: >-
+        [{"id":"001","label":"Labelling Purchase"},{"id":"002","label":"Bottling
+        Purchase"},{"id":"003","label":"IT
+        Purchase"},{"id":"004","label":"Facility"},{"id":"005","label":"Maintenance"},{"id":"006","label":"Ingredient
+        purchase"},{"id":"007","label":"Packaging purchase"}]
+createdAt: 2023-02-03T16:13:34.510Z
+folder: JS_List_Values

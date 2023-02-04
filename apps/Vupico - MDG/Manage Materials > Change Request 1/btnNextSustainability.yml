@@ -1,0 +1,43 @@
+id: btnNextSustainability
+type: widget
+subtype: ButtonWidget2
+template:
+  ordered:
+    - horizontalAlign: stretch
+    - clickable: false
+    - iconAfter: ''
+    - submitTargetId: null
+    - hidden: false
+    - text: Next
+    - showInEditor: false
+    - tooltipText: ''
+    - styleVariant: solid
+    - submit: false
+    - iconBefore: ''
+    - events:
+        - ordered:
+            - event: click
+            - type: widget
+            - method: setValue
+            - pluginId: tabs
+            - targetId: null
+            - params:
+                ordered:
+                  - value: Material Plant
+            - waitType: debounce
+            - waitMs: '0'
+    - loading: false
+    - loaderPosition: auto
+    - disabled: false
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerSustainabilityTitle
+    subcontainer: 5c65f
+    row: 44.999999999999986
+    col: 3
+    height: 1
+    width: 6
+createdAt: 2023-02-03T18:52:32.019Z

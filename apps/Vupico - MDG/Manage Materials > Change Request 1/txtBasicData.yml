@@ -1,0 +1,26 @@
+id: txtBasicData
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '#### Basic Data'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerBasicData
+    subcontainer: 5c65f
+    row: -5.551115123125783e-17
+    height: 0.8
+    width: 12
+createdAt: 2023-01-25T21:19:10.405Z

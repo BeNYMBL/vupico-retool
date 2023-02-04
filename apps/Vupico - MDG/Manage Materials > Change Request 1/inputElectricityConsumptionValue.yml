@@ -1,0 +1,64 @@
+id: inputElectricityConsumptionValue
+type: widget
+subtype: NumberInputWidget
+template:
+  ordered:
+    - readOnly: false
+    - iconAfter: ''
+    - max: null
+    - inputValue: 0
+    - hidden: false
+    - customValidation: ''
+    - showSeparators: true
+    - hideValidationMessage: false
+    - textBefore: ''
+    - validationMessage: ''
+    - textAfter: ''
+    - showInEditor: false
+    - allowNull: true
+    - showClear: false
+    - tooltipText: ''
+    - currency: USD
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: >-
+        {{
+        getSingleChangeRequest.data.material_plant_data.electricity_consumption
+        }}
+    - style:
+        ordered:
+          - border: rgba(186, 186, 228, 0)
+    - labelCaption: ''
+    - min: null
+    - hideLabel: true
+    - labelWidth: '33'
+    - placeholder: Electricity Consumption Value
+    - showStepper: true
+    - label: Label
+    - _validate: false
+    - labelWidthUnit: '%'
+    - invalid: false
+    - format: decimal
+    - iconBefore: ''
+    - textAlign: left
+    - inputTooltip: ''
+    - events:
+        ordered: []
+    - loading: false
+    - disabled: false
+    - labelPosition: left
+    - decimalPlaces: '2'
+    - labelWrap: false
+    - padDecimal: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: collapseSustainabilityData
+    subcontainer: 74bbe
+    row: 3.7999999999999963
+    height: 1
+    width: 5
+createdAt: 2023-02-03T12:11:11.858Z

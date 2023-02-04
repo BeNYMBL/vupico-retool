@@ -1,0 +1,18 @@
+version: 43.0.9
+pageUuid: 88363008-9cf5-11ed-8361-1f64d882a727
+appTemplate:
+  appThemeId: 1
+  folders:
+    - JS_List_Values
+    - Change_Request
+    - Materials
+    - JS_Payloads
+    - Sustainability_Data
+    - Submit
+    - Approve
+    - Material_Plant
+    - Material_Plant_Lists
+  queryStatusVisibility: false
+  rootScreen: null
+  version: 2.99.3
+  markdownLinkBehavior: auto

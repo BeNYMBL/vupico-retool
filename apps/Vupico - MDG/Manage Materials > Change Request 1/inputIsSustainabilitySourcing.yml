@@ -1,0 +1,37 @@
+id: inputIsSustainabilitySourcing
+type: widget
+subtype: CheckboxWidget2
+template:
+  ordered:
+    - hidden: false
+    - customValidation: ''
+    - hideValidationMessage: false
+    - validationMessage: ''
+    - showInEditor: false
+    - tooltipText: ''
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: >-
+        {{getSingleChangeRequest.data.sustainability_data.is_sustainability_sourcing}}
+    - labelCaption: ''
+    - label: SustainabilitySourcing
+    - _validate: false
+    - invalid: false
+    - events:
+        ordered: []
+    - disabled: '{{ getSingleChangeRequest.data.status === "Submitted" }}'
+    - labelPosition: right
+    - labelWrap: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: collapseSustainabilityFormula
+    subcontainer: '13714'
+    row: 0.6000000000000032
+    col: 4
+    height: 0.6
+    width: 4
+createdAt: 2023-01-31T19:09:18.427Z

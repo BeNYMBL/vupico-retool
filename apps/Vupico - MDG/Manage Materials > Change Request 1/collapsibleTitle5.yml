@@ -1,0 +1,25 @@
+id: collapsibleTitle5
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '#### Sustainability Packaging'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: collapseSustainabilityPackaging
+    rowGroup: header
+    height: 0.8
+    width: 9
+createdAt: 2023-01-31T19:26:07.246Z

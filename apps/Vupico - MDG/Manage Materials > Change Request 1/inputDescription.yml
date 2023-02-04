@@ -1,0 +1,60 @@
+id: inputDescription
+type: widget
+subtype: TextInputWidget2
+template:
+  ordered:
+    - spellCheck: false
+    - readOnly: '{{ getSingleChangeRequest.data.status === "Submitted" }}'
+    - iconAfter: ''
+    - showCharacterCount: false
+    - autoComplete: false
+    - maxLength: null
+    - hidden: false
+    - customValidation: ''
+    - patternType: ''
+    - hideValidationMessage: false
+    - textBefore: ''
+    - validationMessage: ''
+    - textAfter: ''
+    - showInEditor: false
+    - showClear: false
+    - pattern: ''
+    - tooltipText: ''
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: '{{getSingleChangeRequest.data.description}}'
+    - style:
+        ordered:
+          - background: rgb(247, 247, 253)
+          - border: rgba(186, 186, 228, 0)
+    - labelCaption: ''
+    - hideLabel: true
+    - labelWidth: '33'
+    - autoFill: ''
+    - placeholder: Description
+    - label: ''
+    - _validate: false
+    - labelWidthUnit: '%'
+    - invalid: false
+    - iconBefore: ''
+    - minLength: null
+    - inputTooltip: ''
+    - events:
+        ordered: []
+    - autoCapitalize: none
+    - loading: false
+    - disabled: false
+    - labelPosition: left
+    - labelWrap: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerChangeRequest
+    subcontainer: 5c65f
+    row: 2.199999999999998
+    height: 1
+    width: 6
+createdAt: 2023-01-25T21:24:24.393Z

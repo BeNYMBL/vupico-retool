@@ -1,0 +1,60 @@
+id: inputMaterialName
+type: widget
+subtype: TextInputWidget2
+template:
+  ordered:
+    - spellCheck: false
+    - readOnly: ''
+    - iconAfter: ''
+    - showCharacterCount: false
+    - autoComplete: false
+    - maxLength: null
+    - hidden: false
+    - customValidation: ''
+    - patternType: ''
+    - hideValidationMessage: false
+    - textBefore: ''
+    - validationMessage: ''
+    - textAfter: ''
+    - showInEditor: false
+    - showClear: false
+    - pattern: ''
+    - tooltipText: ''
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: '{{getSingleChangeRequest.data.basic_data.material}}'
+    - style:
+        ordered:
+          - background: rgb(247, 247, 253)
+          - border: rgba(186, 186, 228, 0)
+    - labelCaption: ''
+    - hideLabel: true
+    - labelWidth: '33'
+    - autoFill: ''
+    - placeholder: Material
+    - label: ''
+    - _validate: false
+    - labelWidthUnit: '%'
+    - invalid: false
+    - iconBefore: ''
+    - minLength: null
+    - inputTooltip: ''
+    - events:
+        ordered: []
+    - autoCapitalize: none
+    - loading: false
+    - disabled: false
+    - labelPosition: left
+    - labelWrap: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: containerBasicData
+    subcontainer: 5c65f
+    row: 1.1999999999999997
+    height: 1
+    width: 6
+createdAt: 2023-01-25T21:50:51.651Z
