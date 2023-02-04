@@ -4,6 +4,7 @@ appTemplate:
   appThemeId: 1
   folders:
     - CONSTS
+    - listQuery
   queryStatusVisibility: false
   rootScreen: null
   version: 2.99.3

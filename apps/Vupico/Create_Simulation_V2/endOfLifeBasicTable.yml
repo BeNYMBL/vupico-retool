@@ -31,26 +31,22 @@ template:
                     array: []
           - waste_from_country:
               ordered:
-                - optionData: '{{ currentColumn }}'
+                - optionData: '{{ listCountry.data }}'
                 - colorMode: auto
                 - allowCustomValue: true
-                - optionLabels:
-                    array: []
+                - optionLabels: '{{item.country}}'
                 - optionColors:
                     array: []
-                - optionValues:
-                    array: []
+                - optionValues: '{{item.country_code}}'
           - waste_to_country:
               ordered:
-                - optionData: '{{ currentColumn }}'
+                - optionData: '{{ listCountry.data }}'
                 - colorMode: auto
                 - allowCustomValue: true
-                - optionLabels:
-                    array: []
+                - optionLabels: '{{item.country}}'
                 - optionColors:
                     array: []
-                - optionValues:
-                    array: []
+                - optionValues: '{{item.country_code}}'
           - material_name:
               ordered:
                 - optionData: '{{ currentColumn }}'
@@ -280,7 +276,9 @@ template:
     - newRow: null
     - emptyMessage: No rows found
     - columnEditable:
-        ordered: []
+        ordered:
+          - waste_from_country: true
+          - waste_to_country: true
     - _viewerColumnSummaryTypes:
         object: {}
     - filters:
