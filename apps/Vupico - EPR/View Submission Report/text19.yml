@@ -10,7 +10,9 @@ template:
     - showInEditor: false
     - verticalAlign: center
     - tooltipText: ''
-    - value: '**{{getEPRReportSummary.data.total_tax_amount[''0'']}}**'
+    - value: >-
+        **{{_.round(getEPRReportSummary.data.total_tax_amount['0']).toLocaleString()}}
+        {{getEPRReportSummary.data.tax_currency['0']}}**
     - style:
         ordered:
           - color: rgb(26, 26, 26)
