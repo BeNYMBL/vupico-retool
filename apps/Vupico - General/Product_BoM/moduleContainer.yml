@@ -1,0 +1,24 @@
+id: moduleContainer
+type: widget
+subtype: ModuleContainerWidget
+template:
+  ordered:
+    - heightType: fixed
+    - spinWhenChildrenAreFetching: true
+    - showBorder: true
+    - productId: '"46389874-af73-4dcb-b930-682276f9b544"'
+    - showDropShadow: true
+    - isGlobalWidgetContainer: true
+    - backgroundColor: white
+    - title: ''
+    - overflowType: hidden
+    - disabled: ''
+position2:
+  position2:
+    height: 21.2
+    width: 12
+mobilePosition2:
+  position2:
+    height: 12
+    width: 12
+createdAt: 2022-11-04T18:52:32.350Z

@@ -1,0 +1,9 @@
+id: productId
+type: globalwidgetprop
+subtype: GlobalWidgetProp
+template:
+  ordered:
+    - value: '"46389874-af73-4dcb-b930-682276f9b544"'
+    - defaultValue: '"aea3c588-1389-4679-b1d8-dca1c3ad0d1c"'
+    - description: '"aea3c588-1389-4679-b1d8-dca1c3ad0d1c"'
+createdAt: 2022-11-04T19:07:05.878Z
