@@ -1,0 +1,19 @@
+id: productBoM1
+type: widget
+subtype: GlobalWidget
+template:
+  ordered:
+    - showFetchingIndicator: boolean
+    - heightType: auto
+    - name: Product_BoM
+    - pageUuid: d6d3c26c-5c71-11ed-8186-c738f8a6bae3
+    - childNamespace: productBoM1
+    - productId: '{{urlparams.productId}}'
+style:
+  ordered: []
+position2:
+  position2:
+    row: 0.2000000000000003
+    height: 2.4
+    width: 12
+createdAt: 2022-11-04T19:03:25.434Z
