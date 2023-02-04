@@ -104,9 +104,10 @@ template:
     - _columnVisibility:
         ordered:
           - id: false
-          - material_code: false
+          - material_code: true
           - customer_country_name: true
           - country_code: false
+          - global_element_id: false
     - _columnSummaryTypes:
         ordered:
           - consumption_percent: average
@@ -212,8 +213,8 @@ template:
     - sort: null
     - _columns:
         - id
-        - material_code
         - material_name
+        - material_code
         - global_element_id
         - weight
         - uom
