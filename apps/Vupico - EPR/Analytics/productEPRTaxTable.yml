@@ -43,7 +43,7 @@ template:
           - dueDate: '{{''due Date''.toUpperCase()}}'
           - projectName: '{{''Project Name''.toUpperCase()}}'
           - c02: '{{''Co2 value in Kg''.toUpperCase()}}'
-          - sum: TAX PAID
+          - sum: TAX AMOUNT
           - name: Co2 Value in Kg
           - product: PRODUCT
           - status: '{{''status''.toUpperCase()}}'

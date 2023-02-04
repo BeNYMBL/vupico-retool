@@ -20,13 +20,43 @@ template:
                 - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
     - isDataTemplateDirty: true
     - datasource: ''
-    - isJsonTemplateDirty: false
+    - isJsonTemplateDirty: true
     - groupByDropdown: ''
     - datasourceInputMode: javascript
     - datasourceDataType: array
     - layout: ''
     - xAxisDropdown: element
-    - data: ''
+    - data: |-
+        [
+          {
+            "name": "TAX",
+            "x": {{formatDataAsObject(getElementEPRTax.data ).element}},
+            "y": {{formatDataAsObject(getElementEPRTax.data )['totalEPRTax']}},
+            "type": "bar",
+            "hovertemplate": "<b>%{x}</b><br>%{fullData.name}: %{y:$,.0f}<extra></extra>",
+            "transforms": [
+              {
+                "type": "sort",
+                "target": {{formatDataAsObject(getElementEPRTax.data ).element}},
+                "order": "ascending"
+              },
+              {
+                "type": "aggregate",
+                "groups": {{formatDataAsObject(getElementEPRTax.data ).element}},
+                "aggregations": [
+                  {
+                    "target": "y",
+                    "func": "sum",
+                    "enabled": true
+                  }
+                ]
+              }
+            ],
+            "marker": {
+              "color": "#033663"
+            }
+          }
+        ]
     - isStackSeriesEnabled: false
     - xAxisTickFormat: ''
     - skipDatasourceUpdate: false
