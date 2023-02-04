@@ -1,79 +1,46 @@
-id: getEPRTax_byElement
+id: getMaterial_PackagingElement
 type: datasource
-subtype: JavascriptQuery
-resourceName: JavascriptQuery
+subtype: SqlQueryUnified
+resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
+resourceDisplayName: Vupico-Database-1
 template:
   ordered:
     - queryRefreshTime: ''
+    - records: ''
     - lastReceivedFromResourceAt: null
+    - databasePasswordOverride: ''
     - queryDisabledMessage: ''
     - successMessage: ''
     - queryDisabled: ''
     - playgroundQuerySaveId: latest
     - resourceNameOverride: ''
-    - runWhenModelUpdates: false
+    - runWhenModelUpdates: true
     - showFailureToaster: true
-    - query: >-
-        let eprDetailData = getEPRDetailData_ByElements.data.epr_detail_data
-
-        let packagingData = formatDataAsArray(getMaterial_PackagingElement.data)
-
-        let packagaingArray = [] 
-
-        packagingData.map(x => {packagaingArray.push(x.id)})
-
-
-        let collectDetailData = []
-
-        eprDetailData.forEach((groupedDetail) => {
-          groupedDetail.forEach((elementDetail) =>{
-            collectDetailData.push(elementDetail.epr_detail_data)
-          })
-        })
-
-
-        collectDetailData = collectDetailData.filter(m =>
-        packagaingArray.includes(m.element))
-
-
-        let flatDetailData = collectDetailData.flat(Infinity)
-
-
-        //console.log('flatDetailData', flatDetailData)
-
-
-        let groupedData = _.groupBy(flatDetailData, 'materialName')
-
-
-        let outArr = []
-
-        for (const materialName in groupedData) {
-          let totalTax_byElement = groupedData[materialName].reduce((acc, obj) => {
-            return acc + obj.epr_tax_amount;
-          }, 0);
-          let outObject = {
-            element: materialName, 
-            totalEPRTax: _.round(totalTax_byElement)
-          }
-          outArr.push(outObject)
-        }
-
-
-        return outArr.sort((a,b) => b.totalEPRTax -
-        a.totalEPRTax).slice(0,5).sort((a,b) => a.totalEPRTax - b.totalEPRTax)
+    - query: |-
+        select id
+        from material
+        where material_type_code = 'PELM'
     - playgroundQueryUuid: ''
     - playgroundQueryId: null
     - error: null
     - privateParams: []
     - runWhenPageLoadsDelay: ''
+    - warningCodes: []
     - data: null
+    - recordId: ''
     - importedQueryInputs:
         ordered: []
     - isImported: false
-    - showSuccessToaster: false
+    - showSuccessToaster: true
+    - dataArray: []
     - cacheKeyTtl: ''
+    - filterBy: ''
+    - databaseHostOverride: ''
     - metadata: null
+    - editorMode: sql
+    - actionType: ''
     - changesetObject: ''
+    - shouldUseLegacySql: false
     - errorTransformer: >-
         // The variable 'data' allows you to reference the request's data in the
         transformer. 
@@ -81,6 +48,7 @@ template:
         // example: return data.find(element => element.isError)
 
         return data.error
+    - databaseNameOverride: ''
     - confirmationMessage: null
     - isFetching: false
     - changeset: ''
@@ -89,12 +57,14 @@ template:
     - resourceTypeOverride: null
     - watchedParams: []
     - enableErrorTransformer: false
+    - enableBulkUpdates: false
     - showLatestVersionUpdatedWarning: false
     - timestamp: 0
     - importedQueryDefaults:
         ordered: []
     - enableTransformer: false
     - showUpdateSetValueDynamicallyToggle: true
+    - bulkUpdatePrimaryKey: ''
     - runWhenPageLoads: false
     - transformer: >-
         // type your code here
@@ -104,14 +74,18 @@ template:
 
         return data
     - events: []
+    - tableName: ''
     - queryTimeout: '10000'
     - requireConfirmation: false
     - queryFailureConditions: ''
     - changesetIsObject: false
     - enableCaching: false
     - allowedGroups: []
+    - databaseUsernameOverride: ''
+    - shouldEnableBatchQuerying: false
+    - doNotThrowOnNoOp: false
     - queryThrottleTime: '750'
     - updateSetValueDynamically: false
     - notificationDuration: ''
-createdAt: 2023-01-19T16:09:25.192Z
-folder: charts
+createdAt: 2023-02-04T17:24:05.017Z
+folder: epr_detail_data
