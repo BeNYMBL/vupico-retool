@@ -1,0 +1,40 @@
+id: mdlSubmit
+type: widget
+subtype: ModalWidget
+template:
+  ordered:
+    - opened: false
+    - modalOverflowType: scroll
+    - hidden: '{{ steppedContainerBoM.currentViewIndex == 0 }}'
+    - onModalClose: ''
+    - modalHeightType: auto
+    - tooltipText: ''
+    - modalHeight: ''
+    - onModalOpen: ''
+    - events:
+        - ordered:
+            - event: open
+            - type: datasource
+            - method: trigger
+            - pluginId: updateChangeRequest
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+    - modalWidth: ''
+    - closeOnOutsideClick: false
+    - loading: ''
+    - disabled: ''
+    - buttonText: Save Draft
+style:
+  ordered: []
+position2:
+  position2:
+    container: steppedContainerBoM
+    rowGroup: footer
+    row: -8.881784197001252e-16
+    col: 4
+    height: 1
+    width: 4
+createdAt: 2023-01-30T20:38:28.399Z
