@@ -10,7 +10,7 @@ template:
     - showInEditor: false
     - verticalAlign: center
     - tooltipText: ''
-    - value: '###### **Simulations**'
+    - value: '###### **LCA Reports for Products**'
     - style:
         ordered:
           - color: primary
