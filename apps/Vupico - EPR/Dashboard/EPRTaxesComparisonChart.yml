@@ -20,13 +20,63 @@ template:
                 - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
     - isDataTemplateDirty: true
     - datasource: ''
-    - isJsonTemplateDirty: false
+    - isJsonTemplateDirty: true
     - groupByDropdown: country
     - datasourceInputMode: javascript
     - datasourceDataType: object
     - layout: ''
     - xAxisDropdown: year
-    - data: ''
+    - data: |-
+        [
+          {
+            "name": "Estimated EPR Tax Amount",
+            "x": {{ getEPRTax_byCountry_byYear.data['year']}},
+            "y": {{ getEPRTax_byCountry_byYear.data['total_epr_tax_amount']}},
+            "type": "line",
+            "hovertemplate": "<b>%{x}</b><br>%{fullData.name}: %{y:$,.0f}<extra></extra>",
+            "transforms": [
+              {
+                "type": "groupby",
+                "groups": {{ getEPRTax_byCountry_byYear.data['country']}},
+                "styles": [
+                  {
+                    "target": {{_.uniq( getEPRTax_byCountry_byYear.data['country'])[0]}},
+                    "value": {
+                      "marker": {
+                        "color": "#CE498B"
+                      }
+                    }
+                  },
+                  {
+                    "target": {{_.uniq( getEPRTax_byCountry_byYear.data['country'])[1]}},
+                    "value": {
+                      "marker": {
+                        "color": "#81C1CB"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "sort",
+                "target": {{ getEPRTax_byCountry_byYear.data['year']}},
+                "order": "ascending"
+              },
+              {
+                "type": "aggregate",
+                "groups": {{ getEPRTax_byCountry_byYear.data['year']}},
+                "aggregations": [
+                  {
+                    "target": "y",
+                    "func": "sum",
+                    "enabled": true
+                  }
+                ]
+              }
+            ],
+            "mode": "lines+markers"
+          }
+        ]
     - isStackSeriesEnabled: false
     - xAxisTickFormat: ''
     - skipDatasourceUpdate: false

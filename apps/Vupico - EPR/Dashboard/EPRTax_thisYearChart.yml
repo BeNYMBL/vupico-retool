@@ -35,13 +35,109 @@ template:
                 - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
     - isDataTemplateDirty: true
     - datasource: ''
-    - isJsonTemplateDirty: false
+    - isJsonTemplateDirty: true
     - groupByDropdown: country
     - datasourceInputMode: javascript
     - datasourceDataType: object
     - layout: ''
     - xAxisDropdown: country
-    - data: ''
+    - data: |-
+        [
+          {
+            "name": "Estimate EPR Tax Amount",
+            "x": {{ getEPRTax_byCountry_thisYear.data .country}},
+            "y": {{ getEPRTax_byCountry_thisYear.data ['total_epr_tax_amount']}},
+            "type": "bar",
+            "hovertemplate": "<b>%{x}</b><br>%{fullData.name}: %{y:$,.0f}<extra></extra>",
+            "transforms": [
+              {
+                "type": "groupby",
+                "groups": {{ getEPRTax_byCountry_thisYear.data ['country']}},
+                "styles": [
+                  {
+                    "target": {{_.uniq( getEPRTax_byCountry_thisYear.data ['country'])[0]}},
+                    "value": {
+                      "marker": {
+                        "color": "#E30"
+                      }
+                    }
+                  },
+                  {
+                    "target": {{_.uniq( getEPRTax_byCountry_thisYear.data ['country'])[1]}},
+                    "value": {
+                      "marker": {
+                        "color": "#E30"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "sort",
+                "target": {{ getEPRTax_byCountry_thisYear.data .country}},
+                "order": "ascending"
+              },
+              {
+                "type": "aggregate",
+                "groups": {{ getEPRTax_byCountry_thisYear.data .country}},
+                "aggregations": [
+                  {
+                    "target": "y",
+                    "func": "sum",
+                    "enabled": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Sale Amount",
+            "x": {{ getEPRTax_byCountry_thisYear.data .country}},
+            "y": {{ getEPRTax_byCountry_thisYear.data ['total_sales']}},
+            "type": "bar",
+            "hovertemplate": "<b>%{x}</b><br>%{fullData.name}: %{y:$,.0f}<extra></extra>",
+            "transforms": [
+              {
+                "type": "groupby",
+                "groups": {{ getEPRTax_byCountry_thisYear.data ['country']}},
+                "styles": [
+                  {
+                    "target": {{_.uniq( getEPRTax_byCountry_thisYear.data ['country'])[0]}},
+                    "value": {
+                      "marker": {
+                        "color": "#3791d3"
+                      }
+                    }
+                  },
+                  {
+                    "target": {{_.uniq( getEPRTax_byCountry_thisYear.data ['country'])[1]}},
+                    "value": {
+                      "marker": {
+                        "color": "#3791d3"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "sort",
+                "target": {{ getEPRTax_byCountry_thisYear.data .country}},
+                "order": "ascending"
+              },
+              {
+                "type": "aggregate",
+                "groups": {{ getEPRTax_byCountry_thisYear.data .country}},
+                "aggregations": [
+                  {
+                    "target": "y",
+                    "func": "sum",
+                    "enabled": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
     - isStackSeriesEnabled: false
     - xAxisTickFormat: ''
     - skipDatasourceUpdate: false
