@@ -11,12 +11,12 @@ template:
         const isEnhanced = {{switchEnhanced.value}}
           
         const customColumnsTransf = customColumns === null ? [] :
-        customColumns.map((val) => ({...val, is_custom: true, length: val.type
-        === 'text' ? 50 : undefined}))
+        customColumns.map((val) => ({...val, is_custom: true, Key: false,
+        length: val.type === 'text' ? 50 : undefined}))
 
         const systemColumnsTransf = systemColumns.map((val) => ({...val,
-        is_custom: false, length: 50, length: val.type === 'character varying' ?
-        50 : undefined}))
+        is_custom: false, length: 50, Key: false, length: val.type ===
+        'character varying' ? 50 : undefined}))
 
 
 
