@@ -27,7 +27,8 @@ template:
           material.product_hierarchy,
           material.uom as base_uom,
           material.material_group,
-          material.material_description
+          material.material_description,
+          material.brand
         FROM
           epr_detail
           JOIN product on product.id = epr_detail.product_id
