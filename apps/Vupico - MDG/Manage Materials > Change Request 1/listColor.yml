@@ -1,0 +1,20 @@
+id: listColor
+type: state
+subtype: State
+template:
+  ordered:
+    - _persistedValueGetter: null
+    - _persistedValueSetter: null
+    - persistValue: false
+    - persistedValueKey: ''
+    - value: |-
+        [
+        'Black',
+          'Coloured',
+          'Opaque',
+          'Transparent or Light',
+          'No Colour',
+          'Colour Non Opaque'
+        ]
+createdAt: 2023-01-25T22:19:10.925Z
+folder: Sustainability_Data

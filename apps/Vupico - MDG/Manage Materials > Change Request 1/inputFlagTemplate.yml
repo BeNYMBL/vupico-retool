@@ -1,0 +1,33 @@
+id: inputFlagTemplate
+type: widget
+subtype: CheckboxWidget2
+template:
+  ordered:
+    - hidden: 'true'
+    - customValidation: ''
+    - hideValidationMessage: false
+    - validationMessage: ''
+    - showInEditor: false
+    - tooltipText: ''
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: '{{getSingleChangeRequest.data.sustainability_data.is_pef}}'
+    - labelCaption: ''
+    - label: Flag Template
+    - _validate: false
+    - invalid: false
+    - events:
+        ordered: []
+    - disabled: false
+    - labelPosition: right
+    - labelWrap: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    row: 19.599999999999994
+    height: 0.6
+    width: 4
+createdAt: 2023-01-31T18:52:11.611Z

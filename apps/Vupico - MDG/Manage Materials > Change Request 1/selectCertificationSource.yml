@@ -1,0 +1,125 @@
+id: selectCertificationSource
+type: widget
+subtype: SelectWidget2
+template:
+  ordered:
+    - imageByIndex:
+        array: []
+    - _disabledByIndex:
+        - ''
+        - ''
+    - showSelectionIndicator: true
+    - _values:
+        - '01'
+        - '02'
+    - iconByIndex:
+        array: []
+    - values:
+        array: []
+    - readOnly: false
+    - iconAfter: ''
+    - _iconByIndex:
+        - ''
+        - ''
+    - allowDeselect: false
+    - inputValue: ''
+    - hidden: '{{ inputCertifiedFlag.value ? false : true }}'
+    - customValidation: ''
+    - data:
+        array: []
+    - searchMode: fuzzy
+    - hideValidationMessage: false
+    - fallbackTextByIndex:
+        array: []
+    - textBefore: ''
+    - _fallbackTextByIndex:
+        - ''
+        - ''
+    - selectedItem: null
+    - validationMessage: ''
+    - automaticItemColors: false
+    - itemAdornmentShape: circle
+    - textAfter: ''
+    - showInEditor: false
+    - showClear: false
+    - tooltipText: ''
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: '{{ getSingleChangeRequest.data.sustainability_data.certification_type }}'
+    - style:
+        ordered:
+          - background: rgb(247, 247, 253)
+          - border: rgba(186, 186, 228, 0)
+    - hiddenByIndex:
+        array: []
+    - labelCaption: ''
+    - hideLabel: true
+    - labelWidth: '33'
+    - deprecatedLabels:
+        array: []
+    - _hiddenByIndex:
+        - ''
+        - ''
+    - placeholder: Certification Source
+    - _captionByIndex:
+        - ''
+        - ''
+    - itemAdornmentSize: auto
+    - label: Label
+    - _hasMigratedNestedItems: true
+    - captionByIndex:
+        array: []
+    - _validate: false
+    - itemMode: static
+    - labelWidthUnit: '%'
+    - allowCustomValue: false
+    - invalid: false
+    - selectedIndex: null
+    - _tooltipByIndex:
+        - ''
+        - ''
+    - _colorByIndex:
+        - ''
+        - ''
+    - tooltipByIndex:
+        array: []
+    - iconBefore: ''
+    - colorByIndex:
+        array: []
+    - selectedLabel: ''
+    - events:
+        ordered: []
+    - _ids:
+        - 00bfc
+        - '88272'
+    - emptyMessage: ''
+    - overlayMaxHeight: 375
+    - loading: false
+    - disabled: false
+    - labelPosition: left
+    - _labels:
+        - Eco Label
+        - EPD
+    - labelWrap: false
+    - disabledValues:
+        array: []
+    - disabledByIndex:
+        array: []
+    - maintainSpaceWhenHidden: true
+    - _imageByIndex:
+        - ''
+        - ''
+    - required: false
+    - labels:
+        array: []
+style:
+  ordered: []
+position2:
+  position2:
+    container: collapseSustainabilityFormula
+    subcontainer: '13714'
+    row: 9
+    col: 6
+    height: 1
+    width: 6
+createdAt: 2023-02-02T20:40:14.548Z

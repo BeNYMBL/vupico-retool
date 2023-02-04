@@ -1,0 +1,61 @@
+id: payloadSustainabilityData
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const final = {
+          is_epr: {{inputEPRFlag.value}},
+          epr_reason: {{inputEPRReason.value}},
+          is_lca: {{ inputLCAFlag.value }},
+          lca_reason: {{ inputLCAReason.value }},
+          is_carbon: {{ inputCarbonFlag.value }},
+          carbon_reason: {{ inputCarbonReason.value }},
+          is_pef: {{ inputPEFFlag.value }},
+          pef_reason: {{ inputPEFReason.value }},
+          color: {{ selectColor.value }},
+          rigidity: {{ selectRigidity.value }},
+          is_recycle: {{ inputRecycleFlag.value }},
+          is_reuse: {{ inputReusableFlag.value }},
+          tax_category: {{ inputTaxCategory.value }},
+          factory: {{ inputFactory.value }},
+          pef_library: {{selectPefLibrary.value}},
+          pef_code: {{selectPefCode.value}},
+          pef_name: '',
+          pef_value: {{inputPefValue.value}},
+          pef_value_unit: {{selectPefUnit.value}},
+          unit_name: {{selectPefUnit.value}},
+          unit_group: {{selectUnitGroup.value}},
+          unit_conversion_factor: {{inputUnitConversionFactor.value}},
+          converting_process: {{selectConvertingProcess.value}},
+          recycle_percent: {{inputRecyclePercent.value}},
+          cas_number: {{inputCasNumber.value}},
+          natural_percent: {{inputNaturalPercent.value}},
+          co2_amount: {{inputCO2amount.value}},
+          is_controversial: {{inputIsControversial.value}},
+          is_degradable: {{inputDegradable.value}},
+          product_type: {{selectProductType.value}},
+          country_code: {{inputCountryCode.value}},
+          weight: {{inputWeight.value}},
+          weight_unit: {{inputWeightUnit.value}},
+          epr_tax_rate: {{inputEprTaxRate.value}},
+          epr_tax_currency: {{inputEprTaxCurrency.value}},
+          company_recycle_percent: {{inputCompanyRecyclePercent.value}},
+          finishing_process: {{selectFinishingProcess.value}},
+          is_green_chemistry: {{inputIsGreenChemistry.value}},
+          is_sustainability_sourcing: {{inputIsSustainabilitySourcing.value}},
+          is_rspo: {{inputIsRspo.value}},
+          is_combustible: {{ inputCombustibleFlag.value }},
+          is_compostable: {{ inputCompostableFlag.value }},
+          is_certified: {{ inputCertifiedFlag.value }},
+          certification_type: {{ selectCertificationSource.value }},
+          packaging_weight: {{ inputPackagingWeight.value }},
+          packaging_unit: {{ selectPackagingUnit.value }},
+          plastic_type: {{ selectPlasticType.value }}
+         
+        }
+
+        return JSON.stringify(final)
+    - value: ''
+createdAt: 2023-01-25T22:35:34.013Z
+folder: JS_Payloads

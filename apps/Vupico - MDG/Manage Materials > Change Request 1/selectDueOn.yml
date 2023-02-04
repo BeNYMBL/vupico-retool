@@ -1,0 +1,52 @@
+id: selectDueOn
+type: widget
+subtype: DateWidget
+template:
+  ordered:
+    - minDate: ''
+    - readOnly: false
+    - iconAfter: ''
+    - datePlaceholder: Due Date
+    - dateFormat: MMM d, yyyy
+    - hidden: '{{ getSingleChangeRequest.data.status === "Pending" ? false : true }}'
+    - customValidation: ''
+    - hideValidationMessage: false
+    - textBefore: ''
+    - validationMessage: ''
+    - textAfter: ''
+    - showInEditor: false
+    - showClear: false
+    - tooltipText: ''
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: '{{getSingleChangeRequest.data.due_on}}'
+    - style:
+        ordered:
+          - border: rgba(173, 173, 227, 0)
+    - labelCaption: ''
+    - hideLabel: true
+    - maxDate: ''
+    - labelWidth: '33'
+    - label: Label
+    - formattedValue: ''
+    - _validate: false
+    - labelWidthUnit: '%'
+    - invalid: false
+    - iconBefore: bold/interface-calendar
+    - events:
+        ordered: []
+    - loading: false
+    - disabled: false
+    - labelPosition: left
+    - labelWrap: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: mdlApprove
+    row: 1.5999999999999996
+    height: 1
+    width: 12
+createdAt: 2023-01-25T22:25:57.909Z

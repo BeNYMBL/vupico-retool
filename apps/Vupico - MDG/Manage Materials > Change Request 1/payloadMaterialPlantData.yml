@@ -1,0 +1,44 @@
+id: payloadMaterialPlantData
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const final = {
+          moving_average_price: {{ inputMovingAveragePrice.value }},
+          currency: {{ selectCurrency.value }},
+          price_unit: {{ inputPriceUnit.value }},
+          uom: {{ selectUnitOfMeasure.value }},
+          purchasing_group: {{ selectPurchasingGroup.value }},
+          date_of_first_goods: {{ inputDateOfFirstGoods.value }},
+          base_uom: {{ selectBaseUom.value }},
+          mrp_controller: {{ selectMrpController.value }},
+          minimum_stock_level: {{ inputMinimumStockLevel.value }},
+          service_level: {{ inputServiceLevel.value }},
+          selling_class: {{ selectSellingClass.value }},
+          mrp_type: {{ selectMrpType.value }},
+          abc_indicator: {{ selectAbcIndicator.value }},
+          isr_service_level: {{ selectServiceLevel.value }},
+          ordering_method: {{ selectOrderingMethod.value }},
+          rp_type: {{ selectRPType.value }},
+          plant_id: {{ selectPlant.value }},
+          batch_size: {{ inputBatchSize.value }},
+          batch_unit: {{ selectBatchUnit.value }},
+          electricity_id: {{ selectElectricity.value }},
+          electricity_consumption: {{ inputElectricityConsumptionValue.value }},
+          electricity_unit: {{ selectElectricityUnit.value }},
+          water_id: {{ selectWater.value }},
+          water_consumption: {{ inputWaterConsumptionValue.value }},
+          water_unit: {{ selectWaterUnit.value }},
+          fuel_id: {{ selectFuel.value }},
+          fuel_consumption: {{ inputFuelConsumptionValue.value }},
+          fuel_unit: {{ selectFuelUnit.value }},
+          lubrication_oil_id: {{ selectLubricationOil.value }},
+          lubrication_oil_consumption: {{ inputLubricationOilConsumptionValue.value }},
+          lubrication_oil_unit: {{ selectLubricationOilUnit.value }}
+        }
+
+        return JSON.stringify(final)
+    - value: ''
+createdAt: 2023-02-03T12:35:23.624Z
+folder: JS_Payloads

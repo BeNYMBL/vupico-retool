@@ -1,0 +1,35 @@
+id: inputCombustibleFlag
+type: widget
+subtype: CheckboxWidget2
+template:
+  ordered:
+    - hidden: false
+    - customValidation: ''
+    - hideValidationMessage: false
+    - validationMessage: ''
+    - showInEditor: false
+    - tooltipText: ''
+    - labelAlign: left
+    - formDataKey: '{{ self.id }}'
+    - value: '{{ getSingleChangeRequest.data.sustainability_data.is_combustible }}'
+    - labelCaption: ''
+    - label: Is combustible
+    - _validate: false
+    - invalid: false
+    - events:
+        ordered: []
+    - disabled: false
+    - labelPosition: right
+    - labelWrap: false
+    - maintainSpaceWhenHidden: false
+    - required: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: collapseSustainabilityFormula
+    subcontainer: '13714'
+    row: 8.4
+    height: 0.6
+    width: 6
+createdAt: 2023-02-02T20:34:32.193Z
