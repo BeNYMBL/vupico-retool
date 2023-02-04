@@ -1,7 +1,0 @@
-id: data_output
-type: globalwidgetoutput
-subtype: GlobalWidgetOutput
-template:
-  ordered:
-    - value: '{{output.value}}'
-createdAt: 2022-12-16T21:16:54.688Z
