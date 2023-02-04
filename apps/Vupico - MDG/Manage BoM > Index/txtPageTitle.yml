@@ -1,0 +1,24 @@
+id: txtPageTitle
+type: widget
+subtype: TextWidget2
+template:
+  ordered:
+    - heightType: auto
+    - horizontalAlign: left
+    - hidden: false
+    - imageWidth: fit
+    - showInEditor: false
+    - verticalAlign: center
+    - tooltipText: ''
+    - value: '## Manage Bill of Materials'
+    - disableMarkdown: false
+    - overflowType: scroll
+    - maintainSpaceWhenHidden: false
+style:
+  ordered: []
+position2:
+  position2:
+    row: 0.7999999999999994
+    height: 0.6
+    width: 4
+createdAt: 2023-01-25T21:04:50.141Z
