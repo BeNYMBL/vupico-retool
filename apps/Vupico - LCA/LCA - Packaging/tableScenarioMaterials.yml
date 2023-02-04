@@ -26,9 +26,7 @@ template:
                 - optionData: '{{ listMaterial.data }}'
                 - colorMode: auto
                 - allowCustomValue: true
-                - optionLabels: >-
-                    {{_.startCase(item.material_name) + ' (' +
-                    item.material_code + ')'}}
+                - optionLabels: '{{_.startCase(item.material_name)}}'
                 - optionColors:
                     array: []
                 - optionValues: '{{item.id}}'
@@ -68,7 +66,7 @@ template:
           - bio_diversity: >-
               Bio Diversity
               ({{BomMaterialsWithTotal.value.bio_diversity_unit[0]}})
-          - material_code: Material ID
+          - material_code: Material Code
           - co2: Co 2 ({{BomMaterialsWithTotal.value.co2_unit[0]}})
           - ecotoxicity: Ecotoxicity ({{BomMaterialsWithTotal.value.ecotoxicity_unit[0]}})
           - human_toxicity_non_cancer: >-
@@ -84,7 +82,7 @@ template:
               ({{BomMaterialsWithTotal.value.ionizing_radiation_unit[0]}})
           - fossil: Fossil ({{BomMaterialsWithTotal.value.fossil_unit[0]}})
           - production_quantity: Production Quantity
-          - material_global_code: Material Code
+          - material_global_code: global
           - particulate_matter: >-
               Particulate Matter
               ({{BomMaterialsWithTotal.value.particulate_matter_unit[0]}})
@@ -195,7 +193,7 @@ template:
           - material_name: false
           - marine_eutrophication_unit: false
           - water_use_unit: false
-          - material_code: false
+          - material_code: true
           - scenario_id: false
           - ozone_depletion_unit: false
           - freshwater_eutrophication_unit: false
@@ -204,7 +202,7 @@ template:
           - land_use_unit: false
           - currency: false
           - particulate_matter_unit: false
-          - material_global_code: true
+          - material_global_code: false
           - to_country: false
           - material_id: true
           - fossil_unit: false
@@ -339,13 +337,51 @@ template:
         - id
         - material_id
         - material_global_code
+        - material_code
         - from_country
         - to_country
         - scenario_id
-        - material_code
         - quantity
         - uom
         - shipping_type_code
+        - material_name
+        - total_cost
+        - currency
+        - production_quantity
+        - acidification
+        - acidification_unit
+        - co2
+        - co2_unit
+        - ecotoxicity
+        - ecotoxicity_unit
+        - fossil
+        - fossil_unit
+        - freshwater_eutrophication
+        - freshwater_eutrophication_unit
+        - human_toxicity_cancer
+        - human_toxicity_cancer_unit
+        - human_toxicity_non_cancer
+        - human_toxicity_non_cancer_unit
+        - ionizing_radiation
+        - ionizing_radiation_unit
+        - land_use
+        - land_use_unit
+        - marine_eutrophication
+        - marine_eutrophication_unit
+        - ozone_depletion
+        - ozone_depletion_unit
+        - particulate_matter
+        - particulate_matter_unit
+        - photochemical_ozone
+        - photochemical_ozone_unit
+        - resource_use
+        - resource_use_unit
+        - terrestrial_eutrophication
+        - terrestrial_eutrophication_unit
+        - water_use
+        - water_use_unit
+        - bio_diversity
+        - bio_diversity_unit
     - sortByRawValue:
         ordered: []
     - calculatedColumns: []
