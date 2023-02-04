@@ -32,7 +32,7 @@ template:
     - columnHeaderNames:
         ordered:
           - material_name: Material
-          - material_code: Material
+          - material_code: Material Code
           - waste_product: Waste
           - uom: Unit
           - loss_product: Loss Product
@@ -80,7 +80,7 @@ template:
         ordered:
           - waste_percent: true
           - collection_percent: true
-          - material_code: false
+          - material_code: true
           - batch_size: true
           - loss_percent: true
           - quantity: true
@@ -89,6 +89,7 @@ template:
           - loss_product: true
           - recycle_percent: true
           - waste: true
+          - global_element_id: false
           - id: false
     - _columnSummaryTypes:
         ordered:
@@ -205,8 +206,8 @@ template:
     - sort: null
     - _columns:
         - id
-        - material_id
         - material_name
+        - material_id
         - material_code
         - global_element_id
         - weight
