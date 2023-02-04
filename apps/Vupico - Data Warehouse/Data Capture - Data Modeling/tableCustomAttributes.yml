@@ -49,6 +49,7 @@ template:
           - type: ''
           - id: ''
           - table_name: ''
+          - Key: ''
           - key: ''
           - required: ''
     - columnFrozenAlignments:
@@ -183,12 +184,13 @@ template:
     - sort: null
     - _columns:
         - name
-        - key
+        - Key
         - type
+        - length
         - required
         - defaultvalue
+        - defaultValue
         - is_custom
-        - length
     - sortByRawValue:
         ordered: []
     - calculatedColumns: []

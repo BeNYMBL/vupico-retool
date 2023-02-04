@@ -17,8 +17,8 @@ template:
     - runWhenModelUpdates: true
     - showFailureToaster: true
     - query: >-
-        SELECT column_name as name, false as Key, data_type as type,
-        column_default as defaultValue, is_nullable as required
+        SELECT column_name as name, data_type as type, column_default as
+        defaultValue, is_nullable as required
           FROM information_schema.columns
          WHERE table_schema = 'public'
         AND table_name   = {{_.toLower(selectTable.value)}}
