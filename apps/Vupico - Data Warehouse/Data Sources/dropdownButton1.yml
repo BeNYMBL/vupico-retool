@@ -1,0 +1,98 @@
+id: dropdownButton1
+type: widget
+subtype: DropdownButtonWidget
+template:
+  ordered:
+    - _disabledByIndex:
+        - ''
+        - ''
+    - horizontalAlign: right
+    - _values:
+        - ''
+        - ''
+    - iconByIndex:
+        array: []
+    - iconPosition: left
+    - clickable: false
+    - _iconByIndex:
+        - ''
+        - ''
+    - hidden: false
+    - data:
+        array: []
+    - text: ''
+    - _fallbackTextByIndex:
+        - ''
+        - ''
+    - showInEditor: false
+    - tooltipText: ''
+    - style:
+        ordered:
+          - border: rgba(10, 14, 20, 0)
+          - label: primary
+    - hiddenByIndex:
+        array: []
+    - _hiddenByIndex:
+        - ''
+        - ''
+    - _captionByIndex:
+        - ''
+        - ''
+    - styleVariant: outline
+    - _hasMigratedNestedItems: true
+    - captionByIndex:
+        array: []
+    - itemMode: static
+    - _tooltipByIndex:
+        - ''
+        - ''
+    - _colorByIndex:
+        - ''
+        - ''
+    - tooltipByIndex:
+        array: []
+    - icon: bold/interface-setting-menu-vertical
+    - events:
+        - ordered:
+            - event: click
+            - type: util
+            - method: openApp
+            - pluginId: ''
+            - targetId: f7c4a
+            - params:
+                ordered:
+                  - uuid: 90f140f4-935c-11ed-83ce-d78042190159
+                  - options:
+                      ordered:
+                        - queryParams:
+                            - ordered:
+                                - key: table_name
+                                - value: '{{selectedTableName.value}}'
+            - waitType: debounce
+            - waitMs: '0'
+    - _ids:
+        - f7c4a
+        - ef161
+    - overlayMaxHeight: 375
+    - disabled: false
+    - _labels:
+        - Enhance Table
+        - Delete Data
+    - disabledByIndex:
+        array: []
+    - maintainSpaceWhenHidden: false
+    - _imageByIndex:
+        - ''
+        - ''
+    - labels:
+        array: []
+style:
+  ordered: []
+position2:
+  position2:
+    container: container2
+    rowGroup: header
+    col: 9
+    height: 1.4
+    width: 3
+createdAt: 2023-02-02T15:28:21.123Z

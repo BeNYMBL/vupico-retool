@@ -1,0 +1,12 @@
+version: 43.0.9
+pageUuid: e2efa8b6-935f-11ed-9d7c-1797d12d11c1
+appTemplate:
+  appThemeId: 1
+  folders:
+    - tableQueries
+    - enhanced
+    - app_js
+  queryStatusVisibility: false
+  rootScreen: null
+  version: 2.99.3
+  markdownLinkBehavior: auto

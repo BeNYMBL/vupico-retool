@@ -1,0 +1,35 @@
+id: singleEdit
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const a = {{getCustomAttributes.data.json_schema[0]}}
+        const titleKey = {{table2.selectedRow.data.material_text}}
+        const test1 = a.map((val) => val.name)
+
+        const test2 = test1.reduce((acc, cur) => {
+          acc[cur] = {
+            type: 'string',
+            title: cur
+          };
+          return acc;
+        }, {});
+
+        const test = JSON.stringify(test2) 
+        const properties = test2
+
+
+        const final = {
+          "title": "Enhance " + titleKey,
+          "description": "Modify your enhanced fields",
+          "type": "object",
+          "required": [
+
+          ],
+          "properties": properties
+        }
+              return final
+              
+    - value: ''
+createdAt: 2023-02-02T16:01:45.693Z
