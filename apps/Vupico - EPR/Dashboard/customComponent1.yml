@@ -38,6 +38,8 @@ template:
           type: "choroplethmapbox", locations: country, 
         z: values,
          coloraxis: 'coloraxis',
+          text: country,
+          hovertemplate: "%{z:$,.0f}<extra>%{text}</extra>",
           geojson: "https://raw.githubusercontent.com/python-visualization/folium/main/examples/data/world-countries.json",
           marker: {line: {width:0}}
         }];

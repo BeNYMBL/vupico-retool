@@ -83,7 +83,7 @@ template:
             "y": {{formatDataAsObject( getEPRTax_byElement.data )['element']}},
             "type": "bar",
             "orientation": 'h',
-            "hovertemplate": "<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>",
+            "hovertemplate": "<b>%{x:$,.0f}</b><br>%{fullData.name}: %{y}<extra></extra>",
             "transforms": [
               {
                 "type": "sort",
