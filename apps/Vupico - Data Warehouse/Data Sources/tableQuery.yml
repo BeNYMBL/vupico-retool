@@ -1,0 +1,31 @@
+id: tableQuery
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const a148 = {{getA148.data}}
+        const adrc = {{getADRC.data}}
+        const afko = {{getAFKO.data}}
+        const material = {{getMaterial.data}}
+        const selectedTable = {{tableTables.selectedRow.data.table_name}}
+              
+        if (selectedTable === 'SDP_A148') {
+          return a148;
+        }
+
+        if (selectedTable === 'SDP_ADRC') {
+          return adrc;
+        }
+
+        if (selectedTable === 'SDP_AFKO') {
+          return afko;
+        }
+
+        if (selectedTable === 'SDP_MATERIAL') {
+          return material;
+        }
+              
+        return a148;
+    - value: ''
+createdAt: 2023-02-02T15:16:28.296Z

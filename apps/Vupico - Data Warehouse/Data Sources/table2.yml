@@ -1,0 +1,514 @@
+id: table2
+type: widget
+subtype: TableWidget
+template:
+  ordered:
+    - showCustomButton: false
+    - sortMappedValue:
+        ordered: []
+    - _filteredSortedRenderedDataWithTypes: null
+    - heightType: fixed
+    - normalizedData: null
+    - rowHeight: standard
+    - saveChangesDisabled: ''
+    - columnTypeProperties:
+        ordered: []
+    - columnWidths:
+        - object:
+            id: material_price
+            value: 247.00000762939453
+        - object:
+            id: material_id
+            value: 197.00000762939453
+    - showSummaryFooter: false
+    - disableRowSelectInteraction: false
+    - columnWidthsMobile: []
+    - hasNextAfterCursor: ''
+    - columnTypeSpecificExtras:
+        ordered: []
+    - onRowAdded: ''
+    - columnHeaderNames:
+        ordered: []
+    - alwaysShowPaginator: false
+    - columnColors:
+        ordered:
+          - sdp_ratid: ''
+          - sdp_flaggroups: ''
+          - sdp_no_disp: ''
+          - sdp_redkz: ''
+          - sdp_po_box_reg: ''
+          - sdp_ftrmi: ''
+          - sdp_flg_bundle: ''
+          - reusable_flag: ''
+          - sdp_prodh1: ''
+          - sdp_name_co: ''
+          - sdp_flagcomm8: ''
+          - sdp_city_code: ''
+          - lca_flag: ''
+          - sdp_sbmeh: ''
+          - sdp_prodh2: ''
+          - sdp_name_text: ''
+          - sdp_flagcomm9: ''
+          - sdp_deli_serv_type: ''
+          - sdp_rshid: ''
+          - sdp_gsuzs: ''
+          - sdp_po_box_lobby: ''
+          - sdp_prodh3: ''
+          - sdp_fsh_mprod_ord: ''
+          - lca_flag_reason: ''
+          - sdp_zaehl: ''
+          - sdp_id_category: ''
+          - sdp_county_code: ''
+          - sdp_street: ''
+          - sdp_splstat: ''
+          - sdp_trkzp: ''
+          - sdp_posnv_rma: ''
+          - sdp_langu_crea: ''
+          - rigidity: ''
+          - sdp_rmzhl: ''
+          - sdp_plsvb: ''
+          - sdp_klvari: ''
+          - sdp_ntzue: ''
+          - sdp_pverw: ''
+          - sdp_gmein: ''
+          - sdp_conf_key: ''
+          - sdp_fhori: ''
+          - sdp_matnr: ''
+          - epr_flag: ''
+          - sdp_roomnumber: ''
+          - material_text: ''
+          - sdp_plnbez: ''
+          - sdp_rsnum: ''
+          - sdp_regiogroup: ''
+          - base_uom: ''
+          - carbon_flag_reason: ''
+          - product_hierarchy: ''
+          - sdp_cuobj: ''
+          - sdp_post_code1: ''
+          - sdp_arsps: ''
+          - sdp_city1: ''
+          - sdp_geuzi: ''
+          - sdp_address_id: ''
+          - sdp_gstrp: ''
+          - sdp_kzerb: ''
+          - sdp_sfcpf: ''
+          - sdp_gltri: ''
+          - sdp_prodnet: ''
+          - sdp_name1: ''
+          - sdp_gluzp: ''
+          - sdp_adrc_uuid: ''
+          - sdp_post_code2: ''
+          - sdp_pnetendt: ''
+          - sdp_upter: ''
+          - sdp_arsnr: ''
+          - sdp_flexible_processing: ''
+          - sdp_city2: ''
+          - sdp_langu: ''
+          - sdp_kapt_vorgz: ''
+          - sdp_cityp_code: ''
+          - sdp_ftrmp: ''
+          - sdp_netzkont: ''
+          - sdp_ftrps: ''
+          - sdp_plart: ''
+          - sdp_name2: ''
+          - sdp_nation: ''
+          - brand: ''
+          - sdp_post_code3: ''
+          - sdp_rsnid: ''
+          - sdp_cfb_adtdays: ''
+          - sdp_gstpp: ''
+          - sdp_igmng: ''
+          - sdp_plnaw: ''
+          - sdp_mill_ratio: ''
+          - sdp_name3: ''
+          - pef_flag_reason: ''
+          - producttype: ''
+          - sdp_gsupp: ''
+          - sdp_taxjurcode: ''
+          - sdp_vorue: ''
+          - sdp_gstrs: ''
+          - sdp_plgrp: ''
+          - taxcategory: ''
+          - sdp_aprio: ''
+          - sdp_name4: ''
+          - sdp_gluzs: ''
+          - volume_unit: ''
+          - sdp_maufnr: ''
+          - sdp_freiz: ''
+          - factory: ''
+          - sdp_county: ''
+          - sdp_dont_use_p: ''
+          - sdp_rmanr: ''
+          - sdp_ftrms: ''
+          - material_status: ''
+          - sdp_rueck: ''
+          - sdp_plnme: ''
+          - sdp_klvarp: ''
+          - sdp_house_num1: ''
+          - sdp_mandt: ''
+          - material_group1: ''
+          - sdp_aufld: ''
+          - sdp_adpsp: ''
+          - sdp_home_city: ''
+          - sdp_gstps: ''
+          - sdp_fax_extens: ''
+          - sdp_fax_number: ''
+          - weight_unit: ''
+          - sdp_slsbs: ''
+          - sdp_house_num2: ''
+          - sdp_po_box: ''
+          - material_group2: ''
+          - sdp_client: ''
+          - sdp_floor: ''
+          - sdp_po_box_loc: ''
+          - sdp_date_to: ''
+          - sdp_gsups: ''
+          - sdp_stlst: ''
+          - colour: ''
+          - sdp_stlbez: ''
+          - sdp_mc_street: ''
+          - sdp_rshty: ''
+          - sdp_house_num3: ''
+          - sdp_vorgz: ''
+          - material_group3: ''
+          - sdp_gamng: ''
+          - sdp_getri: ''
+          - sdp_knumh: ''
+          - sdp_vsnmr_v: ''
+          - sdp_revlv: ''
+          - sdp_dont_use_s: ''
+          - sdp_rmnga: ''
+          - valid_from: ''
+          - sdp_gltrp: ''
+          - sdp_dispo: ''
+          - material_group4: ''
+          - sdp_tel_extens: ''
+          - sdp_tel_number: ''
+          - sdp_aennr: ''
+          - sdp_lodiv: ''
+          - sdp_aufpl: ''
+          - sdp_atrkz: ''
+          - sdp_nauterm: ''
+          - material_group5: ''
+          - sdp_st_arbid: ''
+          - sdp_township: ''
+          - sdp_sichz_trm: ''
+          - sdp_vkorg: ''
+          - sdp_pdatv: ''
+          - sdp_cityh_code: ''
+          - sdp_stlnr: ''
+          - sdp_rdkzp: ''
+          - sdp_pnetstartd: ''
+          - sdp_gltpp: ''
+          - sdp_plsvn: ''
+          - sdp_xpcpt: ''
+          - sdp_naucost: ''
+          - sdp_streetcode: ''
+          - sdp_terhw: ''
+          - sdp_terkz: ''
+          - sdp_stlty: ''
+          - sdp_glupp: ''
+          - sdp_oihantyp: ''
+          - sdp_abarb: ''
+          - sdp_gltrs: ''
+          - sdp_ch_proc: ''
+          - globalmaterial_id: ''
+          - sdp_city_code2: ''
+          - material_price: ''
+          - sdp_objtype: ''
+          - sdp_addr_group: ''
+          - sdp_max_gamng: ''
+          - sdp_pronr: ''
+          - sdp_deli_serv_number: ''
+          - sdp_kkalkr: ''
+          - sdp_zkriz: ''
+          - sdp_po_box_num: ''
+          - sdp_slsvn: ''
+          - sdp_rsnty: ''
+          - sdp_bmenge: ''
+          - sdp_cfb_maxlz: ''
+          - sdp_gltps: ''
+          - sdp_sdatv: ''
+          - material_type: ''
+          - sdp_extension1: ''
+          - sdp_mc_county: ''
+          - gross_weight: ''
+          - sdp_lead_aufnr: ''
+          - sdp_kondm: ''
+          - sdp_chsch: ''
+          - sdp_stufe: ''
+          - sdp_glups: ''
+          - sdp_gasmg: ''
+          - sdp_sort1: ''
+          - material_id: ''
+          - sdp_extension2: ''
+          - sdp_bmeins: ''
+          - sdp_lknot: ''
+          - sdp_gsbtr: ''
+          - sdp_profid: ''
+          - sdp_sort2: ''
+          - sdp_transpzone: ''
+          - sdp_building: ''
+          - sdp_streetabbr: ''
+          - sdp_region: ''
+          - sdp_breaks: ''
+          - sdp_po_box_cty: ''
+          - sdp_iasmg: ''
+          - sdp_vwegx: ''
+          - sdp_str_suppl1: ''
+          - sdp_sort_phn: ''
+          - sdp_mzaehl: ''
+          - sdp_location: ''
+          - sdp_cfb_lzeih: ''
+          - sdp_aufpt: ''
+          - sdp_kbed: ''
+          - sdp_pcode1_ext: ''
+          - sdp_flg_aob: ''
+          - sdp_kappl: ''
+          - sdp_vfmng: ''
+          - sdp_str_suppl2: ''
+          - sdp_plauf: ''
+          - sdp_plnnr: ''
+          - sdp_country: ''
+          - sdp_pnetendd: ''
+          - sdp_stlal: ''
+          - sdp_aufnr: ''
+          - sdp_colordproc: ''
+          - sdp_pcode2_ext: ''
+          - sdp_mc_township: ''
+          - sdp_csplit: ''
+          - sdp_flagcomm10: ''
+          - sdp_tl_versn: ''
+          - sdp_flg_arbei: ''
+          - sdp_aplzt: ''
+          - sdp_sbmng: ''
+          - sdp_addrorigin: ''
+          - sdp_str_suppl3: ''
+          - sdp_kapversa: ''
+          - sdp_adrc_err_status: ''
+          - sdp_uuid_belated: ''
+          - sdp_plnty: ''
+          - sdp_flagcomm11: ''
+          - sdp_paenr: ''
+          - sdp_gsuzi: ''
+          - sdp_datab: ''
+          - sdp_title: ''
+          - sdp_stlan: ''
+          - sdp_pcode3_ext: ''
+          - sdp_postalarea: ''
+          - sdp_aufnt: ''
+          - sdp_wegxx: ''
+          - sdp_flagcomm12: ''
+          - sdp_flagcomm13: ''
+          - sdp_cy_seqnr: ''
+          - pef_flag: ''
+          - sdp_rknot: ''
+          - sdp_addrnumber: ''
+          - sdp_flagcomm2: ''
+          - volume: ''
+          - net_weight: ''
+          - sdp_pers_addr: ''
+          - sdp_fevor: ''
+          - sdp_kapt_sichz: ''
+          - sdp_date_from: ''
+          - sdp_flagcomm3: ''
+          - sdp_vtweg: ''
+          - sdp_saenr: ''
+          - sdp_prueflos: ''
+          - table_name: ''
+          - sdp_bedid: ''
+          - sdp_costupd: ''
+          - sdp_vorgz_trm: ''
+          - sdp_flagcomm4: ''
+          - sdp_nopcost: ''
+          - sdp_mc_city1: ''
+          - sdp_cfb_bbdpi: ''
+          - sdp_plnal: ''
+          - sdp_flagcomm5: ''
+          - sdp_mes_routingid: ''
+          - sdp_mc_name1: ''
+          - valid_to: ''
+          - sdp_time_zone: ''
+          - sdp_datbi: ''
+          - sdp_flagcomm6: ''
+          - carbon_flag: ''
+          - sdp_township_code: ''
+          - sdp_deflt_comm: ''
+          - material_price_currency: ''
+          - sdp_groid: ''
+          - sdp_gstri: ''
+          - sdp_chckstatus: ''
+          - sdp_pnetstartt: ''
+          - sdp_gsuzp: ''
+          - sdp_bom_versn: ''
+          - sdp_rgekz: ''
+          - sdp_kschl: ''
+          - sdp_cfb_datofm: ''
+          - sdp_trmdt: ''
+          - sdp_mill_oc_zuskz: ''
+          - sdp_sichz: ''
+          - sdp_flagcomm7: ''
+          - epr_flag_reason: ''
+          - recyclable_flag: ''
+          - sdp_posnr_rma: ''
+    - columnFrozenAlignments:
+        ordered: []
+    - allowMultiRowSelect: false
+    - columnFormats:
+        ordered: []
+    - columnRestrictedEditing:
+        ordered: []
+    - showFilterButton: true
+    - _columnVisibility:
+        ordered: []
+    - _columnSummaryTypes:
+        ordered: []
+    - _columnsWithLegacyBackgroundColor:
+        set: []
+    - showAddRowButton: false
+    - _unfilteredSelectedIndex: null
+    - nextBeforeCursor: ''
+    - columnVisibility:
+        ordered: []
+    - selectedPageIndex: '0'
+    - applyDynamicSettingsToColumnOrder: true
+    - rowColor:
+        array: []
+    - actionButtonColumnName: Enhance
+    - resetAfterSave: true
+    - filterStackType: and
+    - downloadRawData: false
+    - showFetchingIndicator: true
+    - serverPaginated: false
+    - data: '{{ tableQuery.value }}'
+    - displayedData: null
+    - actionButtons: []
+    - actionButtonSelectsRow: true
+    - selectRowByDefault: true
+    - defaultSortByColumn: ''
+    - paginationOffset: 0
+    - columnAlignment:
+        ordered: []
+    - columnSummaries:
+        object: {}
+    - showBoxShadow: false
+    - sortedDesc: false
+    - customButtonName: ''
+    - columnMappersRenderAsHTML:
+        ordered: []
+    - showRefreshButton: true
+    - pageSize: '20'
+    - useDynamicColumnSettings: false
+    - actionButtonPosition: left
+    - dynamicRowHeights: false
+    - bulkUpdateAction: ''
+    - afterCursor: ''
+    - onCustomButtonPressQueryName: ''
+    - changeSet:
+        object: {}
+    - sortedColumn: ''
+    - _columnSummaryValues:
+        ordered: []
+    - checkboxRowSelect: true
+    - _compatibilityMode: false
+    - showColumnBorders: false
+    - clearSelectionLabel: Clear selection
+    - _renderedDataWithTypes: null
+    - columnAllowOverflow:
+        ordered: []
+    - beforeCursor: ''
+    - serverPaginationType: limitOffsetBased
+    - onRowSelect: ''
+    - showDownloadButton: true
+    - selectedIndex: null
+    - defaultSortDescending: false
+    - _sortedDisplayedDataIndices: null
+    - dynamicColumnSettings: null
+    - totalRowCount: ''
+    - recordUpdates:
+        array: []
+    - newRow: null
+    - emptyMessage: No rows found
+    - columnEditable:
+        ordered: []
+    - _viewerColumnSummaryTypes:
+        object: {}
+    - filters:
+        array: []
+    - displayedDataIndices: null
+    - disableSorting:
+        ordered: []
+    - columnMappers:
+        ordered: []
+    - showClearSelection: false
+    - doubleClickToEdit: true
+    - overflowType: pagination
+    - _reverseSortedDisplayedDataIndices: null
+    - showTableBorder: true
+    - selectedCell:
+        object:
+          index: null
+          data: null
+          columnName: null
+    - columns: []
+    - defaultSelectedRow: first
+    - freezeActionButtonColumns: false
+    - sort: null
+    - _columns:
+        - material_id
+        - material_text
+        - material_type
+        - material_group1
+        - material_price
+        - material_price_currency
+        - gross_weight
+        - base_uom
+        - valid_from
+        - valid_to
+        - material_group2
+        - material_group3
+        - material_group4
+        - material_group5
+        - net_weight
+        - weight_unit
+        - volume
+        - volume_unit
+        - brand
+        - product_hierarchy
+        - globalmaterial_id
+        - epr_flag
+        - lca_flag
+        - carbon_flag
+        - pef_flag
+        - epr_flag_reason
+        - lca_flag_reason
+        - carbon_flag_reason
+        - pef_flag_reason
+        - colour
+        - rigidity
+        - recyclable_flag
+        - reusable_flag
+        - taxcategory
+        - producttype
+        - factory
+        - material_status
+    - sortByRawValue:
+        ordered: []
+    - calculatedColumns: []
+    - selectedRow:
+        object:
+          index: null
+          data: null
+    - showPaginationOnTop: false
+    - _reverseDisplayedDataIndices: null
+    - nextAfterCursor: ''
+    - useCompactMode: false
+style:
+  ordered: []
+position2:
+  position2:
+    container: container2
+    subcontainer: fd3e8
+    height: 14.8
+    width: 12
+createdAt: 2023-02-02T15:09:00.738Z
