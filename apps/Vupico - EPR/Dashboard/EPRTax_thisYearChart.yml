@@ -16,8 +16,8 @@ template:
                 - color: null
                 - colors:
                     ordered:
-                      - '0': '#3791d3'
-                      - '1': '#3791d3'
+                      - '0': '#E30'
+                      - '1': '#E30'
                 - visible: true
                 - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
           - '1':
@@ -29,8 +29,8 @@ template:
                 - color: null
                 - colors:
                     ordered:
-                      - '0': '#E30'
-                      - '1': '#E30'
+                      - '0': '#3791d3'
+                      - '1': '#3791d3'
                 - visible: true
                 - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
     - isDataTemplateDirty: true
