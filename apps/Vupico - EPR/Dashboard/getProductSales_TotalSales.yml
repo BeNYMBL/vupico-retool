@@ -21,7 +21,7 @@ template:
           SUM(amount) total_sales
         FROM
           product_sales
-        WHERE year = 2022
+        WHERE year = 2022 AND country IN ('USA','United Kingdom')
     - playgroundQueryUuid: ''
     - playgroundQueryId: null
     - error: null
