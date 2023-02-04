@@ -114,6 +114,7 @@ template:
           - weight: false
           - recycle_percent: true
           - waste: true
+          - global_element_id: false
           - id: false
           - total_waste: true
     - _columnSummaryTypes:
