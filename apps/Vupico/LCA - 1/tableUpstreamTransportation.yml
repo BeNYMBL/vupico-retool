@@ -101,6 +101,12 @@ template:
         - object:
             id: vendor_name
             value: 172.00000762939453
+        - object:
+            id: material_code
+            value: 132.00000762939453
+        - object:
+            id: material_name
+            value: 122.00000762939453
     - showSummaryFooter: false
     - disableRowSelectInteraction: false
     - columnWidthsMobile: []
@@ -277,7 +283,7 @@ template:
           - photochemical_ozone_unit: false
           - marine_eutrophication_unit: false
           - water_use_unit: false
-          - material_code: false
+          - material_code: true
           - plant_country_name: false
           - ozone_depletion_unit: false
           - vendor_country_name: false
@@ -429,7 +435,58 @@ template:
     - defaultSelectedRow: first
     - freezeActionButtonColumns: false
     - sort: null
-    - _columns: []
+    - _columns:
+        - id
+        - material_name
+        - material_code
+        - global_element_id
+        - from_vendor_code
+        - vendor_name
+        - vendor_country_code
+        - vendor_country_name
+        - to_plant_code
+        - plant_name
+        - plant_country_code
+        - plant_country_name
+        - shipping_type_code
+        - distance
+        - total_cost
+        - currency
+        - distance_unit
+        - acidification
+        - acidification_unit
+        - co2
+        - co2_unit
+        - ecotoxicity
+        - ecotoxicity_unit
+        - fossil
+        - fossil_unit
+        - freshwater_eutrophication
+        - freshwater_eutrophication_unit
+        - human_toxicity_cancer
+        - human_toxicity_cancer_unit
+        - human_toxicity_non_cancer
+        - human_toxicity_non_cancer_unit
+        - ionizing_radiation
+        - ionizing_radiation_unit
+        - land_use
+        - land_use_unit
+        - marine_eutrophication
+        - marine_eutrophication_unit
+        - ozone_depletion
+        - ozone_depletion_unit
+        - particulate_matter
+        - particulate_matter_unit
+        - photochemical_ozone
+        - photochemical_ozone_unit
+        - resource_use
+        - resource_use_unit
+        - terrestrial_eutrophication
+        - terrestrial_eutrophication_unit
+        - water_use
+        - water_use_unit
+        - bio_diversity
+        - bio_diversity_unit
     - sortByRawValue:
         ordered: []
     - calculatedColumns: []
