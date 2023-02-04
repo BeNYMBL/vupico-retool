@@ -19,13 +19,7 @@ template:
                 - currency: USD
                 - padDecimal: true
           - material_code:
-              ordered:
-                - optionData: '{{ currentColumn }}'
-                - colorMode: auto
-                - allowCustomValue: true
-                - optionLabels: []
-                - optionColors: []
-                - optionValues: []
+              ordered: []
           - vendor_country_code:
               ordered:
                 - optionData: '{{ currentColumn }}'
@@ -87,7 +81,7 @@ template:
         ordered:
           - vendor_name: Origin Vendor
           - material_name: Material Name
-          - material_code: Material
+          - material_code: Material Code
           - plant_country_name: Destination Plant
           - total_cost: Cost ({{LS01.value.upstream_breakdown[i].currency}})
           - plant_country_code: Destination Plant Code
@@ -159,7 +153,7 @@ template:
     - columnFormats:
         ordered:
           - total_cost: CurrencyDataCell
-          - material_code: SingleTagDataCell
+          - material_code: TextDataCell
           - vendor_country_code: SingleTagDataCell
           - plant_country_code: SingleTagDataCell
           - material_name: SingleTagDataCell
@@ -180,7 +174,7 @@ template:
           - photochemical_ozone_unit: false
           - marine_eutrophication_unit: false
           - water_use_unit: false
-          - material_code: false
+          - material_code: true
           - to_plant_code: false
           - co2: false
           - ecotoxicity: false
@@ -209,6 +203,7 @@ template:
           - ozone_depletion: false
           - ionizing_radiation_unit: false
           - terrestrial_eutrophication_unit: false
+          - global_element_id: false
           - id: false
           - human_toxicity_non_cancer_unit: false
           - ecotoxicity_unit: false

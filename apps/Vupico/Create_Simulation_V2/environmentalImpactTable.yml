@@ -64,7 +64,7 @@ template:
     - onRowAdded: ''
     - columnHeaderNames:
         ordered:
-          - material_code: Material
+          - material_code: Material Code
           - material_global_code: Global Identifier
           - quantity: Quantity
           - uom: UOM
@@ -135,7 +135,7 @@ template:
         ordered:
           - material_id: SingleTagDataCell
           - total_cost: CurrencyDataCell
-          - material_code: SingleTagDataCell
+          - material_code: default
           - material_name: SingleTagDataCell
     - columnRestrictedEditing:
         ordered: []
@@ -152,7 +152,7 @@ template:
           - photochemical_ozone_unit: false
           - marine_eutrophication_unit: false
           - water_use_unit: false
-          - material_code: false
+          - material_code: true
           - co2: false
           - ecotoxicity: false
           - human_toxicity_non_cancer: false
@@ -168,6 +168,7 @@ template:
           - currency: false
           - production_quantity: false
           - particulate_matter_unit: false
+          - material_global_code: false
           - to_country: false
           - particulate_matter: false
           - land_use: false
