@@ -20,13 +20,62 @@ template:
                 - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
     - isDataTemplateDirty: true
     - datasource: ''
-    - isJsonTemplateDirty: false
+    - isJsonTemplateDirty: true
     - groupByDropdown: country
     - datasourceInputMode: javascript
     - datasourceDataType: object
     - layout: ''
     - xAxisDropdown: country
-    - data: ''
+    - data: |-
+        [
+          {
+            "name": "Top Contributor To Tax By Tax",
+            "x": {{ topContributorTaxAmount.data .country}},
+            "y": {{ topContributorTaxAmount.data ['total_epr_tax_amount']}},
+            "type": "bar",
+            "hovertemplate": "<b>%{x}</b><br>%{fullData.name}: %{y:$,.0f}<extra></extra>",
+            "transforms": [
+              {
+                "type": "groupby",
+                "groups": {{ topContributorTaxAmount.data ['country']}},
+                "styles": [
+                  {
+                    "target": {{_.uniq( topContributorTaxAmount.data ['country'])[0]}},
+                    "value": {
+                      "marker": {
+                        "color": "#90D6E0"
+                      }
+                    }
+                  },
+                  {
+                    "target": {{_.uniq( topContributorTaxAmount.data ['country'])[1]}},
+                    "value": {
+                      "marker": {
+                        "color": "#6AB3E6"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "sort",
+                "target": {{ topContributorTaxAmount.data .country}},
+                "order": "ascending"
+              },
+              {
+                "type": "aggregate",
+                "groups": {{ topContributorTaxAmount.data .country}},
+                "aggregations": [
+                  {
+                    "target": "y",
+                    "func": "sum",
+                    "enabled": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
     - isStackSeriesEnabled: false
     - xAxisTickFormat: ''
     - skipDatasourceUpdate: false

@@ -21,13 +21,46 @@ template:
                 - hovertemplate: '<b>%{x}</b><br>%{fullData.name}: %{y}<extra></extra>'
     - isDataTemplateDirty: true
     - datasource: ''
-    - isJsonTemplateDirty: false
+    - isJsonTemplateDirty: true
     - groupByDropdown: country
     - datasourceInputMode: javascript
     - datasourceDataType: array
     - layout: ''
     - xAxisDropdown: country
-    - data: ''
+    - data: |-
+        [
+          {
+            "name": "Estimated EPR Tax Amount",
+            "x": {{formatDataAsObject( formatDataAsArray(estimateEPRTaxAmount.data) )['country']}},
+            "y": {{formatDataAsObject( formatDataAsArray(estimateEPRTaxAmount.data) )['total_epr_tax_amount']}},
+            "type": "bar",
+            "hovertemplate": "<b>%{x}</b><br>%{fullData.name}: %{y:$,.0f}<extra></extra>",
+            "transforms": [
+              {
+                "type": "groupby",
+                "groups": {{formatDataAsObject( formatDataAsArray(estimateEPRTaxAmount.data) )['country']}},
+                "styles": []
+              },
+              {
+                "type": "sort",
+                "target": {{formatDataAsObject( formatDataAsArray(estimateEPRTaxAmount.data) )['country']}},
+                "order": "ascending"
+              },
+              {
+                "type": "aggregate",
+                "groups": {{formatDataAsObject( formatDataAsArray(estimateEPRTaxAmount.data) )['country']}},
+                "aggregations": [
+                  {
+                    "target": "y",
+                    "func": "sum",
+                    "enabled": true
+                  }
+                ]
+              }
+            ],
+            "marker": {}
+          }
+        ]
     - isStackSeriesEnabled: false
     - xAxisTickFormat: ''
     - skipDatasourceUpdate: false
