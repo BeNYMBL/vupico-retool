@@ -1,0 +1,20 @@
+id: payloadBasicData
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const bom = {{tableBillOfMaterials.selectedRow.data}}
+        const final = {
+          bom: bom.bomname,
+          bomId: bom.bomid,
+          material_description: bom.description,
+          material_type: bom.material_type,
+          material_group: bom.material_group,
+          uom: bom.uom,
+          product_hierarchy: bom.product_hierarchy
+        }
+        return JSON.stringify(final)
+    - value: ''
+createdAt: 2023-01-26T14:24:33.540Z
+folder: JS_Payloads
