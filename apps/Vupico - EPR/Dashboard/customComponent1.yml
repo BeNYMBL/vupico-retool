@@ -43,7 +43,7 @@ template:
           geojson: "https://raw.githubusercontent.com/python-visualization/folium/main/examples/data/world-countries.json",
           marker: {line: {width:0}}
         }];
-         var layout = {mapbox: {style:"light", center: {lon: -74, lat: 43}, zoom: 2},
+         var layout = {mapbox: {style:"light", center: {lon: -44, lat: 43}, zoom: 1.5},
                     responsive: true,autoscale: true, margin: {t: 0, b: 0,l: 0, r:0}, coloraxis: {showscale: false, colorscale: [
                       [0, 'rgba(238,51,0, .2)'], [0.2, 'rgba(238,51,0, .4)'],
                       [0.4, 'rgba(5238,51,0, .6)'], [0.6, 'rgba(238,51,0, .8)'],

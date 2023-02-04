@@ -69,6 +69,22 @@ template:
                         "color": "#E30"
                       }
                     }
+                  },
+                    {
+                    "target": {{_.uniq( getEPRTax_byCountry_thisYear.data ['country'])[2]}},
+                    "value": {
+                      "marker": {
+                        "color": "#E30"
+                      }
+                    }
+                  },
+                    {
+                    "target": {{_.uniq( getEPRTax_byCountry_thisYear.data ['country'])[3]}},
+                    "value": {
+                      "marker": {
+                        "color": "#E30"
+                      }
+                    }
                   }
                 ]
               },
@@ -111,6 +127,22 @@ template:
                   },
                   {
                     "target": {{_.uniq( getEPRTax_byCountry_thisYear.data ['country'])[1]}},
+                    "value": {
+                      "marker": {
+                        "color": "#3791d3"
+                      }
+                    }
+                  },
+                    {
+                    "target": {{_.uniq( getEPRTax_byCountry_thisYear.data ['country'])[2]}},
+                    "value": {
+                      "marker": {
+                        "color": "#3791d3"
+                      }
+                    }
+                  },
+                    {
+                    "target": {{_.uniq( getEPRTax_byCountry_thisYear.data ['country'])[3]}},
                     "value": {
                       "marker": {
                         "color": "#3791d3"
