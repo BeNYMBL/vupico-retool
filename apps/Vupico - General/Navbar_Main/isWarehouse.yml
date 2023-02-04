@@ -1,0 +1,12 @@
+id: isWarehouse
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const pageName = {{retoolContext.appName}}
+
+        return pageName.toLowerCase().includes('warehouse') ? true : false
+    - value: ''
+createdAt: 2023-01-13T16:29:22.127Z
+folder: logic

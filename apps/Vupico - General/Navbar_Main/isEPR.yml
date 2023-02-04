@@ -1,0 +1,12 @@
+id: isEPR
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const pageName = {{retoolContext.appName}}
+
+        return pageName.toLowerCase().includes('epr') ? true : false
+    - value: ''
+createdAt: 2023-01-11T22:17:20.651Z
+folder: logic

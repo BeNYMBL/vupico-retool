@@ -1,0 +1,10 @@
+id: randomNumber
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        const randomNumber = {{Math.random(100000)}}
+        return randomNumber * 10000
+    - value: ''
+createdAt: 2022-12-05T16:15:55.168Z

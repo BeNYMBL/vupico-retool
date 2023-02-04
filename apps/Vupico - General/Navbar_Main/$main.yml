@@ -1,0 +1,15 @@
+id: $main
+type: frame
+subtype: Frame
+template:
+  ordered:
+    - type: main
+    - sticky: false
+    - isHiddenOnDesktop: false
+    - isHiddenOnMobile: false
+    - style:
+        ordered:
+          - canvas: rgb(244, 245, 246)
+style:
+  ordered: []
+createdAt: 2022-11-04T19:09:34.014Z

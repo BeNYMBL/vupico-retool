@@ -1,0 +1,11 @@
+version: 43.0.9
+pageUuid: 33579386-5c74-11ed-8186-1fa1b9abbbb4
+appTemplate:
+  appThemeId: -1
+  folders:
+    - logic
+  queryStatusVisibility: false
+  rootScreen: null
+  isGlobalWidget: true
+  version: 2.99.3
+  markdownLinkBehavior: auto
