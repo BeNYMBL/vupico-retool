@@ -1,8 +1,0 @@
-version: 43.0.9
-pageUuid: 9cfa5648-9734-11ed-acde-eb5164e14abd
-appTemplate:
-  folders:
-    - depreciated
-  rootScreen: null
-  isGlobalWidget: true
-  version: 2.99.3
