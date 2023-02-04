@@ -1,0 +1,19 @@
+id: dataWarehouseHeader1
+type: widget
+subtype: GlobalWidget
+template:
+  ordered:
+    - showFetchingIndicator: boolean
+    - heightType: auto
+    - name: DataWarehouse_Header
+    - pageUuid: d6b0f6fa-935e-11ed-8d1b-fb5cd1fef25f
+    - childNamespace: dataWarehouseHeader1
+style:
+  ordered: []
+position2:
+  position2:
+    subcontainer: header
+    row: 0.19999999999999996
+    height: 0.2
+    width: 12
+createdAt: 2023-01-13T16:26:46.958Z
