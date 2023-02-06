@@ -23,7 +23,7 @@ template:
         from bill_of_material bom2 inner join product p on bom2.product_id =
         p.id inner join material m on p.material_id = m.id
 
-        where bom2.id = {{selectBillOfMaterial.value}}
+        where bom2.id = {{selectBillOfMaterial.value}} 
     - playgroundQueryUuid: ''
     - playgroundQueryId: null
     - error: null
