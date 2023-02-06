@@ -76,7 +76,7 @@ template:
     - maintainSpaceWhenHidden: false
     - _imageByIndex: []
     - required: false
-    - labels: '{{ _.startCase(item) }}'
+    - labels: '{{ item === ''co2'' ? ''CO2'' : _.startCase(item) }}'
 style:
   ordered: []
 position2:
