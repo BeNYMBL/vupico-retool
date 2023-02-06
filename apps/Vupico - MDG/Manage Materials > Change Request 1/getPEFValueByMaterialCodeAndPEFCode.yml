@@ -1,4 +1,4 @@
-id: updateChangeRequest
+id: getPEFValueByMaterialCodeAndPEFCode
 type: datasource
 subtype: SqlQueryUnified
 resourceName: 6e21e4e9-402f-4ead-a4f9-55cbbfd992d9
@@ -14,14 +14,18 @@ template:
     - queryDisabled: ''
     - playgroundQuerySaveId: latest
     - resourceNameOverride: ''
-    - runWhenModelUpdates: false
+    - runWhenModelUpdates: true
     - showFailureToaster: true
-    - query: ''
+    - query: >-
+        select * from sdp_materialpef mp where mp.material_id =
+        {{getMaterial.data['0'].material_code}} and mp.pefcategory_id = {{
+        selectPefCode.value }}
     - playgroundQueryUuid: ''
     - playgroundQueryId: null
     - error: null
     - privateParams: []
     - runWhenPageLoadsDelay: ''
+    - warningCodes: []
     - data: null
     - recordId: ''
     - importedQueryInputs:
@@ -30,11 +34,11 @@ template:
     - showSuccessToaster: true
     - dataArray: []
     - cacheKeyTtl: ''
-    - filterBy: '[{"key":"id","value":"{{urlparams.changeRequestId}}","operation":"="}]'
+    - filterBy: ''
     - databaseHostOverride: ''
     - metadata: null
-    - editorMode: gui
-    - actionType: UPDATE_BY
+    - editorMode: sql
+    - actionType: ''
     - changesetObject: ''
     - shouldUseLegacySql: false
     - errorTransformer: >-
@@ -47,10 +51,7 @@ template:
     - databaseNameOverride: ''
     - confirmationMessage: null
     - isFetching: false
-    - changeset: >-
-        [{"key":"name","value":"{{inputChangeRequest.value}}"},{"key":"description","value":"{{inputDescription.value}}"},{"key":"priority","value":"{{selectPriority.value}}"},{"key":"reason","value":"{{selectReason.value}}"},{"key":"type","value":"{{selectType.value}}"},{"key":"status","value":"{{selectStatus.value}}"},{"key":"created_on","value":"{{selectCreatedOn.value}}"},{"key":"created_by","value":"{{selectCreatedBy.value}}"},{"key":"basic_data","value":"{{payloadBasicData.value}}"},{"key":"sustainability_data","value":"{{payloadSustainabilityData.value}}"},{"key":"material_plant_data","value":"{{
-        payloadMaterialPlantData.value }}"},{"key":"pef_data","value":"{{
-        updateOrAddNewPefValue.value }}"}]
+    - changeset: ''
     - rawData: null
     - queryTriggerDelay: '0'
     - resourceTypeOverride: ''
@@ -72,8 +73,35 @@ template:
         20)
 
         return data
-    - events: []
-    - tableName: mdg_change_request
+    - events:
+        - ordered:
+            - event: success
+            - type: widget
+            - method: setValue
+            - pluginId: inputPefValue
+            - targetId: null
+            - params:
+                ordered:
+                  - value: >-
+                      {{ getPEFValueByMaterialCodeAndPEFCode.data.pef_value[0]
+                      }}
+            - waitType: debounce
+            - waitMs: '0'
+        - ordered:
+            - event: success
+            - type: widget
+            - method: setValue
+            - pluginId: selectPefUnit
+            - targetId: null
+            - params:
+                ordered:
+                  - value: >-
+                      {{
+                      getPEFValueByMaterialCodeAndPEFCode.data.measurement_unit[0]
+                      }}
+            - waitType: debounce
+            - waitMs: '0'
+    - tableName: ''
     - queryTimeout: '10000'
     - requireConfirmation: false
     - queryFailureConditions: ''
@@ -82,9 +110,9 @@ template:
     - allowedGroups: []
     - databaseUsernameOverride: ''
     - shouldEnableBatchQuerying: false
-    - doNotThrowOnNoOp: true
+    - doNotThrowOnNoOp: false
     - queryThrottleTime: '750'
     - updateSetValueDynamically: false
     - notificationDuration: ''
-createdAt: 2023-01-25T21:35:03.642Z
-folder: Change_Request
+createdAt: 2023-02-06T11:16:20.994Z
+folder: PEF

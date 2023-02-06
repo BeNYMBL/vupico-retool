@@ -34,7 +34,8 @@ template:
         'Kg antimony-Eq/a',
         'kg NOx-EQ',
         'm3',
-        'ELU '
+        'ELU ',
+        'G'
         ]
     - searchMode: fuzzy
     - hideValidationMessage: false
@@ -51,7 +52,10 @@ template:
     - tooltipText: ''
     - labelAlign: left
     - formDataKey: '{{ self.id }}'
-    - value: '{{getSingleChangeRequest.data.sustainability_data.pef_value_unit}}'
+    - value: >-
+        {{getPefValuesByPefCode.value.unit_name === undefined ?
+        getPefValuesByPefCode.value.measurement_unit[0] :
+        getPefValuesByPefCode.value.unit_name}}
     - style:
         ordered:
           - background: rgb(247, 247, 253)

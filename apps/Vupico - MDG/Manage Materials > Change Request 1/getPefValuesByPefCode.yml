@@ -1,0 +1,17 @@
+id: getPefValuesByPefCode
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        let dbData = {{getSingleChangeRequest.data.pef_data}};
+
+        let obj = dbData.find(o => o.pef_code === {{selectPefCode.value}});
+        if (obj === undefined) {
+          return {{getPEFValueByMaterialCodeAndPEFCode.data}}
+        } else {
+          return obj;
+        }
+    - value: ''
+createdAt: 2023-02-06T19:28:48.978Z
+folder: PEF

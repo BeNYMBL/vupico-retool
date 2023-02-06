@@ -1,9 +1,9 @@
-id: inputFlagTemplate
+id: inputIsElement
 type: widget
 subtype: CheckboxWidget2
 template:
   ordered:
-    - hidden: 'true'
+    - hidden: false
     - customValidation: ''
     - hideValidationMessage: false
     - validationMessage: ''
@@ -11,9 +11,9 @@ template:
     - tooltipText: ''
     - labelAlign: left
     - formDataKey: '{{ self.id }}'
-    - value: '{{getSingleChangeRequest.data.sustainability_data.is_pef}}'
+    - value: '{{ getSingleChangeRequest.data.basic_data.isElement }}'
     - labelCaption: ''
-    - label: Flag Template
+    - label: Is Element
     - _validate: false
     - invalid: false
     - events:
@@ -27,7 +27,10 @@ style:
   ordered: []
 position2:
   position2:
-    row: 7.399999999999995
+    container: containerBasicData
+    subcontainer: 5c65f
+    row: 2.2
+    col: 6
     height: 0.6
-    width: 4
-createdAt: 2023-01-31T18:52:11.611Z
+    width: 6
+createdAt: 2023-02-06T15:08:47.240Z

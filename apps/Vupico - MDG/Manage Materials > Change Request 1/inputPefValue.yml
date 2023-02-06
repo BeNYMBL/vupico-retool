@@ -21,7 +21,7 @@ template:
     - currency: USD
     - labelAlign: left
     - formDataKey: '{{ self.id }}'
-    - value: '{{parseInt(getSingleChangeRequest.data.sustainability_data.pef_value)}}'
+    - value: '{{parseInt(getPefValuesByPefCode.value.pef_value)}}'
     - style:
         ordered:
           - border: rgba(186, 186, 228, 0)
@@ -55,7 +55,7 @@ position2:
   position2:
     container: collapsePEF
     subcontainer: '13714'
-    row: 0.9999999999999951
+    row: 0.9999999999999953
     height: 1
     width: 6
 createdAt: 2023-01-31T17:20:16.047Z

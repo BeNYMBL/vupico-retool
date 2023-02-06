@@ -8,7 +8,7 @@ template:
     - showSelectionIndicator: true
     - _values: []
     - iconByIndex: ''
-    - values: ''
+    - values: '{{ item.id }}'
     - readOnly: '{{ getSingleChangeRequest.data.status === "Submitted" }}'
     - iconAfter: ''
     - _iconByIndex: []
@@ -16,25 +16,7 @@ template:
     - inputValue: ''
     - hidden: false
     - customValidation: ''
-    - data: |-
-        [
-        'PEF01  Acidification',
-        'PEF02  CO2',
-        'PEF03  Ecotoxicity',
-        'PEF04  Fossil resource use',
-        'PEF05  Freshwater eutrophication',
-        'PEF06  Human toxicity cancer',
-        'PEF07  Human toxicity noncancer',
-        'PEF08  Ionizing radiation',
-        'PEF09  Land use',
-        'PEF10  Marine eutrophication',
-        'PEF11  Ozone depletion',
-        'PEF12  Particulate matter',
-        'PEF13  Photochemical ozone formation',
-        'PEF14  Resource use',
-        'PEF15  Terrestrial eutrophication',
-        'PEF16  Water use',
-        'PEF17  Biodiversity']
+    - data: '{{ listPefCodes.value }}'
     - searchMode: fuzzy
     - hideValidationMessage: false
     - fallbackTextByIndex: ''
@@ -50,7 +32,7 @@ template:
     - tooltipText: ''
     - labelAlign: left
     - formDataKey: '{{ self.id }}'
-    - value: '{{getSingleChangeRequest.data.sustainability_data.color}}'
+    - value: ''
     - style:
         ordered:
           - background: rgb(247, 247, 253)
@@ -81,7 +63,26 @@ template:
     - colorByIndex: ''
     - selectedLabel: ''
     - events:
-        ordered: []
+        - ordered:
+            - event: change
+            - type: datasource
+            - method: trigger
+            - pluginId: getSingleChangeRequest
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
+        - ordered:
+            - event: change
+            - type: datasource
+            - method: trigger
+            - pluginId: getPEFValueByMaterialCodeAndPEFCode
+            - targetId: null
+            - params:
+                ordered: []
+            - waitType: debounce
+            - waitMs: '0'
     - _ids: []
     - emptyMessage: ''
     - overlayMaxHeight: 375
@@ -96,7 +97,7 @@ template:
     - maintainSpaceWhenHidden: false
     - _imageByIndex: []
     - required: false
-    - labels: ''
+    - labels: '{{ item.id }} {{ item.label }}'
 style:
   ordered: []
 position2:
@@ -104,7 +105,6 @@ position2:
     container: collapsePEF
     subcontainer: '13714'
     row: 2.831068712794149e-15
-    col: 6
     height: 1
     width: 6
 createdAt: 2023-01-31T17:54:24.647Z

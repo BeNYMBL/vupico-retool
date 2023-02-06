@@ -1,4 +1,4 @@
-id: containerSustainabilityTitle
+id: pefContainer
 type: widget
 subtype: ContainerWidget2
 template:
@@ -12,16 +12,13 @@ template:
     - clickable: false
     - _iconByIndex:
         - ''
-    - hidden: '{{tabs.value !== ''Sustainability Data''}}'
+    - hidden: '{{ tabs.value !== "PEF" }}'
     - showHeader: false
     - hoistFetching: true
     - views:
         array: []
     - showInEditor: false
     - tooltipText: ''
-    - style:
-        ordered:
-          - border: rgba(191, 191, 228, 0)
     - hiddenByIndex:
         array: []
     - _hiddenByIndex:
@@ -40,7 +37,7 @@ template:
     - events:
         ordered: []
     - _ids:
-        - 5c65f
+        - fd7e3
     - viewKeys:
         array: []
     - iconPositionByIndex:
@@ -62,8 +59,8 @@ style:
   ordered: []
 position2:
   position2:
-    row: 19.200000000000003
+    row: 21.4
     col: 1
-    height: 2
+    height: 0.2
     width: 10
-createdAt: 2023-01-25T21:19:11.270Z
+createdAt: 2023-02-06T10:47:34.770Z

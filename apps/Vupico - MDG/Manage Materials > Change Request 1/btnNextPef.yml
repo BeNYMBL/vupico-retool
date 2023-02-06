@@ -1,4 +1,4 @@
-id: btnNextSustainability
+id: btnNextPef
 type: widget
 subtype: ButtonWidget2
 template:
@@ -23,9 +23,7 @@ template:
             - targetId: null
             - params:
                 ordered:
-                  - value: >-
-                      {{ tabs.data['3'].hidden === false ? 'PEF' : 'Material
-                      Plant' }} 
+                  - value: Material Plant
             - waitType: debounce
             - waitMs: '0'
     - loading: false
@@ -36,10 +34,10 @@ style:
   ordered: []
 position2:
   position2:
-    container: containerSustainabilityTitle
-    subcontainer: 5c65f
-    row: 16.800000000000004
+    container: pefContainer
+    subcontainer: fd7e3
+    row: 29.4
     col: 3
     height: 1
     width: 6
-createdAt: 2023-02-03T18:52:32.019Z
+createdAt: 2023-02-06T15:18:47.801Z

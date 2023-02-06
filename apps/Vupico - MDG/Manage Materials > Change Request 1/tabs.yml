@@ -8,10 +8,12 @@ template:
         - ''
         - ''
         - false
+        - false
     - _values:
         - Change Request
         - Basic Data
         - Sustainability Data
+        - PEF
         - Material Plant
     - iconByIndex:
         array: []
@@ -23,7 +25,8 @@ template:
         - ''
         - ''
         - ''
-    - hidden: false
+        - ''
+    - hidden: ''
     - data:
         array: []
     - targetContainerId: null
@@ -37,11 +40,15 @@ template:
         - ''
         - ''
         - ''
+        - >-
+          {{ listIsElementMaterialCodes.value.includes(selectMaterialType.value)
+          == false && inputIsElement.value != true }}
         - false
     - _hasMigratedNestedItems: true
     - itemMode: static
     - selectedIndex: null
     - _tooltipByIndex:
+        - ''
         - ''
         - ''
         - ''
@@ -64,6 +71,7 @@ template:
         - 5747d
         - 5704a
         - b375c
+        - 8ee5e
         - '38517'
     - iconPositionByIndex:
         array: []
@@ -72,9 +80,11 @@ template:
         - ''
         - ''
         - left
+        - left
     - disabled: false
     - linePosition: bottom
     - _labels:
+        - ''
         - ''
         - ''
         - ''

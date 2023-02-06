@@ -1,0 +1,22 @@
+id: payloadPefData
+type: function
+subtype: Function
+template:
+  ordered:
+    - funcBody: |-
+        let final = [];
+        const payload = {  
+          pef_library: {{selectPefLibrary.value}},
+          pef_code: {{selectPefCode.value}},
+          pef_name: '',
+          pef_value: {{inputPefValue.value}},
+          pef_value_unit: {{selectPefUnit.value}},
+          unit_name: {{selectPefUnit.value}},
+          unit_group: {{selectUnitGroup.value}},
+          unit_conversion_factor: {{inputUnitConversionFactor.value}}
+        }
+        final.push(payload);
+        return JSON.stringify(final);
+    - value: ''
+createdAt: 2023-02-06T12:01:56.007Z
+folder: JS_Payloads

@@ -37,7 +37,7 @@ template:
     - tooltipText: ''
     - labelAlign: left
     - formDataKey: '{{ self.id }}'
-    - value: '{{getSingleChangeRequest.data.sustainability_data.unit_group}}'
+    - value: '{{getPefValuesByPefCode.value.unit_group}}'
     - style:
         ordered:
           - background: rgb(247, 247, 253)
@@ -90,7 +90,7 @@ position2:
   position2:
     container: collapsePEF
     subcontainer: '13714'
-    row: 2.000000000000008
+    row: 2.000000000000007
     height: 1
     width: 6
 createdAt: 2023-01-31T17:59:30.101Z

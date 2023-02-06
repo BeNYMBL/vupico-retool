@@ -1,4 +1,4 @@
-id: btnNextSustainability
+id: btnSavePef
 type: widget
 subtype: ButtonWidget2
 template:
@@ -8,7 +8,7 @@ template:
     - iconAfter: ''
     - submitTargetId: null
     - hidden: false
-    - text: Next
+    - text: Save PEF Value
     - showInEditor: false
     - tooltipText: ''
     - styleVariant: solid
@@ -17,15 +17,12 @@ template:
     - events:
         - ordered:
             - event: click
-            - type: widget
-            - method: setValue
-            - pluginId: tabs
+            - type: datasource
+            - method: trigger
+            - pluginId: updateChangeRequest
             - targetId: null
             - params:
-                ordered:
-                  - value: >-
-                      {{ tabs.data['3'].hidden === false ? 'PEF' : 'Material
-                      Plant' }} 
+                ordered: []
             - waitType: debounce
             - waitMs: '0'
     - loading: false
@@ -36,10 +33,10 @@ style:
   ordered: []
 position2:
   position2:
-    container: containerSustainabilityTitle
-    subcontainer: 5c65f
-    row: 16.800000000000004
-    col: 3
+    container: pefContainer
+    subcontainer: fd7e3
+    row: 28.4
+    col: 8
     height: 1
-    width: 6
-createdAt: 2023-02-03T18:52:32.019Z
+    width: 4
+createdAt: 2023-02-06T17:54:09.610Z

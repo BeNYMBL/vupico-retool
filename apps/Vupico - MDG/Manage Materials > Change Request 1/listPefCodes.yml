@@ -1,0 +1,32 @@
+id: listPefCodes
+type: state
+subtype: State
+template:
+  ordered:
+    - _persistedValueGetter: null
+    - _persistedValueSetter: null
+    - persistValue: false
+    - persistedValueKey: ''
+    - value: >-
+        [{"id":"PEF01","label":"Acidification"},{"id":"PEF02","label":"CO2"},
+
+        {"id":"PEF03","label":"Ecotoxicity"},{"id":"PEF04","label":"Fossil
+        resource use"},{"id":"PEF05","label":"Freshwater
+        eutrophication"},{"id":"PEF06","label":"Human toxicity
+        cancer"},{"id":"PEF07","label":"Human toxicity noncancer"},
+
+        {"id":"PEF08","label":"Ionizing radiation"},{"id":"PEF09","label":"Land
+        use"},
+
+        {"id":"PEF10","label":"Marine
+        eutrophication"},{"id":"PEF11","label":"Ozone
+        depletion"},{"id":"PEF12","label":"Particulate
+        matter"},{"id":"PEF13","label":"Photochemical ozone
+        formation"},{"id":"PEF14","label":"Resource use"},
+
+        {"id":"PEF15","label":"Terrestrial
+        eutrophication"},{"id":"PEF16","label":"Water use"},
+
+        {"id":"PEF17","label":"Biodiversity"}]
+createdAt: 2023-02-06T11:40:57.994Z
+folder: JS_List_Values

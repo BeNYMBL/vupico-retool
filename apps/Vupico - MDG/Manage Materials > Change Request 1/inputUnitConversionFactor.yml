@@ -21,8 +21,7 @@ template:
     - currency: USD
     - labelAlign: left
     - formDataKey: '{{ self.id }}'
-    - value: >-
-        {{parseInt(getSingleChangeRequest.data.sustainability_data.unit_conversion_factor)}}
+    - value: '{{getPefValuesByPefCode.value.unit_conversion_factor}}'
     - style:
         ordered:
           - border: rgba(186, 186, 228, 0)

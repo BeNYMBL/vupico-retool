@@ -9,7 +9,8 @@ template:
           uom: {{selectUom.value}},
           material_type: {{selectMaterialType.value}},
           material_group: {{selectMaterialGroup.value}},
-          product_hierarchy: {{selectProductHierarchy.value}}
+          product_hierarchy: {{selectProductHierarchy.value}},
+          isElement: {{ inputIsElement.value }}
         }
         return JSON.stringify(final)
     - value: ''

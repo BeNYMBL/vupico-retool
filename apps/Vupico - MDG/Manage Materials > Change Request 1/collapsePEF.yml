@@ -52,16 +52,16 @@ template:
     - disabledByIndex:
         array: []
     - maintainSpaceWhenHidden: false
-    - showBody: false
+    - showBody: true
     - labels:
         array: []
 style:
   ordered: []
 position2:
   position2:
-    container: containerSustainabilityTitle
-    subcontainer: 5c65f
-    row: 16.599999999999937
+    container: pefContainer
+    subcontainer: fd7e3
+    row: 0.1999999999999389
     height: 28.200000000000017
     width: 12
 createdAt: 2023-01-31T19:22:33.462Z

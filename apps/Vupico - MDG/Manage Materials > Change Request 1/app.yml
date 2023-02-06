@@ -12,6 +12,7 @@ appTemplate:
     - Approve
     - Material_Plant
     - Material_Plant_Lists
+    - PEF
   queryStatusVisibility: false
   rootScreen: null
   version: 2.99.3
