@@ -36,7 +36,7 @@ template:
     - layout: |-
         {
           "title": {
-            "text": {{_.startCase(selectImpact.value) + ' ' + 'Cost Impact'}},
+            "text": {{selectImpact.selectedLabel + ' ' + 'Cost Impact'}},
             "font": {
               "color": "#3D3D3D",
               "size": 16

@@ -27,7 +27,7 @@ template:
     - layout: |-
         {
           "title": {
-            "text": "Co 2 Impact By Lifestage",
+            "text": "{{selectImpact2.selectedLabel}} <br>Impact By Lifestage",
             "font": {
               "color": "#3D3D3D",
               "size": 16
