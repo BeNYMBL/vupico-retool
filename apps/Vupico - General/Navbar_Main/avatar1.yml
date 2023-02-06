@@ -4,15 +4,14 @@ subtype: AvatarWidget
 template:
   ordered:
     - fallback: '{{ current_user.fullName }}'
-    - src: >-
-        https://media.licdn.com/dms/image/C4D03AQFGqx6pDhbuDg/profile-displayphoto-shrink_800_800/0/1642612293728?e=1680739200&v=beta&t=vsU6onZ0ws7bWXfPUBpPb5dwJiCmqJuPQUrnP25E1T8
+    - src: ''
     - hidden: false
     - showInEditor: false
     - tooltipText: ''
     - labelAlign: right
     - style:
         ordered:
-          - background: rgba(0, 0, 0, 0)
+          - background: automatic
     - labelCaption: '{{ current_user.email }}'
     - label: '{{ current_user.fullName }}'
     - imageSize: 32
